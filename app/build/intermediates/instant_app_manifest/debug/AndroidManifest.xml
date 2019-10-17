@@ -19,12 +19,17 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="org.wit.archaeologicalfieldwork.FieldworkActivity" >
+        <activity
+            android:name="org.wit.archaeologicalfieldwork.SplashScreenActivity"
+            android:noHistory="true"
+            android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="org.wit.archaeologicalfieldwork.FieldworkActivity" >
         </activity>
     </application>
 

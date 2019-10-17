@@ -628,9 +628,12 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable button_background
 drawable hilldata
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable login_background
+drawable login_edit_background
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -826,6 +829,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_fieldword
+layout activity_login
 layout activity_splashscreen
 layout notification_action
 layout notification_action_tombstone
@@ -1042,6 +1046,7 @@ style Base_Widget_AppCompat_Spinner_Underlined
 style Base_Widget_AppCompat_TextView_SpinnerItem
 style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
+style LoginPage
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat

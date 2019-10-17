@@ -11,7 +11,7 @@
 9-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:5:5-23:19
+11-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:5:5-25:19
 12        android:allowBackup="true"
 12-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -48,8 +48,8 @@
 29            </intent-filter>
 30        </activity>
 31        <activity android:name="org.wit.archaeologicalfieldwork.FieldworkActivity" >
-31-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:21:9-22:20
-31-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:21:19-52
+31-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:22:9-24:20
+31-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:22:19-52
 32        </activity>
 33    </application>
 34

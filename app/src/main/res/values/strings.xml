@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Hill data</string>
+    <string name="ForgotPassword">Forgot Password?</string>
+    <string name="Signin">Sign in</string>
+    <string name="Signup">Sign up</string>
+    <string name="email">Email address</string>
+    <string name="password">Password </string>
+    <string name="username">Username</string>
+    <string name="passwordConfirm">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="backToSignin">Already a member? Sign in!</string>
+    <string name="resetPassword"> Reset Password</string>
+    <string name="forgotPWDescrip">Please enter your registered email address to send you password reset instructions.</string>
+    <string name="forgotBacktoLogin">Back to sign in!</string>
 </resources>

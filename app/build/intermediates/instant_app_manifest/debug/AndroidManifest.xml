@@ -20,7 +20,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="org.wit.archaeologicalfieldwork.SplashScreenActivity"
+            android:name="org.wit.archaeologicalfieldwork.activities.SplashScreenActivity"
             android:noHistory="true"
             android:theme="@style/SplashTheme" >
             <intent-filter>
@@ -30,17 +30,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.LoginActivity"
+            android:name="org.wit.archaeologicalfieldwork.activities.LoginActivity"
             android:theme="@style/LoginPage" >
         </activity>
-        <activity android:name="org.wit.archaeologicalfieldwork.FieldworkActivity" >
+        <activity android:name="org.wit.archaeologicalfieldwork.activities.FieldworkActivity" >
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.ForgotPasswordActivity"
+            android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
             android:theme="@style/LoginPage" >
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.SignUpActivity"
+            android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
             android:theme="@style/LoginPage" >
         </activity>
     </application>

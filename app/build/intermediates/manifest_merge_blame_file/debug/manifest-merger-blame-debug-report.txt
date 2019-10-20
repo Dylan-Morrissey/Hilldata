@@ -30,8 +30,8 @@
 20-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:11:9-40
 21        <activity
 21-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:12:9-20:20
-22            android:name="org.wit.archaeologicalfieldwork.SplashScreenActivity"
-22-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:12:19-55
+22            android:name="org.wit.archaeologicalfieldwork.activities.SplashScreenActivity"
+22-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:12:19-66
 23            android:noHistory="true"
 23-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:14:13-37
 24            android:theme="@style/SplashTheme" >
@@ -49,26 +49,26 @@
 30        </activity>
 31        <activity
 31-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:22:9-25:20
-32            android:name="org.wit.archaeologicalfieldwork.LoginActivity"
-32-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:22:19-48
+32            android:name="org.wit.archaeologicalfieldwork.activities.LoginActivity"
+32-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:22:19-59
 33            android:theme="@style/LoginPage" >
 33-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:23:13-45
 34        </activity>
-35        <activity android:name="org.wit.archaeologicalfieldwork.FieldworkActivity" >
+35        <activity android:name="org.wit.archaeologicalfieldwork.activities.FieldworkActivity" >
 35-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:9-30:20
-35-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:19-52
+35-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:19-63
 36        </activity>
 37        <activity
 37-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:32:9-35:20
-38            android:name="org.wit.archaeologicalfieldwork.ForgotPasswordActivity"
-38-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:32:19-57
+38            android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
+38-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:32:19-68
 39            android:theme="@style/LoginPage" >
 39-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:33:13-45
 40        </activity>
 41        <activity
 41-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:37:9-41:20
-42            android:name="org.wit.archaeologicalfieldwork.SignUpActivity"
-42-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:37:19-49
+42            android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
+42-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:37:19-60
 43            android:theme="@style/LoginPage" >
 43-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:38:13-45
 44        </activity>

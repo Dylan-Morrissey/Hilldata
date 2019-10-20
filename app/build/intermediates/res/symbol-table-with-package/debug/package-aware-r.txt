@@ -684,8 +684,10 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnBackSignIn
 id btnBackToLogin
 id btnForgotPassword
+id btnRegester
 id btnResetPassword
 id btnSignIn
 id btnSignUp
@@ -716,6 +718,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id forever
+id forgotEmail
 id gone
 id group_divider
 id groups
@@ -733,10 +736,16 @@ id line1
 id line3
 id listMode
 id list_item
+id loginEmail
+id loginPassword
 id message
 id middle
 id multiply
 id never
+id newEmail
+id newPassword
+id newPasswordConfirm
+id newUsername
 id none
 id normal
 id notification_background

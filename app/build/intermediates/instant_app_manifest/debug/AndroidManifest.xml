@@ -35,6 +35,10 @@
         </activity>
         <activity android:name="org.wit.archaeologicalfieldwork.FieldworkActivity" >
         </activity>
+        <activity
+            android:name="org.wit.archaeologicalfieldwork.ForgotPasswordActivity"
+            android:theme="@style/LoginPage" >
+        </activity>
     </application>
 
 </manifest>

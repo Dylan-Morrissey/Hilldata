@@ -41,6 +41,7 @@
             android:layout_marginTop="15dp"
             />
         <TextView
+            android:id="@+id/btnForgotPassword"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_width="wrap_content"

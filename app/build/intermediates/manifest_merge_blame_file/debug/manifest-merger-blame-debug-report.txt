@@ -11,7 +11,7 @@
 9-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:5:5-31:19
+11-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:5:5-37:19
 12        android:allowBackup="true"
 12-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -58,6 +58,13 @@
 35-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:9-30:20
 35-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:19-52
 36        </activity>
-37    </application>
-38
-39</manifest>
+37        <activity
+37-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:32:9-36:20
+38            android:name="org.wit.archaeologicalfieldwork.ForgotPasswordActivity"
+38-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:32:19-57
+39            android:theme="@style/LoginPage" >
+39-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:33:13-45
+40        </activity>
+41    </application>
+42
+43</manifest>

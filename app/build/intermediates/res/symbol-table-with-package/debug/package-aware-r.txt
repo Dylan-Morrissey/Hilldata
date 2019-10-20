@@ -394,6 +394,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color lightText
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -628,6 +629,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable applogo
 drawable button_background
 drawable hilldata
 drawable ic_launcher_background
@@ -682,6 +684,8 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnForgotPassword
+id btnResetPassword
 id buttonPanel
 id center
 id center_horizontal
@@ -829,6 +833,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_fieldword
+layout activity_forgotpassword
 layout activity_login
 layout activity_splashscreen
 layout notification_action
@@ -842,6 +847,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -1046,6 +1052,7 @@ style Base_Widget_AppCompat_Spinner_Underlined
 style Base_Widget_AppCompat_TextView_SpinnerItem
 style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
+style ForgotPasswordPage
 style LoginPage
 style Platform_AppCompat
 style Platform_AppCompat_Light

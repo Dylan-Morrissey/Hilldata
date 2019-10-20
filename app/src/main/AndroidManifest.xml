@@ -32,6 +32,11 @@
         <activity android:name=".ForgotPasswordActivity"
             android:theme="@style/LoginPage"
             >
+        </activity>
+
+        <activity android:name=".SignUpActivity"
+            android:theme="@style/LoginPage"
+            >
 
         </activity>
     </application>

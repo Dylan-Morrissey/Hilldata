@@ -684,8 +684,11 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnBackToLogin
 id btnForgotPassword
 id btnResetPassword
+id btnSignIn
+id btnSignUp
 id buttonPanel
 id center
 id center_horizontal
@@ -835,6 +838,7 @@ layout abc_tooltip
 layout activity_fieldword
 layout activity_forgotpassword
 layout activity_login
+layout activity_signup
 layout activity_splashscreen
 layout notification_action
 layout notification_action_tombstone
@@ -1052,7 +1056,6 @@ style Base_Widget_AppCompat_Spinner_Underlined
 style Base_Widget_AppCompat_TextView_SpinnerItem
 style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
-style ForgotPasswordPage
 style LoginPage
 style Platform_AppCompat
 style Platform_AppCompat_Light

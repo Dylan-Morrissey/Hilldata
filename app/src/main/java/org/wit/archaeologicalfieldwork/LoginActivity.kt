@@ -19,5 +19,9 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
             val intent = Intent(baseContext, ForgotPasswordActivity::class.java)
             startActivity(intent)
         }
+        btnSignUp.setOnClickListener() {
+            val intent = Intent(baseContext, SignUpActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

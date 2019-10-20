@@ -38,6 +38,10 @@
             android:name="org.wit.archaeologicalfieldwork.ForgotPasswordActivity"
             android:theme="@style/LoginPage" >
         </activity>
+        <activity
+            android:name="org.wit.archaeologicalfieldwork.SignUpActivity"
+            android:theme="@style/LoginPage" >
+        </activity>
     </application>
 
 </manifest>

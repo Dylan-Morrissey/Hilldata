@@ -8,6 +8,7 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_fieldword.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.helpers.readImage
@@ -59,6 +60,10 @@ class FieldworkActivity : AppCompatActivity(), AnkoLogger {
             }
         chooseImage.setOnClickListener {
             showImagePicker(this, IMAGE_REQUEST)
+        }
+
+        hillfortLocation.setOnClickListener {
+            startActivity(intentFor<MapActivity>())
         }
     }
 

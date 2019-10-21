@@ -1130,6 +1130,7 @@ id info
 id invisible
 id italic
 id item_add
+id item_cancel
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
@@ -1331,6 +1332,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu menu_hillfort
 menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_foreground
@@ -1393,6 +1395,7 @@ string hide_bottom_view_on_scroll_behavior
 string hint_HillfortName
 string hint_hillfortDescription
 string menu_addHillfort
+string menu_cancelHillfort
 string mtrl_chip_close_icon_content_description
 string password
 string passwordConfirm

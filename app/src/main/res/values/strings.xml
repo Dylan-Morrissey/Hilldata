@@ -16,4 +16,5 @@
     <string name="hint_HillfortName">Hill fort name</string>
     <string name="hint_hillfortDescription">Description</string>
     <string name="menu_addHillfort">Add</string>
+    <string name="menu_cancelHillfort">Cancel</string>
 </resources>

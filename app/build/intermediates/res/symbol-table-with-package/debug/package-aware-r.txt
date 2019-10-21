@@ -1078,6 +1078,7 @@ id center_horizontal
 id center_vertical
 id chains
 id checkbox
+id chooseImage
 id chronometer
 id clip_horizontal
 id clip_vertical
@@ -1118,6 +1119,7 @@ id ghost_view
 id gone
 id group_divider
 id groups
+id hillfortImage
 id hillfortName
 id hillfortNameCard
 id home
@@ -1384,6 +1386,7 @@ string app_name
 string appbar_scrolling_view_behavior
 string backToSignin
 string bottom_sheet_behavior
+string button_addImage
 string character_counter_content_description
 string character_counter_pattern
 string email
@@ -1409,6 +1412,7 @@ string register
 string resetPassword
 string save_hillfort
 string search_menu_title
+string select_hillfort_image
 string status_bar_notification_info_overflow
 string username
 style AlertDialog_AppCompat

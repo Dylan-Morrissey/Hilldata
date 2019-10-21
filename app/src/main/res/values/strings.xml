@@ -19,5 +19,6 @@
     <string name="menu_cancelHillfort">Cancel</string>
     <string name="enter_hillfort_name">Please Enter a hillfort name</string>
     <string name="save_hillfort">Save hillfort</string>
-    <string name="button_addImage"> Add Image</string>
+    <string name="button_addImage">Add Image</string>
+    <string name="select_hillfort_image">Select hillfort image</string>
 </resources>

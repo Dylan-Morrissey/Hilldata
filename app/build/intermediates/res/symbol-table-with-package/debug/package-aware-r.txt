@@ -1387,6 +1387,7 @@ string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
 string email
+string enter_hillfort_name
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string forgotBacktoLogin
@@ -1406,6 +1407,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string register
 string resetPassword
+string save_hillfort
 string search_menu_title
 string status_bar_notification_info_overflow
 string username

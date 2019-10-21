@@ -18,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity(), AnkoLogger {
         val background = object  : Thread() {
             override fun run() {
                 try {
-                    Thread.sleep(4000)
+                    Thread.sleep(3000)
 
                     val intent = Intent(baseContext, LoginActivity::class.java)
                     startActivity(intent)

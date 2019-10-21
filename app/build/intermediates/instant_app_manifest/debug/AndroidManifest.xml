@@ -10,6 +10,7 @@
         android:targetSdkVersion="29" />
 
     <application
+        android:name="org.wit.archaeologicalfieldwork.main.MainApp"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -33,7 +34,9 @@
             android:name="org.wit.archaeologicalfieldwork.activities.LoginActivity"
             android:theme="@style/LoginPage" >
         </activity>
-        <activity android:name="org.wit.archaeologicalfieldwork.activities.FieldworkActivity" >
+        <activity
+            android:name="org.wit.archaeologicalfieldwork.activities.FieldworkActivity"
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
@@ -42,6 +45,13 @@
         <activity
             android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
             android:theme="@style/LoginPage" >
+        </activity>
+        <activity android:name="org.wit.archaeologicalfieldwork.activities.HillfortListActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

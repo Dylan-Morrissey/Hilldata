@@ -18,17 +18,17 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
         info("Login Activity Started...")
 
         btnForgotPassword.setOnClickListener() {
-            val intent = Intent(baseContext, ForgotPasswordActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(baseContext, ForgotPasswordActivity::class.java))
         }
         btnSignUp.setOnClickListener() {
-            val intent = Intent(baseContext, SignUpActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(baseContext, SignUpActivity::class.java))
         }
 
         btnSignIn.setOnClickListener() {
             if (loginEmail.text.toString().isEmpty()){
-                toast("Please enter an email address.")
+                //toast("Please enter an email address.")
+                startActivity(Intent(baseContext, HillfortListActivity::class.java))
+
             } else if (loginPassword.text.toString().isEmpty()){
                 toast("Please enter a password.")
             }

@@ -1128,6 +1128,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageIcon
 id info
 id invisible
 id italic
@@ -1387,6 +1388,7 @@ string appbar_scrolling_view_behavior
 string backToSignin
 string bottom_sheet_behavior
 string button_addImage
+string change_hillfort_image
 string character_counter_content_description
 string character_counter_pattern
 string email

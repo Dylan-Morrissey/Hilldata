@@ -836,6 +836,10 @@
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_hillfort.xml.flat",
+        "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\src\\main\\res\\layout\\activity_hillfort.xml"
+    },
+    {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
@@ -1950,10 +1954,6 @@
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_fieldword.xml.flat",
-        "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\src\\main\\res\\layout\\activity_fieldword.xml"
     },
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_select_dialog_material.xml.flat",

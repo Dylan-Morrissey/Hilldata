@@ -1,12 +1,13 @@
 package org.wit.archaeologicalfieldwork.activities
 
 import android.content.Intent
-import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_fieldword.*
+import android.view.View
+import android.widget.CheckBox
+import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.helpers.readImage
@@ -27,7 +28,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fieldword)
+        setContentView(R.layout.activity_hillfort)
         toolbarAdd.title = title
         setSupportActionBar(toolbarAdd)
 
@@ -38,6 +39,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             hillfort = intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
             hillfortName.setText(hillfort.name)
             description.setText(hillfort.description)
+            checkbox.setChecked(hillfort.visited)
             hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.image))
             btnAdd.setText(R.string.save_hillfort)
             chooseImage.setText((R.string.change_hillfort_image))
@@ -46,6 +48,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         btnAdd.setOnClickListener() {
             hillfort.name = hillfortName.text.toString()
             hillfort.description = description.text.toString()
+            hillfort.visited = checkbox.isChecked()
             if (hillfort.name.isEmpty()) {
                 toast(R.string.enter_hillfort_name)
             } else {
@@ -61,6 +64,9 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         }
         chooseImage.setOnClickListener {
             showImagePicker(this, IMAGE_REQUEST)
+        }
+        checkbox.setOnClickListener {
+            hillfort.visited = true;
         }
 
         hillfortLocation.setOnClickListener {

@@ -29,7 +29,8 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
 
         fun bind(hillfort: HillfortModel, listener: HillfortListener){
             itemView.hillfortNameCard.text  = hillfort.name
-            itemView.descriptionCard.text = hillfort.description
+            itemView.lnglatCard.text = "Longdiude: "+ hillfort.lng.toString() + "\nLatitude: " + hillfort.lat.toString()
+            itemView.checkboxCard.setChecked(hillfort.visited)
             itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context, hillfort.image))
             itemView.setOnClickListener{listener.onHillfortClick(hillfort)}
         }

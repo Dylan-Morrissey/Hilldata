@@ -9,17 +9,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@drawable/button_background">
 
         <ImageView
             android:id="@+id/imageIcon"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
-            android:contentDescription="@string/change_hillfort_image"
-            />
+            android:contentDescription="@string/change_hillfort_image" />
 
         <TextView
             android:id="@+id/hillfortNameCard"
@@ -30,11 +29,24 @@
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/descriptionCard"
+            android:id="@+id/lnglatCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/hillfortNameCard"
             android:layout_toEndOf="@+id/imageIcon"/>
+
+        <CheckBox
+            android:id="@+id/checkboxCard"
+            android:layout_width="wrap_content"
+            android:text="Visited"
+            android:background="@drawable/login_edit_background"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:layout_below="@id/lnglatCard"
+            android:layout_toEndOf="@id/imageIcon"
+            android:enabled="false"
+            android:textColor="@color/lightText"
+            />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

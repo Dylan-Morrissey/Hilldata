@@ -28,14 +28,15 @@
             android:theme="@style/LoginPage"></activity>
         <activity
             android:name=".activities.HillfortActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/LoginPage"></activity>
         <activity
             android:name=".activities.ForgotPasswordActivity"
             android:theme="@style/LoginPage"></activity>
         <activity
             android:name=".activities.SignUpActivity"
             android:theme="@style/LoginPage"></activity>
-        <activity android:name=".activities.HillfortListActivity">
+        <activity android:name=".activities.HillfortListActivity"
+            android:theme="@style/LoginPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

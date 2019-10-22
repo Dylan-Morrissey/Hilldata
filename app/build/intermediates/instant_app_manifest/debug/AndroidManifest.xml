@@ -45,14 +45,16 @@
             android:theme="@style/LoginPage" />
         <activity
             android:name="org.wit.archaeologicalfieldwork.activities.HillfortActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/LoginPage" />
         <activity
             android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
             android:theme="@style/LoginPage" />
         <activity
             android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
             android:theme="@style/LoginPage" />
-        <activity android:name="org.wit.archaeologicalfieldwork.activities.HillfortListActivity" >
+        <activity
+            android:name="org.wit.archaeologicalfieldwork.activities.HillfortListActivity"
+            android:theme="@style/LoginPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

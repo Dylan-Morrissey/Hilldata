@@ -1,28 +1,29 @@
 package org.wit.archaeologicalfieldwork.activities
 
 import android.content.Intent
+import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_fieldword.*
-import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.helpers.readImage
 import org.wit.archaeologicalfieldwork.helpers.showImagePicker
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
+import org.wit.archaeologicalfieldwork.models.LocationModel
 
 class FieldworkActivity : AppCompatActivity(), AnkoLogger {
 
     var hillfort = HillfortModel()
-    lateinit var app:MainApp
+    lateinit var app: MainApp
     var edit = false
     var IMAGE_REQUEST = 1
+    val LOCATION_REQUEST = 2
+  //  var location = LocationModel(52.245696, -7.139102, 15f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +31,7 @@ class FieldworkActivity : AppCompatActivity(), AnkoLogger {
         toolbarAdd.title = title
         setSupportActionBar(toolbarAdd)
 
-        app= application as MainApp
+        app = application as MainApp
 
         if (intent.hasExtra("hillfort_edit")) {
             edit = true
@@ -57,13 +58,19 @@ class FieldworkActivity : AppCompatActivity(), AnkoLogger {
             info("add Button Pressed:${hillfort}")
             setResult(AppCompatActivity.RESULT_OK)
             finish()
-            }
+        }
         chooseImage.setOnClickListener {
             showImagePicker(this, IMAGE_REQUEST)
         }
 
         hillfortLocation.setOnClickListener {
-            startActivity(intentFor<MapActivity>())
+            val location = LocationModel(52.245696, -7.139102, 15f)
+            if (hillfort.zoom !=0f){
+                location.lat= hillfort.lat
+                location.lng=hillfort.lng
+                location.zoom=hillfort.zoom
+            }
+            startActivityForResult( intentFor<MapActivity>().putExtra("location",location),LOCATION_REQUEST)
         }
     }
 
@@ -89,6 +96,14 @@ class FieldworkActivity : AppCompatActivity(), AnkoLogger {
                     hillfort.image = data.getData().toString()
                     hillfortImage.setImageBitmap(readImage(this, resultCode, data))
                     chooseImage.setText(R.string.change_hillfort_image)
+                }
+            }
+            LOCATION_REQUEST -> {
+                if (data != null) {
+                    val location=data.extras?.getParcelable<LocationModel>("location")!!
+                    hillfort.lat = location.lat
+                    hillfort.lng = location.lng
+                    hillfort.zoom = location.zoom
                 }
             }
         }

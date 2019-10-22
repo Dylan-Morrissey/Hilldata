@@ -10,152 +10,139 @@
 9        android:targetSdkVersion="29" />
 9-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml
 10
-11    <!--
-12         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-13         Google Maps Android API v2, but you must specify either coarse or fine
-14         location permissions for the 'MyLocation' functionality.
-15    -->
-16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:10:5-79
-16-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:10:22-76
-17
-18    <!-- Include required permissions for Google Maps API to run. -->
-19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-19-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:23:5-79
-19-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:23:22-76
-20    <uses-permission android:name="android.permission.INTERNET" />
-20-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:24:5-67
-20-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:24:22-64
-21
-22    <uses-feature
-22-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:26:5-28:35
-23        android:glEsVersion="0x00020000"
-23-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:27:9-41
-24        android:required="true" />
-24-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:28:9-32
-25
-26    <application
-26-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:12:5-65:19
-27        android:name="org.wit.archaeologicalfieldwork.main.MainApp"
-27-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:13:9-37
-28        android:allowBackup="true"
-28-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:14:9-35
-29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-29-->[androidx.core:core:1.0.2] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\68399ff6f7cdf924235d3ad145929c6a\core-1.0.2\AndroidManifest.xml:22:18-86
-30        android:debuggable="true"
-31        android:icon="@mipmap/ic_launcher"
-31-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:15:9-43
-32        android:label="@string/app_name"
-32-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:16:9-41
-33        android:roundIcon="@mipmap/ic_launcher_round"
-33-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:17:9-54
-34        android:supportsRtl="true"
-34-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:18:9-35
-35        android:testOnly="true"
-36        android:theme="@style/AppTheme" >
-36-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:19:9-40
-37
-38        <!--
-39             The API key for Google Maps-based APIs is defined as a string resource.
-40             (See the file "res/values/google_maps_api.xml").
-41             Note that the API key is linked to the encryption key used to sign the APK.
-42             You need a different API key for each encryption key, including the release key that is used to
-43             sign the APK for publishing.
-44             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-45        -->
-46        <meta-data
-46-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:29:9-31:55
-47            android:name="com.google.android.geo.API_KEY"
-47-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:30:13-58
-48            android:value="@string/google_maps_key" />
-48-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:31:13-52
-49
-50        <activity
-50-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:33:9-35:67
-51            android:name="org.wit.archaeologicalfieldwork.activities.MapActivity"
-51-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:34:13-51
-52            android:label="@string/title_activity_map" />
-52-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:35:13-55
-53        <activity
-53-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:36:9-45:20
-54            android:name="org.wit.archaeologicalfieldwork.activities.SplashScreenActivity"
-54-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:37:13-60
-55            android:noHistory="true"
-55-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:38:13-37
-56            android:theme="@style/SplashTheme" >
-56-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:39:13-47
-57            <intent-filter>
-57-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:40:13-44:29
-58                <action android:name="android.intent.action.MAIN" />
-58-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:41:17-69
-58-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:41:25-66
-59
-60                <category android:name="android.intent.category.LAUNCHER" />
-60-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:43:17-77
-60-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:43:27-74
-61            </intent-filter>
-62        </activity>
-63        <activity
-63-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:46:9-48:57
-64            android:name="org.wit.archaeologicalfieldwork.activities.LoginActivity"
-64-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:47:13-53
-65            android:theme="@style/LoginPage" />
-65-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:48:13-45
+11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+11-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:5:5-79
+11-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:5:22-76
+12
+13    <!-- Include required permissions for Google Maps API to run. -->
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:23:5-79
+14-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:23:22-76
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:24:5-67
+15-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:24:22-64
+16
+17    <uses-feature
+17-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:26:5-28:35
+18        android:glEsVersion="0x00020000"
+18-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:27:9-41
+19        android:required="true" />
+19-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:28:9-32
+20
+21    <application
+21-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:7:5-52:19
+22        android:name="org.wit.archaeologicalfieldwork.main.MainApp"
+22-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:8:9-37
+23        android:allowBackup="true"
+23-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:9:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.0.2] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\68399ff6f7cdf924235d3ad145929c6a\core-1.0.2\AndroidManifest.xml:22:18-86
+25        android:debuggable="true"
+26        android:icon="@mipmap/ic_launcher"
+26-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:10:9-43
+27        android:label="@string/app_name"
+27-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:11:9-41
+28        android:roundIcon="@mipmap/ic_launcher_round"
+28-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:12:9-54
+29        android:supportsRtl="true"
+29-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:13:9-35
+30        android:testOnly="true"
+31        android:theme="@style/LoginPage" >
+31-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:14:9-41
+32        <activity
+32-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:16:9-25:20
+33            android:name="org.wit.archaeologicalfieldwork.activities.SplashScreenActivity"
+33-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:17:13-60
+34            android:noHistory="true"
+34-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:18:13-37
+35            android:theme="@style/SplashTheme" >
+35-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:19:13-47
+36            <intent-filter>
+36-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:20:13-24:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:21:17-69
+37-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:21:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:23:17-77
+39-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:23:27-74
+40            </intent-filter>
+41        </activity>
+42        <activity
+42-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:26:9-28:57
+43            android:name="org.wit.archaeologicalfieldwork.activities.LoginActivity"
+43-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:13-53
+44            android:theme="@style/LoginPage" />
+44-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:28:13-45
+45        <activity
+45-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:29:9-31:56
+46            android:name="org.wit.archaeologicalfieldwork.activities.FieldworkActivity"
+46-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:30:13-57
+47            android:theme="@style/AppTheme" />
+47-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:31:13-44
+48        <activity
+48-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:32:9-34:57
+49            android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
+49-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:33:13-62
+50            android:theme="@style/LoginPage" />
+50-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:34:13-45
+51        <activity
+51-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:35:9-37:57
+52            android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
+52-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:36:13-54
+53            android:theme="@style/LoginPage" />
+53-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:37:13-45
+54        <activity android:name="org.wit.archaeologicalfieldwork.activities.HillfortListActivity" >
+54-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:38:9-44:20
+54-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:38:19-66
+55            <intent-filter>
+55-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:20:13-24:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:21:17-69
+56-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:21:25-66
+57
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:23:17-77
+58-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:23:27-74
+59            </intent-filter>
+60        </activity>
+61
+62        <meta-data
+62-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:45:9-47:55
+63            android:name="com.google.android.geo.API_KEY"
+63-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:46:13-58
+64            android:value="@string/google_maps_key" />
+64-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:47:13-52
+65
 66        <activity
-66-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:49:9-51:56
-67            android:name="org.wit.archaeologicalfieldwork.activities.FieldworkActivity"
-67-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:50:13-57
-68            android:theme="@style/AppTheme" />
-68-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:51:13-44
-69        <activity
-69-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:52:9-54:57
-70            android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
-70-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:53:13-62
-71            android:theme="@style/LoginPage" />
-71-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:54:13-45
-72        <activity
-72-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:55:9-57:57
-73            android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
-73-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:56:13-54
-74            android:theme="@style/LoginPage" />
-74-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:57:13-45
-75        <activity android:name="org.wit.archaeologicalfieldwork.activities.HillfortListActivity" >
-75-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:58:9-64:20
-75-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:58:19-66
-76            <intent-filter>
-76-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:40:13-44:29
-77                <action android:name="android.intent.action.MAIN" />
-77-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:41:17-69
-77-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:41:25-66
+66-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:49:9-51:67
+67            android:name="org.wit.archaeologicalfieldwork.activities.MapActivity"
+67-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:50:13-51
+68            android:label="@string/title_activity_map" />
+68-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:51:13-55
+69        <!-- Needs to be explicitly declared on P+ -->
+70        <uses-library
+70-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:33:9-35:40
+71            android:name="org.apache.http.legacy"
+71-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:34:13-50
+72            android:required="false" />
+72-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:35:13-37
+73
+74        <activity
+74-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9daef969499e3ce3980703d3580fd152\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+75            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+75-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9daef969499e3ce3980703d3580fd152\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+76            android:exported="false"
+76-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9daef969499e3ce3980703d3580fd152\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+77            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+77-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9daef969499e3ce3980703d3580fd152\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
 78
-79                <category android:name="android.intent.category.LAUNCHER" />
-79-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:43:17-77
-79-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:43:27-74
-80            </intent-filter>
-81        </activity>
-82        <!-- Needs to be explicitly declared on P+ -->
-83        <uses-library
-83-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:33:9-35:40
-84            android:name="org.apache.http.legacy"
-84-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:34:13-50
-85            android:required="false" />
-85-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\771c70923a5e5993f66a2dc19060580f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:35:13-37
-86
-87        <activity
-87-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9daef969499e3ce3980703d3580fd152\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
-88            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-88-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9daef969499e3ce3980703d3580fd152\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
-89            android:exported="false"
-89-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9daef969499e3ce3980703d3580fd152\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
-90            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-90-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9daef969499e3ce3980703d3580fd152\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
-91
-92        <meta-data
-92-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\d88f3fda21c31e06a0e7c1423f508970\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
-93            android:name="com.google.android.gms.version"
-93-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\d88f3fda21c31e06a0e7c1423f508970\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
-94            android:value="@integer/google_play_services_version" />
-94-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\d88f3fda21c31e06a0e7c1423f508970\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
-95    </application>
-96
-97</manifest>
+79        <meta-data
+79-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\d88f3fda21c31e06a0e7c1423f508970\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
+80            android:name="com.google.android.gms.version"
+80-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\d88f3fda21c31e06a0e7c1423f508970\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
+81            android:value="@integer/google_play_services_version" />
+81-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\d88f3fda21c31e06a0e7c1423f508970\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
+82    </application>
+83
+84</manifest>

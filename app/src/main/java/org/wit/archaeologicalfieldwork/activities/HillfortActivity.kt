@@ -50,6 +50,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.image))
             btnAdd.setText(R.string.save_hillfort)
             chooseImage.setText((R.string.change_hillfort_image))
+            deleteHillfortBtn.visibility = View.VISIBLE
         }
 
         if (checkbox.isChecked() == true){
@@ -111,6 +112,12 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             datePicker.show()
         }
 
+        deleteHillfortBtn.setOnClickListener {
+            app.hillforts.delete(hillfort.copy())
+            info("Delete Button Pressed")
+            setResult(AppCompatActivity.RESULT_OK)
+            finish()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

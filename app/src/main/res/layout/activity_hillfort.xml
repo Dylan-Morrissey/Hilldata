@@ -177,6 +177,20 @@
                     android:textAllCaps="false"
                     android:textSize="20sp" />
 
+                <Button
+                    android:id="@+id/deleteHillfortBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/delbutton_background"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/delete_hilfort"
+                    android:textColor="@color/lightText"
+                    android:textAllCaps="false"
+                    android:visibility="invisible"
+                    android:textSize="20sp"/>
 
             </LinearLayout>
         </ScrollView>

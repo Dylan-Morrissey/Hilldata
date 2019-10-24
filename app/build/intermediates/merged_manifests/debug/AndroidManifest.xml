@@ -44,7 +44,8 @@
             android:theme="@style/LoginPage" />
         <activity
             android:name="org.wit.archaeologicalfieldwork.activities.HillfortActivity"
-            android:theme="@style/LoginPage" />
+            android:theme="@style/LoginPage" >
+        </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
             android:theme="@style/LoginPage" />

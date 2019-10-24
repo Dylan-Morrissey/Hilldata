@@ -28,7 +28,8 @@
             android:theme="@style/LoginPage"></activity>
         <activity
             android:name=".activities.HillfortActivity"
-            android:theme="@style/LoginPage"></activity>
+            android:theme="@style/LoginPage">
+        </activity>
         <activity
             android:name=".activities.ForgotPasswordActivity"
             android:theme="@style/LoginPage"></activity>

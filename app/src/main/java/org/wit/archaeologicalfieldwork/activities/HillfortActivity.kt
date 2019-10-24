@@ -1,5 +1,6 @@
 package org.wit.archaeologicalfieldwork.activities
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.CheckBox
+import android.widget.DatePicker
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
@@ -16,6 +18,7 @@ import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
 import org.wit.archaeologicalfieldwork.models.LocationModel
+import java.util.*
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
@@ -40,15 +43,27 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             hillfortName.setText(hillfort.name)
             description.setText(hillfort.description)
             checkbox.setChecked(hillfort.visited)
+            dateText.setText(hillfort.date)
+            lngText.setText("Longitude " +hillfort.lng.toString())
+            latText.setText("Latitude " +  hillfort.lat.toString())
+            notes.setText(hillfort.notes)
             hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.image))
             btnAdd.setText(R.string.save_hillfort)
             chooseImage.setText((R.string.change_hillfort_image))
+        }
+
+        if (checkbox.isChecked() == true){
+            btnDate.setText("Change visited date")
+        } else {
+            btnDate.setText("Change visit date")
         }
 
         btnAdd.setOnClickListener() {
             hillfort.name = hillfortName.text.toString()
             hillfort.description = description.text.toString()
             hillfort.visited = checkbox.isChecked()
+            hillfort.date = dateText.text.toString()
+            hillfort.notes = notes.text.toString()
             if (hillfort.name.isEmpty()) {
                 toast(R.string.enter_hillfort_name)
             } else {
@@ -66,7 +81,13 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             showImagePicker(this, IMAGE_REQUEST)
         }
         checkbox.setOnClickListener {
-            hillfort.visited = true;
+            if (checkbox.isChecked() == true){
+                hillfort.visited = true;
+                btnDate.setText("Change visited date")
+            } else {
+                hillfort.visited = false;
+                btnDate.setText("Change visit date")
+            }
         }
 
         hillfortLocation.setOnClickListener {
@@ -78,6 +99,18 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             }
             startActivityForResult( intentFor<MapActivity>().putExtra("location",location),LOCATION_REQUEST)
         }
+
+        btnDate.setOnClickListener {
+          val calander = Calendar.getInstance()
+          val year = calander.get(Calendar.YEAR)
+          val month = calander.get(Calendar.MONTH)
+          val day = calander.get(Calendar.DAY_OF_MONTH)
+          val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view:DatePicker, mYear:Int, mMonth:Int, mDay:Int ->
+              dateText.setText("" + mDay + "/" + mMonth + "/" + mYear)
+          }, year, month, day)
+            datePicker.show()
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -102,7 +135,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
                     hillfort.image = data.getData().toString()
                     hillfortImage.setImageBitmap(readImage(this, resultCode, data))
                     chooseImage.setText(R.string.change_hillfort_image)
-                }
+                    }
             }
             LOCATION_REQUEST -> {
                 if (data != null) {
@@ -113,5 +146,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
                 }
             }
         }
+        lngText.setText("Longitude " + hillfort.lng.toString())
+        latText.setText("Latitude " + hillfort.lat.toString())
     }
 }

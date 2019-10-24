@@ -1137,6 +1137,7 @@ id bottom
 id btnAdd
 id btnBackSignIn
 id btnBackToLogin
+id btnDate
 id btnForgotPassword
 id btnRegester
 id btnResetPassword
@@ -1162,6 +1163,7 @@ id coordinator
 id custom
 id customPanel
 id dark
+id dateText
 id decor_content_parent
 id default_activity_button
 id description
@@ -1213,12 +1215,14 @@ id item_cancel
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id latText
 id left
 id light
 id line1
 id line3
 id listMode
 id list_item
+id lngText
 id lnglatCard
 id loginEmail
 id loginPassword
@@ -1239,6 +1243,7 @@ id newPasswordConfirm
 id newUsername
 id none
 id normal
+id notes
 id notification_background
 id notification_main_column
 id notification_main_column_container

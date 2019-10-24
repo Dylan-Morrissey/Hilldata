@@ -58,7 +58,7 @@
                     android:background="@drawable/login_edit_background"
                     android:hint="@string/hint_HillfortName"
                     android:inputType="text"
-                    android:maxLength="25"
+                    android:maxLength="140"
                     android:maxLines="1"
                     android:padding="8dp"
                     android:textSize="14sp"/>
@@ -71,11 +71,39 @@
                     android:hint="@string/hint_hillfortDescription"
                     android:background="@drawable/login_edit_background"
                     android:inputType="text"
-                    android:maxLength="25"
+                    android:maxLength="300"
                     android:maxLines="1"
                     android:padding="8dp"
                     android:textSize="14sp" />
 
+                <EditText
+                    android:id="@+id/notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Additional Notes"
+                    android:background="@drawable/login_edit_background"
+                    android:inputType="textMultiLine"
+                    android:maxLength="300"
+                    android:maxLines="10"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/lngText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Longitude: "
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/latText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Latitude: "
+                    android:layout_gravity="center"
+                    />
 
                 <Button
                     android:id="@+id/chooseImage"
@@ -124,9 +152,30 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Visited?"
-                    android:onClick="onCheckboxClicked"
                     android:layout_gravity="center"
                     android:textSize="20dp"/>
+
+                <TextView
+                    android:id="@+id/dateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:layout_gravity="center"
+                    />
+
+                <Button
+                    android:id="@+id/btnDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/button_background"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:stateListAnimator="@null"
+                    android:text="Visit / Visited Date"
+                    android:textColor="@color/lightText"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
 
 
             </LinearLayout>

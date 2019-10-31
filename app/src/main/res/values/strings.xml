@@ -9,7 +9,7 @@
     <string name="passwordConfirm">Confirm Password</string>
     <string name="register">Register</string>
     <string name="backToSignin">Already a member? Sign in!</string>
-    <string name="resetPassword"> Reset Password</string>
+    <string name="resetPassword"> Request Password</string>
     <string name="forgotPWDescrip">Please enter your registered email address to send you password reset instructions.</string>
     <string name="forgotBacktoLogin">Back to sign in!</string>
     <string name="addHillFort">Add Hill fort</string>

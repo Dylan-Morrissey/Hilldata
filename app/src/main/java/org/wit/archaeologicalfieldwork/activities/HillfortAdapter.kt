@@ -23,7 +23,7 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
         holder.bind(hillfort, listener)
     }
 
-    override fun getItemCount(): Int = hillforts.size
+        override fun getItemCount(): Int = hillforts.size
 
     class MainHolder constructor(itemView: View): RecyclerView.ViewHolder(itemView) {
 

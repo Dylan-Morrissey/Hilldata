@@ -8,11 +8,14 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
+import org.wit.archaeologicalfieldwork.main.MainApp
 
 class ForgotPasswordActivity : AppCompatActivity(), AnkoLogger {
+    lateinit var app: MainApp
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        app = application as MainApp
         setContentView(R.layout.activity_forgotpassword)
         info("Login Activity Started...")
 
@@ -22,8 +25,13 @@ class ForgotPasswordActivity : AppCompatActivity(), AnkoLogger {
         }
 
         btnResetPassword.setOnClickListener() {
-            if (forgotEmail.text.toString().isEmpty()){
-                toast("Please enter your email address.")
+            for (x in app.users.findAll()){
+                if (forgotEmail.text.toString() == x.emailAddress) {
+                    info { "forgot button pressed" }
+                    toast("Password: " + x.password)
+                } else {
+                    toast("Invalid email address")
+                }
             }
         }
     }

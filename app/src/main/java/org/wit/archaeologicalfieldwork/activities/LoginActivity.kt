@@ -3,7 +3,9 @@ package org.wit.archaeologicalfieldwork.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_signup.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.email
 import org.jetbrains.anko.info
@@ -19,6 +21,7 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         app = application as MainApp
+        loadUsers()
         info("Login Activity Started...")
 
         btnForgotPassword.setOnClickListener() {
@@ -27,19 +30,24 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
         btnSignUp.setOnClickListener() {
             startActivity(Intent(baseContext, SignUpActivity::class.java))
         }
-        loadUsers()
 
         btnSignIn.setOnClickListener() {
-            if (loginEmail.text.toString().isEmpty()) {
-                //toast("Please enter an email address.")
-                startActivity(Intent(baseContext, HillfortListActivity::class.java))
-
-            } else if (loginPassword.text.toString().isEmpty()) {
-                toast("Please enter a password.")
+            if (loginEmail.text.toString().isNotEmpty() && loginPassword.text.toString().isNotEmpty()) {
+                for (x in app.users.findAll()) {
+                    if (x.emailAddress == loginEmail.text.toString() && x.password == loginPassword.text.toString()) {
+                        startActivity(Intent(baseContext, HillfortListActivity::class.java))
+                    } else {
+                        toast("Invalid Email or Password")
+                    }
+                }
+            } else {
+                toast("Please make sure user name and password  are correct.")
             }
         }
     }
+
     private fun loadUsers() {
         app.users.findAll()
     }
+
 }

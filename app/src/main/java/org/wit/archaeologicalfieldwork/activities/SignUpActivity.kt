@@ -20,16 +20,20 @@ class SignUpActivity : AppCompatActivity(), AnkoLogger {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+        app = application as MainApp
         info("Login Activity Started...")
 
         btnRegester.setOnClickListener() {
-            if (newUsername.text.isNotEmpty() || newEmail.text.isNotEmpty() || newPassword.text.isNotEmpty() || newPasswordConfirm.text.isNotEmpty()) {
+            if (newUsername.text.isNotEmpty() && newEmail.text.isNotEmpty() && newPassword.text.isNotEmpty() && newPasswordConfirm.text.isNotEmpty()) {
                 if (isEmailValid(newEmail.text.toString()) == true) {
                     if (newPassword.text.toString() == newPasswordConfirm.text.toString()) {
                         newuser.userName = newUsername.text.toString()
                         newuser.emailAddress = newEmail.text.toString()
                         newuser.password = newPassword.text.toString()
-                        info("User Created")
+                        app.users.create(newuser.copy())
+                        info("Register Button Pressed:${newuser}")
+                        setResult(RESULT_OK)
+                        finish()
                         val intent = Intent(baseContext, LoginActivity::class.java)
                         startActivity(intent)
                     } else {

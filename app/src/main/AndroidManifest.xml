@@ -35,14 +35,15 @@
             android:theme="@style/LoginPage"></activity>
         <activity
             android:name=".activities.SignUpActivity"
-            android:theme="@style/LoginPage"></activity>
-        <activity android:name=".activities.HillfortListActivity"
             android:theme="@style/LoginPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activities.HillfortListActivity"
+            android:theme="@style/LoginPage">
         </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"

@@ -12,11 +12,11 @@ import org.wit.archaeologicalfieldwork.helpers.write
 import org.wit.archaeologicalfieldwork.helpers.*
 import java.util.*
 
-val JSON_FILE = "hillforts.json"
-val gsonBuilder = GsonBuilder().setPrettyPrinting().create()
-val listType = object : TypeToken<java.util.ArrayList<HillfortModel>>() {}.type
+private val JSON_FILE = "hillforts.json"
+private val gsonBuilder = GsonBuilder().setPrettyPrinting().create()
+private val listType = object : TypeToken<java.util.ArrayList<HillfortModel>>() {}.type
 
-fun generateRandomId(): Long {
+private fun generateRandomId(): Long {
     return Random().nextLong()
 }
 

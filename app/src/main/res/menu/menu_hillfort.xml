@@ -6,4 +6,5 @@
         android:id="@+id/item_cancel"
         android:title="@string/menu_cancelHillfort"
         app:showAsAction="always"/>
+
 </menu>

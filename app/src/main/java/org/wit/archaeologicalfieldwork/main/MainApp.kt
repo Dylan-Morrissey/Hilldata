@@ -11,10 +11,12 @@ import org.wit.archaeologicalfieldwork.models.HillfortStore
 class MainApp : Application(), AnkoLogger {
 
     lateinit var  hillforts:HillfortStore
+    lateinit var  users:UserStore
 
     override fun onCreate() {
         super.onCreate()
         hillforts = HillfortJSONStore(applicationContext)
+        users = UserJSONStore(applicationContext)
         info("Hilfort started")
     }
 }

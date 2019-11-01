@@ -21,7 +21,8 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         app = application as MainApp
-        loadUsers()
+
+
         info("Login Activity Started...")
 
         btnForgotPassword.setOnClickListener() {
@@ -33,9 +34,11 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
 
         btnSignIn.setOnClickListener() {
             if (loginEmail.text.toString().isNotEmpty() && loginPassword.text.toString().isNotEmpty()) {
-                for (x in app.users.findAll()) {
+                for (x in app.users.findAllUsers()) {
                     if (x.emailAddress == loginEmail.text.toString() && x.password == loginPassword.text.toString()) {
+                        app.user = app.users.findUser(x.id)!!
                         startActivity(Intent(baseContext, HillfortListActivity::class.java))
+                        finish()
                     } else {
                         toast("Invalid Email or Password")
                     }
@@ -47,7 +50,7 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
     }
 
     private fun loadUsers() {
-        app.users.findAll()
+        app.users.findAllUsers()
     }
 
 }

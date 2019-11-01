@@ -18,11 +18,13 @@ import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
 import org.wit.archaeologicalfieldwork.models.LocationModel
+import org.wit.archaeologicalfieldwork.models.UserModel
 import java.util.*
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
     var hillfort = HillfortModel()
+    var user = UserModel()
     lateinit var app: MainApp
     var edit = false
     var IMAGE_REQUEST = 1
@@ -36,6 +38,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         setSupportActionBar(toolbarAdd)
 
         app = application as MainApp
+        user = app.user
 
         if (intent.hasExtra("hillfort_edit")) {
             edit = true
@@ -69,9 +72,9 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
                 toast(R.string.enter_hillfort_name)
             } else {
                 if (edit) {
-                    app.hillforts.update(hillfort.copy())
+                    app.users.updateHillfort(hillfort.copy(), user)
                 } else {
-                    app.hillforts.create(hillfort.copy())
+                    app.users.createHillfort(hillfort.copy(), user)
                 }
             }
             info("add Button Pressed:${hillfort}")
@@ -113,7 +116,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         }
 
         deleteHillfortBtn.setOnClickListener {
-            app.hillforts.delete(hillfort.copy())
+            app.users.deleteHillfort(hillfort.copy(), user)
             info("Delete Button Pressed")
             setResult(AppCompatActivity.RESULT_OK)
             finish()

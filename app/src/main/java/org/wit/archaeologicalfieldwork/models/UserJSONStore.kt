@@ -32,33 +32,94 @@ class UserJSONStore : UserStore, AnkoLogger {
         }
     }
 
-    override fun findAll(): MutableList<UserModel> {
+    override fun findUser(id: Long): UserModel? {
+        val finduser: UserModel? = users.find { p -> p.id == id}
+        return finduser
+    }
+
+    override fun findUserEmail(email: String): UserModel? {
+        for (user in users){
+            if (user.emailAddress == email){
+                return user
+            }
+        }
+        return null
+    }
+
+    override fun findAllUsers(): List<UserModel> {
         return users
     }
 
-    override fun create(user: UserModel) {
+
+    override fun createUser(user: UserModel) {
         user.id = generateRandomId()
         users.add(user)
         serialize()
     }
 
-    override fun update(user: UserModel) {
-        var foundUser: UserModel? = users.find { p -> p.id == user.id }
-        if (foundUser != null) {
+    override fun updateUser(user: UserModel) {
+        val foundUsers: UserModel? = users.find { hill -> hill.id == user.id }
+        if (foundUsers != null){
+            foundUsers.id = user.id
+            foundUsers.userName = user.userName
+            foundUsers.emailAddress = user.emailAddress
+            foundUsers.password = user.password
+            foundUsers.hillforts = user.hillforts
+        }
+        serialize()
+    }
 
-            foundUser.userName = user.userName
-            foundUser.emailAddress = user.emailAddress
-            foundUser.password = user.password
-
+    override fun deleteUser(user: UserModel){
+        val foundUsers: UserModel? = users.find { p -> p.id == user.id }
+        if (foundUsers != null){
+            users.remove(foundUsers.copy())
             serialize()
         }
     }
 
-    override fun delete(user: UserModel) {
+    override fun createHillfort(hillfortModel: HillfortModel, user: UserModel) {
+        hillfortModel.id = generateRandomId()
+        user.hillforts.add(hillfortModel)
         var foundUser: UserModel? = users.find { p -> p.id == user.id }
         if (foundUser != null) {
-            users.remove(foundUser)
+            foundUser.hillforts = user.hillforts
             serialize()
+        }
+    }
+
+    override fun findAllHillforts(user: UserModel): List<HillfortModel> {
+        return user.hillforts
+    }
+
+    override fun updateHillfort(hillfortModel: HillfortModel, user: UserModel) {
+        var foundUser: UserModel? = users.find { p -> p.id == user.id }
+        if (foundUser != null) {
+            for (hillfort in foundUser.hillforts) {
+                if (hillfort.id == hillfortModel.id){
+                    hillfort.name = hillfortModel.name
+                    hillfort.description = hillfortModel.description
+                    hillfort.image = hillfortModel.image
+                    hillfort.lat = hillfortModel.lat
+                    hillfort.lng = hillfortModel.lng
+                    hillfort.zoom = hillfort.zoom
+                    hillfort.visited = hillfortModel.visited
+                    hillfort.date = hillfortModel.date
+                    hillfort.notes = hillfortModel.notes
+                    serialize()
+                }
+            }
+        }
+    }
+
+    override fun deleteHillfort(hillfortModel: HillfortModel,user: UserModel) {
+        var foundUser: UserModel? = users.find { p -> p.id == user.id }
+        if (foundUser != null) {
+            for (hillforts in foundUser.hillforts) {
+                if (hillforts.id == hillfortModel.id){
+                    user.hillforts.remove(hillfortModel)
+                    serialize()
+                }
+            }
         }
     }
 

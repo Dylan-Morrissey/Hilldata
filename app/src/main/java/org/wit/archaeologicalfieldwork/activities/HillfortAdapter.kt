@@ -2,10 +2,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
+import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
+import org.wit.archaeologicalfieldwork.models.UserModel
 
 interface HillfortListener {
     fun onHillfortClick(hillfort: HillfortModel)
@@ -15,7 +18,7 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
                                   private val listener: HillfortListener) : RecyclerView.Adapter<HillfortAdapter.MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
-        return MainHolder(LayoutInflater.from(parent?.context).inflate(R.layout.card_hillfort, parent, false))
+        return MainHolder(LayoutInflater.from(parent.context).inflate(R.layout.card_hillfort, parent, false))
     }
 
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
@@ -23,7 +26,7 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
         holder.bind(hillfort, listener)
     }
 
-        override fun getItemCount(): Int = hillforts.size
+    override fun getItemCount(): Int = hillforts.size
 
     class MainHolder constructor(itemView: View): RecyclerView.ViewHolder(itemView) {
 

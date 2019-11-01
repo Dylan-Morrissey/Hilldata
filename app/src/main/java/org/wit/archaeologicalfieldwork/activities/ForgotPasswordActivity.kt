@@ -25,7 +25,7 @@ class ForgotPasswordActivity : AppCompatActivity(), AnkoLogger {
         }
 
         btnResetPassword.setOnClickListener() {
-            for (x in app.users.findAll()){
+            for (x in app.users.findAllUsers()){
                 if (forgotEmail.text.toString() == x.emailAddress) {
                     info { "forgot button pressed" }
                     toast("Password: " + x.password)

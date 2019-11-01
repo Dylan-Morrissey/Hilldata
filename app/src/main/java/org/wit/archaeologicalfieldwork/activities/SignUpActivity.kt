@@ -30,7 +30,7 @@ class SignUpActivity : AppCompatActivity(), AnkoLogger {
                         newuser.userName = newUsername.text.toString()
                         newuser.emailAddress = newEmail.text.toString()
                         newuser.password = newPassword.text.toString()
-                        app.users.create(newuser.copy())
+                        app.users.createUser(newuser.copy())
                         info("Register Button Pressed:${newuser}")
                         setResult(RESULT_OK)
                         finish()

@@ -7,18 +7,15 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.CheckBox
 import android.widget.DatePicker
 import androidx.viewpager.widget.ViewPager
-import org.wit.archaeologicalfieldwork.activities.ImageAdapter
+import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.helpers.readImage
 import org.wit.archaeologicalfieldwork.helpers.showImagePicker
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.main.MainApp
-import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
 import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.models.UserModel
 import java.util.*
@@ -56,7 +53,8 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             chooseImage.setText((R.string.change_hillfort_image))
             deleteHillfortBtn.visibility = View.VISIBLE
             val images = findViewById<ViewPager>(R.id.hillfortImages)
-            val adapter = ImageAdapter(this, hillfort.imageStore)
+            val adapter =
+                ImageAdapter(this, hillfort.imageStore)
             images.adapter = adapter
         }
 
@@ -151,7 +149,10 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
                     hillfort.image = data.data.toString()
                     hillfort.imageStore.add(hillfort.image)
                     val images = findViewById<ViewPager>(R.id.hillfortImages)
-                    val adapter = ImageAdapter(this, hillfort.imageStore)
+                    val adapter = ImageAdapter(
+                        this,
+                        hillfort.imageStore
+                    )
                     images.adapter = adapter
                     chooseImage.setText(R.string.change_hillfort_image)
                     }

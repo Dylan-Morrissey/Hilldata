@@ -47,6 +47,10 @@
         <activity
             android:name=".activities.MapActivity"
             android:label="@string/title_activity_map"></activity>
+
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:theme="@style/LoginPage"></activity>
     </application>
 
 </manifest>

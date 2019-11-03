@@ -5,11 +5,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.activities.ImageAdapter
-import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
-import org.wit.archaeologicalfieldwork.main.MainApp
+import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import org.wit.archaeologicalfieldwork.models.HillfortModel
-import org.wit.archaeologicalfieldwork.models.UserModel
 
 interface HillfortListener {
     fun onHillfortClick(hillfort: HillfortModel)

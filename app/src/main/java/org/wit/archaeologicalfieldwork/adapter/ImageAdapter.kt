@@ -1,4 +1,4 @@
-package org.wit.archaeologicalfieldwork.activities
+package org.wit.archaeologicalfieldwork.adapter
 
 import android.content.Context
 import android.net.Uri

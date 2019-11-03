@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.startActivityForResult
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
@@ -25,6 +26,7 @@ class HillfortListActivity: AppCompatActivity(), HillfortListener, AnkoLogger {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hillfort_list)
         app = application as MainApp
+
         toolbar.title = title
         setSupportActionBar(toolbar)
 
@@ -47,13 +49,15 @@ class HillfortListActivity: AppCompatActivity(), HillfortListener, AnkoLogger {
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.menu_hillfortlist, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.item_add -> startActivityForResult(intentFor<HillfortActivity>(), 0)
+            R.id.item_list_logout -> startActivity(Intent(baseContext, LoginActivity::class.java))
+            R.id.item_list_settings -> startActivity(Intent(baseContext,SettingsActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
     }

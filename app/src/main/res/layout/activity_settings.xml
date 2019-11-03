@@ -7,6 +7,12 @@
     android:background="@drawable/login_background"
     tools:context=".activities.SettingsActivity">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,6 +96,66 @@
             android:layout_marginTop="20dp"
             />
 
+        <TextView
+            android:id="@+id/totalUserHillforts"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:id="@+id/hillfortsVisited"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:id="@+id/totalPictures"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:id="@+id/totalUsers"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:id="@+id/totalHillforts"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            />
+
         <Button
             android:id="@+id/btnSaveSettings"
             android:layout_width="match_parent"
@@ -116,5 +182,19 @@
             android:textSize="20dp"
             />
 
+        <Button
+            android:id="@+id/deleteUserBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/delbutton_background"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="Delete Account"
+            android:textColor="@color/lightText"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+
     </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

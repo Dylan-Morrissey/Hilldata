@@ -50,6 +50,36 @@ class SettingsActivity : AppCompatActivity(), AnkoLogger {
             }
         }
 
+        deleteUserBtn.setOnClickListener {
+            app.users.deleteUser(app.user)
+            toast("Account Deleted")
+            startActivity(Intent(baseContext, LoginActivity::class.java))
+        }
+
+
+
+        totalUserHillforts.setText(app.user.userName + "'s hillforts total : " + app.user.hillforts.size )
+
+        var visited = 0
+        var pictueCount = 0
+        for (userhillfort in app.user.hillforts) {
+            pictueCount += userhillfort.imageStore.size
+            if (userhillfort.visited == true) {
+                visited += 1
+            }
+        }
+
+        hillfortsVisited.setText(app.user.userName + " hillfort visited total: " + visited)
+        totalPictures.setText(app.user.userName + " pictue upload count: " + pictueCount)
+        totalUsers.setText("Hilldata total number of users: " + app.users.findAllUsers().size)
+        var users = app.users.findAllUsers()
+        var hillfortCount = 0
+        for (user in users) {
+            hillfortCount += user.hillforts.size
+        }
+        totalHillforts.setText("Total hillforts on Hilldata: " + hillfortCount)
+
+
     }
     fun isEmailValid(email:String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()

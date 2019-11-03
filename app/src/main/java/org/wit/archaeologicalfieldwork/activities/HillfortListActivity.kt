@@ -8,6 +8,7 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
+import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
 import org.wit.archaeologicalfieldwork.R
@@ -15,19 +16,19 @@ import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
 
-class HillfortListActivity: AppCompatActivity(), HillfortListener {
+class HillfortListActivity: AppCompatActivity(), HillfortListener, AnkoLogger {
 
-    lateinit var app: MainApp
     lateinit var user: UserModel
+    lateinit var app: MainApp
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hillfort_list)
         app = application as MainApp
-        user = app.user
         toolbar.title = title
         setSupportActionBar(toolbar)
 
+        user = app.user
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = HillfortAdapter(app.users.findAllHillforts(user), this)
@@ -52,7 +53,7 @@ class HillfortListActivity: AppCompatActivity(), HillfortListener {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.item_add -> startActivityForResult<HillfortActivity>(0)
+            R.id.item_add -> startActivityForResult(intentFor<HillfortActivity>(), 0)
         }
         return super.onOptionsItemSelected(item)
     }
@@ -62,7 +63,7 @@ class HillfortListActivity: AppCompatActivity(), HillfortListener {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        loadHillforts()
+        showHillforts(app.users.findAllHillforts(user))
         super.onActivityResult(requestCode, resultCode, data)
     }
 }

@@ -9,6 +9,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.CheckBox
 import android.widget.DatePicker
+import androidx.viewpager.widget.ViewPager
+import org.wit.archaeologicalfieldwork.activities.ImageAdapter
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
@@ -50,11 +52,15 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             lngText.setText("Longitude " +hillfort.lng.toString())
             latText.setText("Latitude " +  hillfort.lat.toString())
             notes.setText(hillfort.notes)
-            hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.image))
             btnAdd.setText(R.string.save_hillfort)
             chooseImage.setText((R.string.change_hillfort_image))
             deleteHillfortBtn.visibility = View.VISIBLE
+            val images = findViewById<ViewPager>(R.id.hillfortImages)
+            val adapter = ImageAdapter(this, hillfort.imageStore)
+            images.adapter = adapter
         }
+
+
 
         if (checkbox.isChecked() == true){
             btnDate.setText("Change visited date")
@@ -142,8 +148,11 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         when (requestCode) {
             IMAGE_REQUEST -> {
                 if (data != null) {
-                    hillfort.image = data.getData().toString()
-                    hillfortImage.setImageBitmap(readImage(this, resultCode, data))
+                    hillfort.image = data.data.toString()
+                    hillfort.imageStore.add(hillfort.image)
+                    val images = findViewById<ViewPager>(R.id.hillfortImages)
+                    val adapter = ImageAdapter(this, hillfort.imageStore)
+                    images.adapter = adapter
                     chooseImage.setText(R.string.change_hillfort_image)
                     }
             }

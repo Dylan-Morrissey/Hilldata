@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.wit.archaeologicalfieldwork.R
+import org.wit.archaeologicalfieldwork.activities.ImageAdapter
 import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
@@ -34,8 +35,15 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
             itemView.hillfortNameCard.text  = hillfort.name
             itemView.lnglatCard.text = "Longdiude: "+ hillfort.lng.toString() + "\nLatitude: " + hillfort.lat.toString()
             itemView.checkboxCard.setChecked(hillfort.visited)
-            itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context, hillfort.image))
+            val viewPager = itemView.findViewById<ViewPager>(R.id.imageIcon)
+            val adapter = ImageAdapter(
+                itemView.context,
+                hillfort.imageStore
+            )
+            viewPager.adapter = adapter
+
             itemView.setOnClickListener{listener.onHillfortClick(hillfort)}
+
         }
     }
 }

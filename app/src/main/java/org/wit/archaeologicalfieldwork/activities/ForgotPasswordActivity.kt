@@ -30,7 +30,7 @@ class ForgotPasswordActivity : AppCompatActivity(), AnkoLogger {
                     info { "forgot button pressed" }
                     toast("Password: " + x.password)
                 } else {
-                    toast("Invalid email address")
+                    info("Invalid email address")
                 }
             }
         }

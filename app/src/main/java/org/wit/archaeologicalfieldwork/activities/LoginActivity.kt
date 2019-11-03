@@ -22,7 +22,6 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
         setContentView(R.layout.activity_login)
         app = application as MainApp
 
-
         info("Login Activity Started...")
 
         btnForgotPassword.setOnClickListener() {
@@ -40,7 +39,7 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
                         startActivity(Intent(baseContext, HillfortListActivity::class.java))
                         finish()
                     } else {
-                        toast("Invalid Email or Password")
+                        info { "Invalid Email or Password" }
                     }
                 }
             } else {

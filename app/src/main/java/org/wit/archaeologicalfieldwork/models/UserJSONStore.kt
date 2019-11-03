@@ -98,7 +98,7 @@ class UserJSONStore : UserStore, AnkoLogger {
                 if (hillfort.id == hillfortModel.id){
                     hillfort.name = hillfortModel.name
                     hillfort.description = hillfortModel.description
-                    hillfort.image = hillfortModel.image
+                    hillfort.imageStore = hillfortModel.imageStore
                     hillfort.lat = hillfortModel.lat
                     hillfort.lng = hillfortModel.lng
                     hillfort.zoom = hillfort.zoom

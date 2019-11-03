@@ -30,6 +30,7 @@ fun readImage(activity: Activity, resultCode: Int, data: Intent?): Bitmap? {
     }
     return bitmap
 }
+
 fun readImageFromPath(context: Context, path : String) : Bitmap? {
     var bitmap : Bitmap? = null
     val uri = Uri.parse(path)

@@ -18,4 +18,10 @@
         android:title="@string/lof_out"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/item_map"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:title="@string/menu_addHillfort"
+        app:showAsAction="always"/>
+
 </menu>

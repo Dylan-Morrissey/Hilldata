@@ -722,6 +722,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -867,6 +868,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -1062,6 +1064,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable delbutton_background
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1136,11 +1139,13 @@ id blocking
 id bottom
 id btnAdd
 id btnBackSignIn
+id btnBackToList
 id btnBackToLogin
 id btnDate
 id btnForgotPassword
 id btnRegester
 id btnResetPassword
+id btnSaveSettings
 id btnSignIn
 id btnSignUp
 id buttonPanel
@@ -1166,6 +1171,8 @@ id dark
 id dateText
 id decor_content_parent
 id default_activity_button
+id deleteHillfortBtn
+id deleteUserBtn
 id description
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -1183,6 +1190,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1194,10 +1202,11 @@ id ghost_view
 id gone
 id group_divider
 id groups
-id hillfortImage
+id hillfortImages
 id hillfortLocation
 id hillfortName
 id hillfortNameCard
+id hillfortsVisited
 id home
 id homeAsUp
 id hybrid
@@ -1212,6 +1221,9 @@ id invisible
 id italic
 id item_add
 id item_cancel
+id item_list_logout
+id item_list_settings
+id item_map
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
@@ -1284,6 +1296,9 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id settingEmail
+id settingPassword
+id settingUserName
 id shortcut
 id showCustom
 id showHome
@@ -1326,8 +1341,13 @@ id titleDividerNoCustom
 id title_template
 id toolbar
 id toolbarAdd
+id toolbarMap
 id top
 id topPanel
+id totalHillforts
+id totalPictures
+id totalUserHillforts
+id totalUsers
 id touch_outside
 id transition_current_scene
 id transition_layout_save
@@ -1395,11 +1415,14 @@ layout abc_tooltip
 layout activity_forgotpassword
 layout activity_hillfort
 layout activity_hillfort_list
+layout activity_hillfort_maps
 layout activity_login
 layout activity_map
+layout activity_settings
 layout activity_signup
 layout activity_splashscreen
 layout card_hillfort
+layout content_hillfort_maps
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1436,7 +1459,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu menu_hillfort
-menu menu_main
+menu menu_hillfortlist
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
@@ -1510,6 +1533,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string delete_hilfort
 string email
 string enter_hillfort_name
 string fab_transformation_scrim_behavior
@@ -1520,6 +1544,7 @@ string google_maps_key
 string hide_bottom_view_on_scroll_behavior
 string hint_HillfortName
 string hint_hillfortDescription
+string lof_out
 string menu_addHillfort
 string menu_cancelHillfort
 string mtrl_chip_close_icon_content_description
@@ -1535,7 +1560,9 @@ string resetPassword
 string save_hillfort
 string search_menu_title
 string select_hillfort_image
+string settings
 string status_bar_notification_info_overflow
+string title_activity_hillfort_maps
 string title_activity_map
 string username
 style AlertDialog_AppCompat
@@ -1545,6 +1572,8 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
+style AppTheme_AppBarOverlay
+style AppTheme_PopupOverlay
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

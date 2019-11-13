@@ -1150,6 +1150,7 @@ id btnSignIn
 id btnSignUp
 id buttonPanel
 id cancel_action
+id cardView
 id center
 id center_horizontal
 id center_vertical
@@ -1239,6 +1240,7 @@ id lnglatCard
 id loginEmail
 id loginPassword
 id map
+id mapView
 id masked
 id media_actions
 id message

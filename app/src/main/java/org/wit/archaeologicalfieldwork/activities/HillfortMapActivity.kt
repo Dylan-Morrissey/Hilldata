@@ -18,7 +18,15 @@ class HillfortMapActivity: AppCompatActivity() {
         toolbarMap.title = title
         setSupportActionBar(toolbarMap)
         mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync {
+            map = it
+            configureMap()
+        }
 
+    }
+
+    fun configureMap(){
+        map.uiSettings.setZoomControlsEnabled(true)
     }
 
     override fun onDestroy() {

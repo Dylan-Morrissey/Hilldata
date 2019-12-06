@@ -7,6 +7,7 @@ interface UserStore {
     fun deleteUser(user: UserModel)
     fun findUser(id:Long): UserModel?
     fun findUserEmail(email: String): UserModel?
+    fun findHillfortById(user:UserModel, id: Long) : HillfortModel?
     fun findAllHillforts(user: UserModel):List<HillfortModel>
     fun createHillfort(hillfort:HillfortModel, user: UserModel)
     fun updateHillfort(hillfort: HillfortModel, user: UserModel)

@@ -37,6 +37,11 @@ class UserJSONStore : UserStore, AnkoLogger {
         return finduser
     }
 
+    override fun findHillfortById(user: UserModel, id: Long): HillfortModel? {
+        val foundHillfort: HillfortModel? = user.hillforts.find{ p -> p.id == id}
+        return foundHillfort
+    }
+
     override fun findUserEmail(email: String): UserModel? {
         for (user in users){
             if (user.emailAddress == email){

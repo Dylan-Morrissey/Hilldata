@@ -112,6 +112,10 @@
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\f4cc650857ca7115336c32e42c84fc6f\\material-1.0.0\\res\\color\\mtrl_tabs_legacy_text_color_selector.xml"
     },
     {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_hillfortlist.xml.flat",
+        "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\src\\main\\res\\menu\\menu_hillfortlist.xml"
+    },
+    {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
@@ -216,12 +220,12 @@
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\layout-v26\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_bottom_nav_colored_item_tint.xml.flat",
-        "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\f4cc650857ca7115336c32e42c84fc6f\\material-1.0.0\\res\\color\\mtrl_bottom_nav_colored_item_tint.xml"
-    },
-    {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_bottom_nav_colored_item_tint.xml.flat",
+        "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\f4cc650857ca7115336c32e42c84fc6f\\material-1.0.0\\res\\color\\mtrl_bottom_nav_colored_item_tint.xml"
     },
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
@@ -500,6 +504,10 @@
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\9daef969499e3ce3980703d3580fd152\\jetified-play-services-base-16.0.1\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
     },
     {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_hillfort_maps.xml.flat",
+        "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\src\\main\\res\\layout\\activity_hillfort_maps.xml"
+    },
+    {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg.xml.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\68399ff6f7cdf924235d3ad145929c6a\\core-1.0.2\\res\\drawable\\notification_bg.xml"
     },
@@ -576,12 +584,12 @@
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
@@ -832,12 +840,12 @@
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_hillfort.xml.flat",
         "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\src\\main\\res\\layout\\activity_hillfort.xml"
+    },
+    {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -1042,6 +1050,10 @@
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable_delbutton_background.xml.flat",
+        "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\src\\main\\res\\drawable\\delbutton_background.xml"
     },
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -1712,10 +1724,6 @@
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
-        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_main.xml.flat",
-        "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\src\\main\\res\\menu\\menu_main.xml"
-    },
-    {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable\\abc_btn_radio_material.xml"
     },
@@ -1826,6 +1834,10 @@
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_bottom.xml.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_hillfort_maps.xml.flat",
+        "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\src\\main\\res\\layout\\content_hillfort_maps.xml"
     },
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_light.xml.flat",
@@ -2010,6 +2022,10 @@
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\src\\main\\res\\layout\\activity_settings.xml"
     },
     {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",

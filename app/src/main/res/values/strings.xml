@@ -28,4 +28,7 @@
     <string name="settings">Settings</string>
     <string name="lof_out">Log Out</string>
     <string name="title_activity_hillfort_maps">Map of All Hillforts</string>
+    <string name="hillfort_image_placeholder">Hillfort Imagee</string>
+    <string name="hillfort_title_placeholder">Hillfort Title</string>
+    <string name="hillfort_description_placeholder">Hillfort Description</string>
 </resources>

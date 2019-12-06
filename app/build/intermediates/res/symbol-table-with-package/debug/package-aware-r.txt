@@ -1166,6 +1166,9 @@ id container
 id content
 id contentPanel
 id coordinator
+id currentDescription
+id currentImage
+id currentTitle
 id custom
 id customPanel
 id dark
@@ -1544,6 +1547,9 @@ string forgotBacktoLogin
 string forgotPWDescrip
 string google_maps_key
 string hide_bottom_view_on_scroll_behavior
+string hillfort_description_placeholder
+string hillfort_image_placeholder
+string hillfort_title_placeholder
 string hint_HillfortName
 string hint_hillfortDescription
 string lof_out

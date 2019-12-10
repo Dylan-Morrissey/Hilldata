@@ -1552,7 +1552,7 @@ string hillfort_image_placeholder
 string hillfort_title_placeholder
 string hint_HillfortName
 string hint_hillfortDescription
-string lof_out
+string log_out
 string menu_addHillfort
 string menu_cancelHillfort
 string mtrl_chip_close_icon_content_description

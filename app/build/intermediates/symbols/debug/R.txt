@@ -1551,7 +1551,7 @@ int string hillfort_image_placeholder 0x7f0e0050
 int string hillfort_title_placeholder 0x7f0e0051
 int string hint_HillfortName 0x7f0e0052
 int string hint_hillfortDescription 0x7f0e0053
-int string lof_out 0x7f0e0054
+int string log_out 0x7f0e0054
 int string menu_addHillfort 0x7f0e0055
 int string menu_cancelHillfort 0x7f0e0056
 int string mtrl_chip_close_icon_content_description 0x7f0e0057

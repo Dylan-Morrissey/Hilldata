@@ -22,12 +22,10 @@ import java.util.*
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
-    var hillfort = HillfortModel()
-    var user = UserModel()
-    lateinit var app: MainApp
-    var edit = false
-    var IMAGE_REQUEST = 1
-    val LOCATION_REQUEST = 2
+
+    lateinit var presenter: HillfortPresenter
+
+
   //  var location = LocationModel(52.245696, -7.139102, 15f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,77 +34,28 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         toolbarAdd.title = title
         setSupportActionBar(toolbarAdd)
 
-        app = application as MainApp
-        user = app.user
-
-        if (intent.hasExtra("hillfort_edit")) {
-            edit = true
-            hillfort = intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
-            hillfortName.setText(hillfort.name)
-            description.setText(hillfort.description)
-            checkbox.setChecked(hillfort.visited)
-            dateText.setText(hillfort.date)
-            lngText.setText("Longitude " +hillfort.lng.toString())
-            latText.setText("Latitude " +  hillfort.lat.toString())
-            notes.setText(hillfort.notes)
-            btnAdd.setText(R.string.save_hillfort)
-            chooseImage.setText((R.string.change_hillfort_image))
-            deleteHillfortBtn.visibility = View.VISIBLE
-            val images = findViewById<ViewPager>(R.id.hillfortImages)
-            val adapter =
-                ImageAdapter(this, hillfort.imageStore)
-            images.adapter = adapter
-        }
-
-
-
-        if (checkbox.isChecked() == true){
-            btnDate.setText("Change visited date")
-        } else {
-            btnDate.setText("Change visit date")
-        }
+        presenter = HillfortPresenter(this)
 
         btnAdd.setOnClickListener() {
-            hillfort.name = hillfortName.text.toString()
-            hillfort.description = description.text.toString()
-            hillfort.visited = checkbox.isChecked()
-            hillfort.date = dateText.text.toString()
-            hillfort.notes = notes.text.toString()
-            if (hillfort.name.isEmpty()) {
+            if (hillfortName.text.toString().isEmpty()) {
                 toast(R.string.enter_hillfort_name)
             } else {
-                if (edit) {
-                    app.users.updateHillfort(hillfort.copy(), user)
-                } else {
-                    app.users.createHillfort(hillfort.copy(), user)
-                }
+                presenter.doAddOrSave(hillfortName.text.toString(), description.text.toString(), checkbox.isChecked, dateText.text.toString(), notes.text.toString())
             }
-            info("add Button Pressed:${hillfort}")
-            setResult(AppCompatActivity.RESULT_OK)
-            finish()
         }
-        chooseImage.setOnClickListener {
-            showImagePicker(this, IMAGE_REQUEST)
-        }
+
+        chooseImage.setOnClickListener {presenter.doSelectImage()}
+
         checkbox.setOnClickListener {
-            if (checkbox.isChecked() == true){
-                hillfort.visited = true;
+            presenter.doCheckBox(checkbox.isChecked)
+            if (checkbox.isChecked()){
                 btnDate.setText("Change visited date")
             } else {
-                hillfort.visited = false;
                 btnDate.setText("Change visit date")
             }
         }
 
-        hillfortLocation.setOnClickListener {
-            val location = LocationModel(52.245696, -7.139102, 15f)
-            if (hillfort.zoom !=0f){
-                location.lat= hillfort.lat
-                location.lng=hillfort.lng
-                location.zoom=hillfort.zoom
-            }
-            startActivityForResult( intentFor<MapActivity>().putExtra("location",location),LOCATION_REQUEST)
-        }
+        hillfortLocation.setOnClickListener { presenter.doSetLocation()}
 
         btnDate.setOnClickListener {
           val calander = Calendar.getInstance()
@@ -119,12 +68,27 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             datePicker.show()
         }
 
-        deleteHillfortBtn.setOnClickListener {
-            app.users.deleteHillfort(hillfort.copy(), user)
-            info("Delete Button Pressed")
-            setResult(AppCompatActivity.RESULT_OK)
-            finish()
+        deleteHillfortBtn.setOnClickListener {presenter.doDelete()
+            presenter.doCancel()
         }
+    }
+
+    fun showHillfort(hillfort:HillfortModel) {
+        hillfortName.setText(hillfort.name)
+        description.setText(hillfort.description)
+        checkbox.setChecked(hillfort.visited)
+        dateText.setText(hillfort.date)
+        lngText.setText("Longitude " +hillfort.lng.toString())
+        latText.setText("Latitude " +  hillfort.lat.toString())
+        notes.setText(hillfort.notes)
+        btnAdd.setText(R.string.save_hillfort)
+        chooseImage.setText((R.string.change_hillfort_image))
+        deleteHillfortBtn.visibility = View.VISIBLE
+        val images = findViewById<ViewPager>(R.id.hillfortImages)
+        val adapter =
+            ImageAdapter(this, hillfort.imageStore)
+        images.adapter = adapter
+        btnAdd.setText(R.string.save_hillfort)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -135,7 +99,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.item_cancel -> {
-                finish()
+                presenter.doCancel()
             }
         }
         return super.onOptionsItemSelected(item)
@@ -143,30 +107,8 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            IMAGE_REQUEST -> {
-                if (data != null) {
-                    hillfort.image = data.data.toString()
-                    hillfort.imageStore.add(hillfort.image)
-                    val images = findViewById<ViewPager>(R.id.hillfortImages)
-                    val adapter = ImageAdapter(
-                        this,
-                        hillfort.imageStore
-                    )
-                    images.adapter = adapter
-                    chooseImage.setText(R.string.change_hillfort_image)
-                    }
-            }
-            LOCATION_REQUEST -> {
-                if (data != null) {
-                    val location=data.extras?.getParcelable<LocationModel>("location")!!
-                    hillfort.lat = location.lat
-                    hillfort.lng = location.lng
-                    hillfort.zoom = location.zoom
-                }
+        if (data != null) {
+            presenter.doActivityResult(requestCode, resultCode, data)
             }
         }
-        lngText.setText("Longitude " + hillfort.lng.toString())
-        latText.setText("Latitude " + hillfort.lat.toString())
-    }
 }

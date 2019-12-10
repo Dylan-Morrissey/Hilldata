@@ -11,11 +11,11 @@ import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.startActivityForResult
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
+import org.wit.archaeologicalfieldwork.views.hillfort.HillfortView
 
 class HillfortListActivity: AppCompatActivity(), HillfortListener, AnkoLogger {
 
@@ -55,7 +55,7 @@ class HillfortListActivity: AppCompatActivity(), HillfortListener, AnkoLogger {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.item_add -> startActivityForResult(intentFor<HillfortActivity>(), 0)
+            R.id.item_add -> startActivityForResult(intentFor<HillfortView>(), 0)
             R.id.item_list_logout -> startActivity(Intent(baseContext, LoginActivity::class.java))
             R.id.item_list_settings -> startActivity(Intent(baseContext,SettingsActivity::class.java))
             R.id.item_map -> startActivity <HillfortMapActivity>()
@@ -64,7 +64,7 @@ class HillfortListActivity: AppCompatActivity(), HillfortListener, AnkoLogger {
     }
 
     override fun onHillfortClick(hillfort: HillfortModel) {
-        startActivityForResult(intentFor<HillfortActivity>().putExtra("hillfort_edit", hillfort), 0)
+        startActivityForResult(intentFor<HillfortView>().putExtra("hillfort_edit", hillfort), 0)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -27,7 +27,7 @@
             android:name=".activities.LoginActivity"
             android:theme="@style/LoginPage"></activity>
         <activity
-            android:name=".activities.HillfortActivity"
+            android:name=".views.hillfort.HillfortView"
             android:theme="@style/LoginPage">
         </activity>
         <activity

@@ -9,6 +9,7 @@ import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
+import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListActivity
 
 class LoginActivity : AppCompatActivity(), AnkoLogger {
 

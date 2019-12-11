@@ -76,7 +76,7 @@
 44-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:28:13-45
 45        <activity
 45-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:29:9-32:20
-46            android:name="org.wit.archaeologicalfieldwork.activities.HillfortActivity"
+46            android:name="org.wit.archaeologicalfieldwork.views.hillfort.HillfortView"
 46-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:30:13-56
 47            android:theme="@style/LoginPage" >
 47-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:31:13-45
@@ -96,8 +96,8 @@
 55        </activity>
 56        <activity
 56-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:40:9-42:20
-57            android:name="org.wit.archaeologicalfieldwork.activities.HillfortListActivity"
-57-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:40:19-66
+57            android:name="org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListActivity"
+57-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:40:19-74
 58            android:theme="@style/LoginPage" >
 58-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:41:13-45
 59        </activity>

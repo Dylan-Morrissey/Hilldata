@@ -2,6 +2,7 @@ package org.wit.archaeologicalfieldwork.views.hillfort
 
 import android.content.Intent
 import androidx.viewpager.widget.ViewPager
+import org.jetbrains.anko.intentFor
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.activities.MapActivity
 import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
@@ -11,7 +12,7 @@ import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
 
-class HillfortPresenter(val view: HillfortActivity) {
+class HillfortPresenter(val view: HillfortView) {
 
     val IMAGE_REQUEST = 1
     val LOCATION_REQUEST = 2

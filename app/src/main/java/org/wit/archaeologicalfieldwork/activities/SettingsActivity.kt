@@ -5,11 +5,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_settings.*
-import kotlinx.android.synthetic.main.activity_signup.*
 import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
+import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListActivity
 
 class SettingsActivity : AppCompatActivity(), AnkoLogger {
 
@@ -26,7 +26,8 @@ class SettingsActivity : AppCompatActivity(), AnkoLogger {
         settingPassword.setText(app.user.password)
 
         btnBackToList.setOnClickListener {
-            startActivity(Intent(baseContext,HillfortListActivity::class.java))
+            startActivity(Intent(baseContext,
+                HillfortListActivity::class.java))
         }
 
         btnSaveSettings.setOnClickListener {

@@ -1,4 +1,4 @@
-package org.wit.archaeologicalfieldwork.activities
+package org.wit.archaeologicalfieldwork.views.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.wit.archaeologicalfieldwork.R
+import org.wit.archaeologicalfieldwork.activities.LoginActivity
 import java.lang.Exception
 
 class SplashScreenActivity : AppCompatActivity(), AnkoLogger {

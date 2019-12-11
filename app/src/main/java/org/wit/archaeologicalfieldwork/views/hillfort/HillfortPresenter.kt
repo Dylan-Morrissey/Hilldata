@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.viewpager.widget.ViewPager
 import org.jetbrains.anko.intentFor
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.views.editlocation.MapActivity
+import org.wit.archaeologicalfieldwork.views.editlocation.MapView
 import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import org.wit.archaeologicalfieldwork.helpers.showImagePicker
 import org.wit.archaeologicalfieldwork.main.MainApp
@@ -70,7 +70,7 @@ class HillfortPresenter(val view: HillfortView) {
             location.lng = hillfort.lng
             location.zoom = hillfort.zoom
         }
-        view.startActivityForResult(view.intentFor<MapActivity>().putExtra("location", location), LOCATION_REQUEST)
+        view.startActivityForResult(view.intentFor<MapView>().putExtra("location", location), LOCATION_REQUEST)
     }
 
     fun doActivityResult(requestCode:Int, resultCode: Int, data: Intent) {

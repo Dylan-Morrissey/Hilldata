@@ -9,18 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.startActivity
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.activities.HillfortMapActivity
-import org.wit.archaeologicalfieldwork.activities.LoginActivity
-import org.wit.archaeologicalfieldwork.activities.SettingsActivity
-import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
-import org.wit.archaeologicalfieldwork.models.UserModel
-import org.wit.archaeologicalfieldwork.views.hillfort.HillfortView
 
-class HillfortListActivity: AppCompatActivity(), HillfortListener, AnkoLogger {
+class HillfortListView: AppCompatActivity(), HillfortListener, AnkoLogger {
 
     lateinit var presenter: HillfortListPresenter
 

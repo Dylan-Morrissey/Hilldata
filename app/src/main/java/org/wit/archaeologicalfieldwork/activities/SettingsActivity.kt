@@ -9,7 +9,7 @@ import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
-import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListActivity
+import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 
 class SettingsActivity : AppCompatActivity(), AnkoLogger {
 
@@ -27,7 +27,7 @@ class SettingsActivity : AppCompatActivity(), AnkoLogger {
 
         btnBackToList.setOnClickListener {
             startActivity(Intent(baseContext,
-                HillfortListActivity::class.java))
+                HillfortListView::class.java))
         }
 
         btnSaveSettings.setOnClickListener {
@@ -40,7 +40,7 @@ class SettingsActivity : AppCompatActivity(), AnkoLogger {
                     info("Update Button Pressed:${app.user}")
                     setResult(RESULT_OK)
                     finish()
-                    val intent = Intent(baseContext, HillfortListActivity::class.java)
+                    val intent = Intent(baseContext, HillfortListView::class.java)
                     startActivity(intent)
 
                 } else {

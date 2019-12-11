@@ -2,7 +2,6 @@ package org.wit.archaeologicalfieldwork.views.editlocation
 
 import android.app.Activity
 import android.content.Intent
-import android.location.Location
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
@@ -10,7 +9,7 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import org.wit.archaeologicalfieldwork.models.LocationModel
 
-class MapPresenter(val view: MapActivity) {
+class MapPresenter(val view: MapView) {
 
     var location = LocationModel()
 

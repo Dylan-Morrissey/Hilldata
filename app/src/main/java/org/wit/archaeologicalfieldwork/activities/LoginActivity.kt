@@ -9,7 +9,7 @@ import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
-import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListActivity
+import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 
 class LoginActivity : AppCompatActivity(), AnkoLogger {
 
@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
                 for (x in app.users.findAllUsers()) {
                     if (x.emailAddress == loginEmail.text.toString() && x.password == loginPassword.text.toString()) {
                         app.user = app.users.findUser(x.id)!!
-                        startActivity(Intent(baseContext, HillfortListActivity::class.java))
+                        startActivity(Intent(baseContext, HillfortListView::class.java))
                         finish()
                     } else {
                         info { "Invalid Email or Password" }

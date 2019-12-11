@@ -31,7 +31,7 @@
         android:testOnly="true"
         android:theme="@style/LoginPage" >
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.SplashScreenActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.splashscreen.SplashScreenActivity"
             android:noHistory="true"
             android:theme="@style/SplashTheme" >
             <intent-filter>
@@ -55,7 +55,7 @@
             android:theme="@style/LoginPage" >
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView"
             android:theme="@style/LoginPage" >
         </activity>
 
@@ -64,13 +64,13 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="org.wit.archaeologicalfieldwork.views.editlocation.MapActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.editlocation.MapView"
             android:label="@string/title_activity_map" />
         <activity
             android:name="org.wit.archaeologicalfieldwork.activities.SettingsActivity"
             android:theme="@style/LoginPage" />
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.HillfortMapActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.map.HillfortMapView"
             android:label="@string/title_activity_hillfort_maps" />
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library

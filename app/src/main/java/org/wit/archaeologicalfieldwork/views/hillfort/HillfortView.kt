@@ -13,12 +13,7 @@ import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.activities.MapActivity
-import org.wit.archaeologicalfieldwork.helpers.showImagePicker
 import org.wit.archaeologicalfieldwork.models.HillfortModel
-import org.wit.archaeologicalfieldwork.main.MainApp
-import org.wit.archaeologicalfieldwork.models.LocationModel
-import org.wit.archaeologicalfieldwork.models.UserModel
 import java.util.*
 
 class HillfortView : AppCompatActivity(), AnkoLogger {

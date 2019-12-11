@@ -1,10 +1,8 @@
 package org.wit.archaeologicalfieldwork.views.hillfortlist
 
-import android.content.Intent
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.startActivityForResult
-import org.wit.archaeologicalfieldwork.activities.HillfortActivity
 import org.wit.archaeologicalfieldwork.activities.HillfortMapActivity
 import org.wit.archaeologicalfieldwork.activities.LoginActivity
 import org.wit.archaeologicalfieldwork.activities.SettingsActivity

@@ -111,8 +111,8 @@
 64
 65        <activity
 65-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:47:9-49:67
-66            android:name="org.wit.archaeologicalfieldwork.activities.MapActivity"
-66-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:48:13-51
+66            android:name="org.wit.archaeologicalfieldwork.views.editlocation.MapActivity"
+66-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:48:13-59
 67            android:label="@string/title_activity_map" />
 67-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:49:13-55
 68        <activity

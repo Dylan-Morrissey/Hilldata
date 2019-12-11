@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.viewpager.widget.ViewPager
 import org.jetbrains.anko.intentFor
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.activities.MapActivity
+import org.wit.archaeologicalfieldwork.views.editlocation.MapActivity
 import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import org.wit.archaeologicalfieldwork.helpers.showImagePicker
 import org.wit.archaeologicalfieldwork.main.MainApp

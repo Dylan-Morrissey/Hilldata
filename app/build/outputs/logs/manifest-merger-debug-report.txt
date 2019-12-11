@@ -155,12 +155,12 @@ ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:45:13-52
 	android:name
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:44:13-58
-activity#org.wit.archaeologicalfieldwork.activities.MapActivity
+activity#org.wit.archaeologicalfieldwork.views.editlocation.MapActivity
 ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:47:9-49:67
 	android:label
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:49:13-55
 	android:name
-		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:48:13-51
+		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:48:13-59
 activity#org.wit.archaeologicalfieldwork.activities.SettingsActivity
 ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:51:9-53:57
 	android:theme

@@ -5,7 +5,7 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.startActivityForResult
 import org.wit.archaeologicalfieldwork.views.map.HillfortMapView
 import org.wit.archaeologicalfieldwork.views.login.LoginView
-import org.wit.archaeologicalfieldwork.activities.SettingsActivity
+import org.wit.archaeologicalfieldwork.views.settings.SettingsActivity
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel

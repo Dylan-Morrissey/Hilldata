@@ -1,4 +1,4 @@
-package org.wit.archaeologicalfieldwork.activities
+package org.wit.archaeologicalfieldwork.views.signup
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

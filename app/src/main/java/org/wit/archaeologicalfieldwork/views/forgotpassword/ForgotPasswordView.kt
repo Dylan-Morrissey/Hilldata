@@ -1,4 +1,4 @@
-package org.wit.archaeologicalfieldwork.activities
+package org.wit.archaeologicalfieldwork.views.forgotpassword
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,29 +11,23 @@ import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.views.login.LoginView
 
-class ForgotPasswordActivity : AppCompatActivity(), AnkoLogger {
-    lateinit var app: MainApp
+class ForgotPasswordView : AppCompatActivity(), AnkoLogger {
+
+
+    lateinit var presenter : ForgotPasswordPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        app = application as MainApp
         setContentView(R.layout.activity_forgotpassword)
         info("Login Activity Started...")
+        presenter = ForgotPasswordPresenter(this)
 
         btnBackToLogin.setOnClickListener() {
-            val intent = Intent(baseContext, LoginView::class.java)
-            startActivity(intent)
+            presenter.doBack()
         }
 
         btnResetPassword.setOnClickListener() {
-            for (x in app.users.findAllUsers()){
-                if (forgotEmail.text.toString() == x.emailAddress) {
-                    info { "forgot button pressed" }
-                    toast("Password: " + x.password)
-                } else {
-                    info("Invalid email address")
-                }
-            }
+            presenter.doResetPassword(forgotEmail.text.toString())
         }
     }
 }

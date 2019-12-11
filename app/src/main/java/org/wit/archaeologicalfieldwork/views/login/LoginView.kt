@@ -1,6 +1,5 @@
 package org.wit.archaeologicalfieldwork.views.login
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_login.*
@@ -8,10 +7,6 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity
-import org.wit.archaeologicalfieldwork.activities.SignUpActivity
-import org.wit.archaeologicalfieldwork.main.MainApp
-import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 
 class LoginView : AppCompatActivity(), AnkoLogger {
 

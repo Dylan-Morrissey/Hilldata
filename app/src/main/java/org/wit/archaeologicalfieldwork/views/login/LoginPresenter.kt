@@ -1,11 +1,9 @@
 package org.wit.archaeologicalfieldwork.views.login
 
-import android.content.Intent
-import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivity
-import org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity
-import org.wit.archaeologicalfieldwork.activities.SignUpActivity
+import org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView
+import org.wit.archaeologicalfieldwork.views.signup.SignUpActivity
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 
@@ -18,7 +16,7 @@ class LoginPresenter (val view: LoginView){
     }
 
     fun doForgotPassword(){
-        view.startActivity<ForgotPasswordActivity>()
+        view.startActivity<ForgotPasswordView>()
     }
 
     fun doSignUp(){

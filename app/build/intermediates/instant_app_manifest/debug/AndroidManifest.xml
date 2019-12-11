@@ -48,10 +48,10 @@
             android:theme="@style/LoginPage" >
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView"
             android:theme="@style/LoginPage" />
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.signup.SignUpActivity"
             android:theme="@style/LoginPage" >
         </activity>
         <activity
@@ -67,7 +67,7 @@
             android:name="org.wit.archaeologicalfieldwork.views.editlocation.MapView"
             android:label="@string/title_activity_map" />
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.SettingsActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsActivity"
             android:theme="@style/LoginPage" />
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.map.HillfortMapView"

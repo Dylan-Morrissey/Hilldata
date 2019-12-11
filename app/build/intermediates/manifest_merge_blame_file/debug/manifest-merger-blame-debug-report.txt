@@ -83,14 +83,14 @@
 48        </activity>
 49        <activity
 49-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:33:9-35:57
-50            android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
-50-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:34:13-62
+50            android:name="org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView"
+50-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:34:13-68
 51            android:theme="@style/LoginPage" />
 51-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:35:13-45
 52        <activity
 52-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:36:9-39:20
-53            android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
-53-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:37:13-54
+53            android:name="org.wit.archaeologicalfieldwork.views.signup.SignUpActivity"
+53-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:37:13-56
 54            android:theme="@style/LoginPage" >
 54-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:38:13-45
 55        </activity>
@@ -117,8 +117,8 @@
 67-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:49:13-55
 68        <activity
 68-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:51:9-53:57
-69            android:name="org.wit.archaeologicalfieldwork.activities.SettingsActivity"
-69-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:52:13-56
+69            android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsActivity"
+69-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:52:13-60
 70            android:theme="@style/LoginPage" />
 70-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:53:13-45
 71        <activity

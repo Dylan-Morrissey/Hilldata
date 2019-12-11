@@ -31,7 +31,7 @@
         android:testOnly="true"
         android:theme="@style/LoginPage" >
         <activity
-            android:name="org.wit.archaeologicalfieldwork.views.splashscreen.SplashScreenActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.splashscreen.SplashScreenView"
             android:noHistory="true"
             android:theme="@style/SplashTheme" >
             <intent-filter>

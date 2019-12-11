@@ -51,8 +51,8 @@
 31-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:14:9-41
 32        <activity
 32-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:16:9-25:20
-33            android:name="org.wit.archaeologicalfieldwork.views.splashscreen.SplashScreenActivity"
-33-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:17:13-68
+33            android:name="org.wit.archaeologicalfieldwork.views.splashscreen.SplashScreenView"
+33-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:17:13-64
 34            android:noHistory="true"
 34-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:18:13-37
 35            android:theme="@style/SplashTheme" >

@@ -9,6 +9,7 @@ import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
+import org.wit.archaeologicalfieldwork.views.login.LoginView
 
 class ForgotPasswordActivity : AppCompatActivity(), AnkoLogger {
     lateinit var app: MainApp
@@ -20,7 +21,7 @@ class ForgotPasswordActivity : AppCompatActivity(), AnkoLogger {
         info("Login Activity Started...")
 
         btnBackToLogin.setOnClickListener() {
-            val intent = Intent(baseContext, LoginActivity::class.java)
+            val intent = Intent(baseContext, LoginView::class.java)
             startActivity(intent)
         }
 

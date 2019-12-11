@@ -4,7 +4,7 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.startActivityForResult
 import org.wit.archaeologicalfieldwork.views.map.HillfortMapView
-import org.wit.archaeologicalfieldwork.activities.LoginActivity
+import org.wit.archaeologicalfieldwork.views.login.LoginView
 import org.wit.archaeologicalfieldwork.activities.SettingsActivity
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
@@ -29,7 +29,7 @@ class HillfortListPresenter(val view: HillfortListView) {
     }
 
     fun doLogout(){
-        view.startActivity<LoginActivity>()
+        view.startActivity<LoginView>()
     }
 
     fun doSettings() {

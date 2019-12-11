@@ -10,6 +10,7 @@ import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
+import org.wit.archaeologicalfieldwork.views.login.LoginView
 
 class SettingsActivity : AppCompatActivity(), AnkoLogger {
 
@@ -54,7 +55,7 @@ class SettingsActivity : AppCompatActivity(), AnkoLogger {
         deleteUserBtn.setOnClickListener {
             app.users.deleteUser(app.user)
             toast("Account Deleted")
-            startActivity(Intent(baseContext, LoginActivity::class.java))
+            startActivity(Intent(baseContext, LoginView::class.java))
         }
 
 

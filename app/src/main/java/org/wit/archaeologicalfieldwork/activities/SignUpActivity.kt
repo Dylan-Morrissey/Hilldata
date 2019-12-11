@@ -3,7 +3,6 @@ package org.wit.archaeologicalfieldwork.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_signup.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -11,6 +10,7 @@ import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.UserModel
+import org.wit.archaeologicalfieldwork.views.login.LoginView
 
 class SignUpActivity : AppCompatActivity(), AnkoLogger {
 
@@ -34,7 +34,7 @@ class SignUpActivity : AppCompatActivity(), AnkoLogger {
                         info("Register Button Pressed:${newuser}")
                         setResult(RESULT_OK)
                         finish()
-                        val intent = Intent(baseContext, LoginActivity::class.java)
+                        val intent = Intent(baseContext, LoginView::class.java)
                         startActivity(intent)
                     } else {
                         newPassword.setText("")
@@ -50,7 +50,7 @@ class SignUpActivity : AppCompatActivity(), AnkoLogger {
         }
 
         btnBackSignIn.setOnClickListener() {
-            val intent = Intent(baseContext, LoginActivity::class.java)
+            val intent = Intent(baseContext, LoginView::class.java)
             startActivity(intent)
         }
     }

@@ -14,7 +14,7 @@
         android:theme="@style/LoginPage">
 
         <activity
-            android:name=".views.splashscreen.SplashScreenActivity"
+            android:name=".views.splashscreen.SplashScreenView"
             android:noHistory="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".views.login.LoginView"
             android:theme="@style/LoginPage"></activity>
         <activity
             android:name=".views.hillfort.HillfortView"

@@ -119,12 +119,12 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:23:17-77
 	android:name
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:23:27-74
-activity#org.wit.archaeologicalfieldwork.activities.LoginActivity
+activity#org.wit.archaeologicalfieldwork.views.login.LoginView
 ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:26:9-28:57
 	android:theme
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:28:13-45
 	android:name
-		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:13-53
+		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:13-50
 activity#org.wit.archaeologicalfieldwork.views.hillfort.HillfortView
 ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:29:9-32:20
 	android:theme

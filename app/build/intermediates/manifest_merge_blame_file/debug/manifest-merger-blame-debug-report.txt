@@ -70,8 +70,8 @@
 41        </activity>
 42        <activity
 42-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:26:9-28:57
-43            android:name="org.wit.archaeologicalfieldwork.activities.LoginActivity"
-43-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:13-53
+43            android:name="org.wit.archaeologicalfieldwork.views.login.LoginView"
+43-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:27:13-50
 44            android:theme="@style/LoginPage" />
 44-->C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:28:13-45
 45        <activity

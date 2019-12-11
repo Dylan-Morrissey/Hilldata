@@ -15,41 +15,28 @@ import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 
 class LoginView : AppCompatActivity(), AnkoLogger {
 
-    lateinit var app: MainApp
+    lateinit var presenter: LoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        app = application as MainApp
+        presenter = LoginPresenter(this)
 
         info("Login Activity Started...")
 
         btnForgotPassword.setOnClickListener() {
-            startActivity(Intent(baseContext, ForgotPasswordActivity::class.java))
+            presenter.doForgotPassword()
         }
         btnSignUp.setOnClickListener() {
-            startActivity(Intent(baseContext, SignUpActivity::class.java))
+            presenter.doSignUp()
         }
 
         btnSignIn.setOnClickListener() {
             if (loginEmail.text.toString().isNotEmpty() && loginPassword.text.toString().isNotEmpty()) {
-                for (x in app.users.findAllUsers()) {
-                    if (x.emailAddress == loginEmail.text.toString() && x.password == loginPassword.text.toString()) {
-                        app.user = app.users.findUser(x.id)!!
-                        startActivity(Intent(baseContext, HillfortListView::class.java))
-                        finish()
-                    } else {
-                        info { "Invalid Email or Password" }
-                    }
-                }
+                presenter.doSignIn(loginEmail.text.toString(), loginPassword.text.toString())
             } else {
                 toast("Please make sure user name and password  are correct.")
             }
         }
     }
-
-    private fun loadUsers() {
-        app.users.findAllUsers()
-    }
-
 }

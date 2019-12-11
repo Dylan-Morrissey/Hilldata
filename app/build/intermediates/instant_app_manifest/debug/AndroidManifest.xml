@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.LoginActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.login.LoginView"
             android:theme="@style/LoginPage" />
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.hillfort.HillfortView"

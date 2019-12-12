@@ -137,12 +137,12 @@ ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:35:13-45
 	android:name
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:34:13-68
-activity#org.wit.archaeologicalfieldwork.views.signup.SignUpActivity
+activity#org.wit.archaeologicalfieldwork.views.signup.SignUpView
 ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:36:9-39:20
 	android:theme
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:38:13-45
 	android:name
-		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:37:13-56
+		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:37:13-52
 activity#org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:40:9-42:20
 	android:theme
@@ -161,12 +161,12 @@ ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:49:13-55
 	android:name
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:48:13-55
-activity#org.wit.archaeologicalfieldwork.views.settings.SettingsActivity
+activity#org.wit.archaeologicalfieldwork.views.settings.SettingsView
 ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:51:9-53:57
 	android:theme
 		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:53:13-45
 	android:name
-		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:52:13-60
+		ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:52:13-56
 activity#org.wit.archaeologicalfieldwork.views.map.HillfortMapView
 ADDED from C:\Users\Dylan\AndroidStudioProjects\ArchaeologicalFieldwork\app\src\main\AndroidManifest.xml:55:9-56:77
 	android:label

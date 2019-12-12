@@ -34,7 +34,7 @@
             android:name=".views.forgotpassword.ForgotPasswordView"
             android:theme="@style/LoginPage"></activity>
         <activity
-            android:name=".views.signup.SignUpActivity"
+            android:name=".views.signup.SignUpView"
             android:theme="@style/LoginPage">
         </activity>
         <activity android:name=".views.hillfortlist.HillfortListView"
@@ -49,7 +49,7 @@
             android:label="@string/title_activity_map"></activity>
 
         <activity
-            android:name=".views.settings.SettingsActivity"
+            android:name=".views.settings.SettingsView"
             android:theme="@style/LoginPage"></activity>
 
         <activity android:name=".views.map.HillfortMapView"

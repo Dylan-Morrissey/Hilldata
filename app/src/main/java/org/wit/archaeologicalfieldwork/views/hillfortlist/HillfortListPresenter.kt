@@ -5,7 +5,7 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.startActivityForResult
 import org.wit.archaeologicalfieldwork.views.map.HillfortMapView
 import org.wit.archaeologicalfieldwork.views.login.LoginView
-import org.wit.archaeologicalfieldwork.views.settings.SettingsActivity
+import org.wit.archaeologicalfieldwork.views.settings.SettingsView
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
@@ -33,7 +33,7 @@ class HillfortListPresenter(val view: HillfortListView) {
     }
 
     fun doSettings() {
-        view.startActivity<SettingsActivity>()
+        view.startActivity<SettingsView>()
     }
 
     fun doEditHillfort(hillfort: HillfortModel){

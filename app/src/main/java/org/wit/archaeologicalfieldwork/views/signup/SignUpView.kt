@@ -12,38 +12,20 @@ import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.UserModel
 import org.wit.archaeologicalfieldwork.views.login.LoginView
 
-class SignUpActivity : AppCompatActivity(), AnkoLogger {
+class SignUpView : AppCompatActivity(), AnkoLogger {
 
     var newuser = UserModel()
-    lateinit var app: MainApp
+    lateinit var presenter : SignUpPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
-        app = application as MainApp
         info("Login Activity Started...")
+        presenter = SignUpPresenter(this)
 
         btnRegester.setOnClickListener() {
             if (newUsername.text.isNotEmpty() && newEmail.text.isNotEmpty() && newPassword.text.isNotEmpty() && newPasswordConfirm.text.isNotEmpty()) {
-                if (isEmailValid(newEmail.text.toString()) == true) {
-                    if (newPassword.text.toString() == newPasswordConfirm.text.toString()) {
-                        newuser.userName = newUsername.text.toString()
-                        newuser.emailAddress = newEmail.text.toString()
-                        newuser.password = newPassword.text.toString()
-                        app.users.createUser(newuser.copy())
-                        info("Register Button Pressed:${newuser}")
-                        setResult(RESULT_OK)
-                        finish()
-                        val intent = Intent(baseContext, LoginView::class.java)
-                        startActivity(intent)
-                    } else {
-                        newPassword.setText("")
-                        newPasswordConfirm.setText("")
-                        toast("Passwords do not match Please try again")
-                    }
-                } else {
-                    toast("Please eneter a valid email address.")
-                }
+                presenter.doRegisterUser()
             } else {
                 toast("Please fill in to register")
             }

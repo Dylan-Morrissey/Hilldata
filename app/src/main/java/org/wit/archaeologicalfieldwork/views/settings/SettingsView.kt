@@ -12,7 +12,7 @@ import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 import org.wit.archaeologicalfieldwork.views.login.LoginView
 
-class SettingsActivity : AppCompatActivity(), AnkoLogger {
+class SettingsView : AppCompatActivity(), AnkoLogger {
 
     lateinit var app: MainApp
     var hillfort = HillfortModel()

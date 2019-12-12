@@ -3,7 +3,7 @@ package org.wit.archaeologicalfieldwork.views.login
 import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivity
 import org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView
-import org.wit.archaeologicalfieldwork.views.signup.SignUpActivity
+import org.wit.archaeologicalfieldwork.views.signup.SignUpView
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 
@@ -20,7 +20,7 @@ class LoginPresenter (val view: LoginView){
     }
 
     fun doSignUp(){
-        view.startActivity<SignUpActivity>()
+        view.startActivity<SignUpView>()
     }
 
     fun doSignIn(loginEmail:String, loginPassword: String) {

@@ -1,4 +1,4 @@
-#Thu Dec 12 10:08:48 GMT 2019
+#Thu Dec 12 10:30:26 GMT 2019
 base.0=C\:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

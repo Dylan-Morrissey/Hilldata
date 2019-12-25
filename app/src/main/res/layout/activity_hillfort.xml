@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.HillfortActivity"
+    tools:context=".views.hillfort.HillfortView"
     android:background="@drawable/login_background">
 
     <RelativeLayout
@@ -135,6 +135,15 @@
                     android:textAllCaps="false"
                     android:textSize="20sp"/>
 
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="378dp"
+                    android:layout_height="126dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <Button
                     android:id="@+id/btnAdd"

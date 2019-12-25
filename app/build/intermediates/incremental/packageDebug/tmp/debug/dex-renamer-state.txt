@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Tue Dec 10 17:19:12 GMT 2019
+=======
+#Wed Dec 25 22:04:47 GMT 2019
+>>>>>>> feature/model_view_presenter
 base.0=C\:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

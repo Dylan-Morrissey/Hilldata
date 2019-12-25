@@ -14,7 +14,7 @@
         android:theme="@style/LoginPage">
 
         <activity
-            android:name=".activities.SplashScreenActivity"
+            android:name=".views.splashscreen.SplashScreenView"
             android:noHistory="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -24,20 +24,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".views.login.LoginView"
             android:theme="@style/LoginPage"></activity>
         <activity
-            android:name=".activities.HillfortActivity"
+            android:name=".views.hillfort.HillfortView"
             android:theme="@style/LoginPage">
         </activity>
         <activity
-            android:name=".activities.ForgotPasswordActivity"
+            android:name=".views.forgotpassword.ForgotPasswordView"
             android:theme="@style/LoginPage"></activity>
         <activity
-            android:name=".activities.SignUpActivity"
+            android:name=".views.signup.SignUpView"
             android:theme="@style/LoginPage">
         </activity>
-        <activity android:name=".activities.HillfortListActivity"
+        <activity android:name=".views.hillfortlist.HillfortListView"
             android:theme="@style/LoginPage">
         </activity>
         <meta-data
@@ -45,14 +45,14 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".activities.MapActivity"
+            android:name=".views.editlocation.MapView"
             android:label="@string/title_activity_map"></activity>
 
         <activity
-            android:name=".activities.SettingsActivity"
+            android:name=".views.settings.SettingsView"
             android:theme="@style/LoginPage"></activity>
 
-        <activity android:name=".activities.HillfortMapActivity"
+        <activity android:name=".views.map.HillfortMapView"
             android:label="@string/title_activity_hillfort_maps"></activity>
     </application>
 

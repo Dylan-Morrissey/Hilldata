@@ -30,7 +30,7 @@
         android:testOnly="true"
         android:theme="@style/LoginPage" >
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.SplashScreenActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.splashscreen.SplashScreenView"
             android:noHistory="true"
             android:theme="@style/SplashTheme" >
             <intent-filter>
@@ -40,21 +40,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.LoginActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.login.LoginView"
             android:theme="@style/LoginPage" />
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.HillfortActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.hillfort.HillfortView"
             android:theme="@style/LoginPage" >
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView"
             android:theme="@style/LoginPage" />
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.signup.SignUpView"
             android:theme="@style/LoginPage" >
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.HillfortListActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView"
             android:theme="@style/LoginPage" >
         </activity>
 
@@ -63,13 +63,13 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.MapActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.editlocation.MapView"
             android:label="@string/title_activity_map" />
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.SettingsActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsView"
             android:theme="@style/LoginPage" />
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.HillfortMapActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.map.HillfortMapView"
             android:label="@string/title_activity_hillfort_maps" />
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library

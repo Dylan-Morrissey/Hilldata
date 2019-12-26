@@ -1,7 +1,10 @@
 package org.wit.archaeologicalfieldwork.views.hillfort
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.viewpager.widget.ViewPager
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
@@ -15,6 +18,9 @@ import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
+import org.wit.archaeologicalfieldwork.helpers.checkLocationPermissions
+import org.wit.archaeologicalfieldwork.helpers.isPermissionGranted
+
 
 class HillfortPresenter(val view: HillfortView) {
 
@@ -22,6 +28,7 @@ class HillfortPresenter(val view: HillfortView) {
     val LOCATION_REQUEST = 2
     var user = UserModel()
     var map: GoogleMap?= null
+    var locationService: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(view)
     var hillfort = HillfortModel()
     var location = LocationModel(52.245696, -7.139102, 15f)
     var app: MainApp
@@ -35,8 +42,16 @@ class HillfortPresenter(val view: HillfortView) {
             hillfort = view.intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
             view.showHillfort(hillfort)
         } else {
-            hillfort.lat = location.lat
-            hillfort.lng = location.lng
+            if(checkLocationPermissions(view)){
+                doSetCurrentLocation()
+            }
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    fun doSetCurrentLocation() {
+        locationService.lastLocation.addOnSuccessListener {
+            locationUpdate(it.latitude, it.longitude)
         }
     }
 
@@ -55,6 +70,15 @@ class HillfortPresenter(val view: HillfortView) {
         map?.addMarker(options)
         map?.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(hillfort.lat, hillfort.lng), hillfort.zoom))
         view?.showHillfort(hillfort)
+    }
+
+    override fun doRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        if (isPermissionGranted(requestCode, grantResults)) {
+            doSetCurrentLocation()
+        } else {
+            // permissions denied, so use the default location
+            locationUpdate(location.lat, location.lng)
+        }
     }
 
     fun doAddOrSave(name: String, description: String, visited: Boolean, date: String, notes: String) {

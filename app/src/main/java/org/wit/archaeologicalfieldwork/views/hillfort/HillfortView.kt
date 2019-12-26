@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.DatePicker
 import androidx.viewpager.widget.ViewPager
+import com.google.android.gms.maps.GoogleMap
 import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.*
@@ -20,6 +21,7 @@ class HillfortView : AppCompatActivity(), AnkoLogger {
 
 
     lateinit var presenter: HillfortPresenter
+    lateinit var map: GoogleMap
 
 
   //  var location = LocationModel(52.245696, -7.139102, 15f)
@@ -31,6 +33,12 @@ class HillfortView : AppCompatActivity(), AnkoLogger {
         setSupportActionBar(toolbarAdd)
 
         presenter = HillfortPresenter(this)
+
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync {
+            map = it
+            presenter.doConfigureMap(map)
+        }
 
         btnAdd.setOnClickListener() {
             if (hillfortName.text.toString().isEmpty()) {
@@ -107,4 +115,29 @@ class HillfortView : AppCompatActivity(), AnkoLogger {
             presenter.doActivityResult(requestCode, resultCode, data)
             }
         }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mapView.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView.onLowMemory()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mapView.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mapView.onResume()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        mapView.onSaveInstanceState(outState)
+    }
 }

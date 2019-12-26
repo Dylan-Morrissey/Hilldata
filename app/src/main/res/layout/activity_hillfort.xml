@@ -135,7 +135,6 @@
                     android:textAllCaps="false"
                     android:textSize="20sp"/>
 
-
                 <com.google.android.gms.maps.MapView
                     android:id="@+id/mapView"
                     android:layout_width="378dp"

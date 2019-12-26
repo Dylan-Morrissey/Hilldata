@@ -2,6 +2,10 @@ package org.wit.archaeologicalfieldwork.views.hillfort
 
 import android.content.Intent
 import androidx.viewpager.widget.ViewPager
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import org.jetbrains.anko.intentFor
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.views.editlocation.MapView
@@ -17,7 +21,7 @@ class HillfortPresenter(val view: HillfortView) {
     val IMAGE_REQUEST = 1
     val LOCATION_REQUEST = 2
     var user = UserModel()
-
+    var map: GoogleMap?= null
     var hillfort = HillfortModel()
     var location = LocationModel(52.245696, -7.139102, 15f)
     var app: MainApp
@@ -30,7 +34,27 @@ class HillfortPresenter(val view: HillfortView) {
             edit = true
             hillfort = view.intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
             view.showHillfort(hillfort)
+        } else {
+            hillfort.lat = location.lat
+            hillfort.lng = location.lng
         }
+    }
+
+    fun doConfigureMap(m:GoogleMap){
+        map = m
+        locationUpdate(hillfort.lat, hillfort.lng)
+    }
+
+    fun locationUpdate(lat:Double, lng:Double){
+        hillfort.lat = lat
+        hillfort.lng = lng
+        hillfort.zoom = 15f
+        map?.clear()
+        map?.uiSettings?.setZoomControlsEnabled(true)
+        val options = MarkerOptions().title(hillfort.name).position(LatLng(hillfort.lat, hillfort.lng))
+        map?.addMarker(options)
+        map?.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(hillfort.lat, hillfort.lng), hillfort.zoom))
+        view?.showHillfort(hillfort)
     }
 
     fun doAddOrSave(name: String, description: String, visited: Boolean, date: String, notes: String) {
@@ -89,6 +113,7 @@ class HillfortPresenter(val view: HillfortView) {
                 hillfort.lat = location.lat
                 hillfort.lng = location.lng
                 hillfort.zoom = location.zoom
+                locationUpdate(hillfort.lat, hillfort.lng)
             }
         }
     }

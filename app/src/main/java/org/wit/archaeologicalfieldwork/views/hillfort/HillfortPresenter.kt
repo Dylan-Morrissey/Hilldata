@@ -20,34 +20,31 @@ import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
 import org.wit.archaeologicalfieldwork.helpers.checkLocationPermissions
 import org.wit.archaeologicalfieldwork.helpers.isPermissionGranted
+import org.wit.archaeologicalfieldwork.views.Base.*
 
 
-class HillfortPresenter(val view: HillfortView) {
+class HillfortPresenter(view: BaseView): BasePresenter(view) {
 
-    val IMAGE_REQUEST = 1
-    val LOCATION_REQUEST = 2
-    var user = UserModel()
-    var map: GoogleMap?= null
-    var locationService: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(view)
-    var hillfort = HillfortModel()
-    var location = LocationModel(52.245696, -7.139102, 15f)
-    var app: MainApp
-    var edit = false;
+        var user = UserModel()
+        var map: GoogleMap? = null
+        var locationService: FusedLocationProviderClient =
+            LocationServices.getFusedLocationProviderClient(view)
+        var hillfort = HillfortModel()
+        var location = LocationModel(52.245696, -7.139102, 15f)
+        var edit = false;
 
-    init {
-        app = view.application as MainApp
-        user = app.user
-        if (view.intent.hasExtra("hillfort_edit")) {
-            edit = true
-            hillfort = view.intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
-            view.showHillfort(hillfort)
-        } else {
-            if(checkLocationPermissions(view)){
-                doSetCurrentLocation()
+        init {
+            user = app.user
+            if (view.intent.hasExtra("hillfort_edit")) {
+                edit = true
+                hillfort = view.intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
+                view.showHillfort(hillfort)
+            } else {
+                if (checkLocationPermissions(view)) {
+                    doSetCurrentLocation()
+                }
             }
         }
-    }
-
     @SuppressLint("MissingPermission")
     fun doSetCurrentLocation() {
         locationService.lastLocation.addOnSuccessListener {
@@ -93,11 +90,11 @@ class HillfortPresenter(val view: HillfortView) {
         } else {
             app.users.createHillfort(hillfort.copy(), user)
         }
-        view.finish()
+        view?.finish()
     }
 
     fun doCancel() {
-        view.finish()
+        view?.finish()
     }
 
     fun doDelete() {
@@ -105,7 +102,7 @@ class HillfortPresenter(val view: HillfortView) {
     }
 
     fun doSelectImage(){
-        showImagePicker(view, IMAGE_REQUEST)
+        showImagePicker(view!!, IMAGE_REQUEST)
     }
 
     fun doCheckBox(checkBox: Boolean) {
@@ -113,31 +110,33 @@ class HillfortPresenter(val view: HillfortView) {
     }
 
     fun doSetLocation() {
-        if (hillfort.zoom !=0f) {
-            location.lat = hillfort.lat
-            location.lng = hillfort.lng
-            location.zoom = hillfort.zoom
+        if (edit == false) {
+            view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", location)
+        } else {
+            view?.navigateTo(
+                VIEW.LOCATION,
+                LOCATION_REQUEST,
+                "location",
+                LocationModel(hillfort.lat, hillfort.lng, hillfort.zoom)
+            )
         }
-        view.startActivityForResult(view.intentFor<MapView>().putExtra("location", location), LOCATION_REQUEST)
     }
 
-    fun doActivityResult(requestCode:Int, resultCode: Int, data: Intent) {
+    override fun doActivityResult(requestCode:Int, resultCode: Int, data: Intent) {
         when (requestCode) {
-            IMAGE_REQUEST ->{
-                if(data != null) {
+            IMAGE_REQUEST -> {
                     hillfort.image = data.data.toString()
                     hillfort.imageStore.add(hillfort.image)
-                    val images = view.findViewById<ViewPager>(R.id.hillfortImages)
-                    val adapter = ImageAdapter(view, hillfort.imageStore)
-                    images.adapter = adapter
+                    val images = view?.findViewById<ViewPager>(R.id.hillfortImages)
+                    val adapter = ImageAdapter(view!!, hillfort.imageStore)
+                    images?.adapter = adapter
                 }
-            }
             LOCATION_REQUEST -> {
-                location = data.extras?.getParcelable<LocationModel>("location")!!
+                val location = data.extras?.getParcelable<LocationModel>("location")!!
                 hillfort.lat = location.lat
                 hillfort.lng = location.lng
                 hillfort.zoom = location.zoom
-                locationUpdate(hillfort.lat, hillfort.lng)
+
             }
         }
     }

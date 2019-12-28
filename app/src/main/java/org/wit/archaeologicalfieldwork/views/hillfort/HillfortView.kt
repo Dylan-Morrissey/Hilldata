@@ -15,12 +15,14 @@ import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.models.HillfortModel
+import org.wit.archaeologicalfieldwork.views.Base.BaseView
 import java.util.*
 
-class HillfortView : AppCompatActivity(), AnkoLogger {
+class HillfortView : BaseView(), AnkoLogger {
 
 
     lateinit var presenter: HillfortPresenter
+    var hillfort = HillfortModel()
     lateinit var map: GoogleMap
 
 
@@ -30,9 +32,9 @@ class HillfortView : AppCompatActivity(), AnkoLogger {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hillfort)
         toolbarAdd.title = title
-        setSupportActionBar(toolbarAdd)
+        init(toolbarAdd)
 
-        presenter = HillfortPresenter(this)
+        presenter = initPresenter(HillfortPresenter(this)) as HillfortPresenter
 
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync {
@@ -77,7 +79,7 @@ class HillfortView : AppCompatActivity(), AnkoLogger {
         }
     }
 
-    fun showHillfort(hillfort:HillfortModel) {
+    override fun showHillfort(hillfort:HillfortModel) {
         hillfortName.setText(hillfort.name)
         description.setText(hillfort.description)
         checkbox.setChecked(hillfort.visited)

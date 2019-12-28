@@ -13,6 +13,7 @@ import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
+import org.wit.archaeologicalfieldwork.views.editlocation.MapView
 
 class HillfortPresenter(val view: HillfortActivity) {
 
@@ -72,7 +73,7 @@ class HillfortPresenter(val view: HillfortActivity) {
             location.lng = hillfort.lng
             location.zoom = hillfort.zoom
         }
-        view.startActivityForResult(view.intentFor<MapActivity>().putExtra("location", location), LOCATION_REQUEST)
+        view.startActivityForResult(view.intentFor<MapView>().putExtra("location", location), LOCATION_REQUEST)
     }
 
     fun doActivityResult(requestCode:Int, resultCode: Int, data: Intent) {

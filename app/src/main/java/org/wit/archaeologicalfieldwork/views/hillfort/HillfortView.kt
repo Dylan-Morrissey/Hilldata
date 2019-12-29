@@ -61,8 +61,11 @@ class HillfortView : BaseView(), AnkoLogger {
             }
         }
 
-        hillfortLocation.setOnClickListener { presenter.doSetLocation()}
-
+        //hillfortLocation.setOnClickListener { presenter.doSetLocation()}
+        mapView.getMapAsync {
+            presenter.doConfigureMap(it)
+            it.setOnMapClickListener { presenter.doSetLocation() }
+        }
         btnDate.setOnClickListener {
           val calander = Calendar.getInstance()
           val year = calander.get(Calendar.YEAR)

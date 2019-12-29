@@ -1199,7 +1199,6 @@ id gone
 id group_divider
 id groups
 id hillfortImages
-id hillfortLocation
 id hillfortName
 id hillfortNameCard
 id hillfortsVisited

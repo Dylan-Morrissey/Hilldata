@@ -55,7 +55,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             }
         }
 
-        hillfortLocation.setOnClickListener { presenter.doSetLocation()}
+        //hillfortLocation.setOnClickListener { presenter.doSetLocation()}
 
         btnDate.setOnClickListener {
           val calander = Calendar.getInstance()

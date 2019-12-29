@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.viewpager.widget.ViewPager
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -19,6 +21,7 @@ import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
 import org.wit.archaeologicalfieldwork.helpers.checkLocationPermissions
+import org.wit.archaeologicalfieldwork.helpers.createDefaultLocationRequest
 import org.wit.archaeologicalfieldwork.helpers.isPermissionGranted
 import org.wit.archaeologicalfieldwork.views.Base.*
 
@@ -29,6 +32,7 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
         var map: GoogleMap? = null
         var locationService: FusedLocationProviderClient =
             LocationServices.getFusedLocationProviderClient(view)
+        val locationRequest = createDefaultLocationRequest()
         var hillfort = HillfortModel()
         var location = LocationModel(52.245696, -7.139102, 15f)
         var edit = false;
@@ -119,6 +123,21 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
                 "location",
                 LocationModel(hillfort.lat, hillfort.lng, hillfort.zoom)
             )
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    fun doResartLocationUpdates() {
+        var locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult?) {
+                if (locationResult != null && locationResult.locations != null) {
+                    val l = locationResult.locations.last()
+                    locationUpdate(l.latitude, l.longitude)
+                }
+            }
+        }
+        if (!edit) {
+            locationService.requestLocationUpdates(locationRequest, locationCallback, null)
         }
     }
 

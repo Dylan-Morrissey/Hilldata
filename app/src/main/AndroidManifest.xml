@@ -48,7 +48,11 @@
 
         <activity
             android:name=".views.editlocation.EditLocationView"
-            android:label="@string/title_activity_map"></activity>
+            android:label="@string/title_activity_map">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfort.HillfortView" />
+        </activity>
 
         <activity
             android:name=".views.settings.SettingsView"

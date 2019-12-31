@@ -2,6 +2,7 @@ package org.wit.archaeologicalfieldwork.views.hillfort
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.location.Location
 import androidx.viewpager.widget.ViewPager
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -28,27 +29,26 @@ import org.wit.archaeologicalfieldwork.views.Base.*
 
 class HillfortPresenter(view: BaseView): BasePresenter(view) {
 
-        var user = UserModel()
-        var map: GoogleMap? = null
-        var locationService: FusedLocationProviderClient =
-            LocationServices.getFusedLocationProviderClient(view)
-        val locationRequest = createDefaultLocationRequest()
-        var hillfort = HillfortModel()
-        var location = LocationModel(52.245696, -7.139102, 15f)
-        var edit = false;
+    var user = UserModel()
+    var map: GoogleMap? = null
+    var locationService: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(view)
+    val locationRequest = createDefaultLocationRequest()
+    var hillfort = HillfortModel()
+    var defaultLocation = LocationModel(52.245696, -7.139102, 15f)
+    var edit = false;
 
-        init {
-            user = app.user
-            if (view.intent.hasExtra("hillfort_edit")) {
-                edit = true
-                hillfort = view.intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
-                view.showHillfort(hillfort)
-            } else {
-                if (checkLocationPermissions(view)) {
-                    doSetCurrentLocation()
-                }
+    init {
+        user = app.user
+        if (view.intent.hasExtra("hillfort_edit")) {
+            edit = true
+            hillfort = view.intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
+            view.showHillfort(hillfort)
+        } else {
+            if (checkLocationPermissions(view)) {
+                doSetCurrentLocation()
             }
         }
+    }
     @SuppressLint("MissingPermission")
     fun doSetCurrentLocation() {
         locationService.lastLocation.addOnSuccessListener {
@@ -78,7 +78,7 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
             doSetCurrentLocation()
         } else {
             // permissions denied, so use the default location
-            locationUpdate(location.lat, location.lng)
+            locationUpdate(defaultLocation.lat, defaultLocation.lng)
         }
     }
 
@@ -103,10 +103,13 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
 
     fun doDelete() {
         app.users.deleteHillfort(hillfort.copy(), user)
+        view?.finish()
     }
 
     fun doSelectImage(){
-        showImagePicker(view!!, IMAGE_REQUEST)
+        view?.let {
+            showImagePicker(view!!, IMAGE_REQUEST)
+        }
     }
 
     fun doCheckBox(checkBox: Boolean) {
@@ -115,7 +118,7 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
 
     fun doSetLocation() {
         if (edit == false) {
-            view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", location)
+            view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", LocationModel(hillfort.lat, hillfort.lng, hillfort.zoom))
         } else {
             view?.navigateTo(
                 VIEW.LOCATION,

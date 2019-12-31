@@ -81,14 +81,4 @@ open abstract class BaseView(): AppCompatActivity(), AnkoLogger {
     open fun showHillforts(hillfort: List<HillfortModel>) {}
     open fun showProgress() {}
     open fun hideProgress() {}
-
-    open fun putHillfort(hillFortModel: HillfortModel){}
-    open fun addImages(listofImages: ArrayList<String>) {}
-    open fun showResult(hillFortModel: HillfortModel){}
-    open fun showLocation(hillFortModel: HillfortModel, location: Location){}
-    //open fun showImages(images: hillfort.imageview){}
-    open fun showHillfortAdd(){}
-    //open fun showNotes(notes: hillfort.notes) {}
-    //open fun setMarkerDetails(hillfort.imageview,hillFortModel: HillFortModel) {}
-    open fun registerSignIn(){}
 }

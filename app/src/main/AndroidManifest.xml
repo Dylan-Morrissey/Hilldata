@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.wit.archaeologicalfieldwork">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -11,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/LoginPage">
+        android:theme="@style/LoginPage"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <activity
             android:name=".views.splashscreen.SplashScreenView"
@@ -45,8 +47,12 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".views.editlocation.MapView"
-            android:label="@string/title_activity_map"></activity>
+            android:name=".views.editlocation.EditLocationView"
+            android:label="@string/title_activity_map">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfort.HillfortView" />
+        </activity>
 
         <activity
             android:name=".views.settings.SettingsView"

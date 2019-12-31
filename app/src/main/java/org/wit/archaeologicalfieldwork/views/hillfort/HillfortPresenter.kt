@@ -1,35 +1,84 @@
 package org.wit.archaeologicalfieldwork.views.hillfort
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.location.Location
 import androidx.viewpager.widget.ViewPager
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationResult
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import org.jetbrains.anko.intentFor
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.views.editlocation.MapView
+import org.wit.archaeologicalfieldwork.views.editlocation.*
 import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import org.wit.archaeologicalfieldwork.helpers.showImagePicker
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
+import org.wit.archaeologicalfieldwork.helpers.checkLocationPermissions
+import org.wit.archaeologicalfieldwork.helpers.createDefaultLocationRequest
+import org.wit.archaeologicalfieldwork.helpers.isPermissionGranted
+import org.wit.archaeologicalfieldwork.views.Base.*
 
-class HillfortPresenter(val view: HillfortView) {
 
-    val IMAGE_REQUEST = 1
-    val LOCATION_REQUEST = 2
+class HillfortPresenter(view: BaseView): BasePresenter(view) {
+
     var user = UserModel()
-
+    var map: GoogleMap? = null
+    var locationService: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(view)
+    val locationRequest = createDefaultLocationRequest()
     var hillfort = HillfortModel()
-    var location = LocationModel(52.245696, -7.139102, 15f)
-    var app: MainApp
+    var defaultLocation = LocationModel(52.245696, -7.139102, 15f)
     var edit = false;
 
     init {
-        app = view.application as MainApp
         user = app.user
         if (view.intent.hasExtra("hillfort_edit")) {
             edit = true
             hillfort = view.intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
             view.showHillfort(hillfort)
+        } else {
+            if (checkLocationPermissions(view)) {
+                doSetCurrentLocation()
+            }
+        }
+    }
+    @SuppressLint("MissingPermission")
+    fun doSetCurrentLocation() {
+        locationService.lastLocation.addOnSuccessListener {
+            locationUpdate(it.latitude, it.longitude)
+        }
+    }
+
+    fun doConfigureMap(m:GoogleMap){
+        map = m
+        locationUpdate(hillfort.lat, hillfort.lng)
+    }
+
+    fun locationUpdate(lat:Double, lng:Double){
+        hillfort.lat = lat
+        hillfort.lng = lng
+        hillfort.zoom = 15f
+        map?.clear()
+        map?.uiSettings?.setZoomControlsEnabled(true)
+        val options = MarkerOptions().title(hillfort.name).position(LatLng(hillfort.lat, hillfort.lng))
+        map?.addMarker(options)
+        map?.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(hillfort.lat, hillfort.lng), hillfort.zoom))
+        view?.showHillfort(hillfort)
+    }
+
+    override fun doRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        if (isPermissionGranted(requestCode, grantResults)) {
+            doSetCurrentLocation()
+        } else {
+            // permissions denied, so use the default location
+            locationUpdate(defaultLocation.lat, defaultLocation.lng)
         }
     }
 
@@ -45,19 +94,22 @@ class HillfortPresenter(val view: HillfortView) {
         } else {
             app.users.createHillfort(hillfort.copy(), user)
         }
-        view.finish()
+        view?.finish()
     }
 
     fun doCancel() {
-        view.finish()
+        view?.finish()
     }
 
     fun doDelete() {
         app.users.deleteHillfort(hillfort.copy(), user)
+        view?.finish()
     }
 
     fun doSelectImage(){
-        showImagePicker(view, IMAGE_REQUEST)
+        view?.let {
+            showImagePicker(view!!, IMAGE_REQUEST)
+        }
     }
 
     fun doCheckBox(checkBox: Boolean) {
@@ -65,30 +117,48 @@ class HillfortPresenter(val view: HillfortView) {
     }
 
     fun doSetLocation() {
-        if (hillfort.zoom !=0f) {
-            location.lat = hillfort.lat
-            location.lng = hillfort.lng
-            location.zoom = hillfort.zoom
+        if (edit == false) {
+            view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", LocationModel(hillfort.lat, hillfort.lng, hillfort.zoom))
+        } else {
+            view?.navigateTo(
+                VIEW.LOCATION,
+                LOCATION_REQUEST,
+                "location",
+                LocationModel(hillfort.lat, hillfort.lng, hillfort.zoom)
+            )
         }
-        view.startActivityForResult(view.intentFor<MapView>().putExtra("location", location), LOCATION_REQUEST)
     }
 
-    fun doActivityResult(requestCode:Int, resultCode: Int, data: Intent) {
-        when (requestCode) {
-            IMAGE_REQUEST ->{
-                if(data != null) {
-                    hillfort.image = data.data.toString()
-                    hillfort.imageStore.add(hillfort.image)
-                    val images = view.findViewById<ViewPager>(R.id.hillfortImages)
-                    val adapter = ImageAdapter(view, hillfort.imageStore)
-                    images.adapter = adapter
+    @SuppressLint("MissingPermission")
+    fun doResartLocationUpdates() {
+        var locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult?) {
+                if (locationResult != null && locationResult.locations != null) {
+                    val l = locationResult.locations.last()
+                    locationUpdate(l.latitude, l.longitude)
                 }
             }
+        }
+        if (!edit) {
+            locationService.requestLocationUpdates(locationRequest, locationCallback, null)
+        }
+    }
+
+    override fun doActivityResult(requestCode:Int, resultCode: Int, data: Intent) {
+        when (requestCode) {
+            IMAGE_REQUEST -> {
+                    hillfort.image = data.data.toString()
+                    hillfort.imageStore.add(hillfort.image)
+                    val images = view?.findViewById<ViewPager>(R.id.hillfortImages)
+                    val adapter = ImageAdapter(view!!, hillfort.imageStore)
+                    images?.adapter = adapter
+                }
             LOCATION_REQUEST -> {
-                location = data.extras?.getParcelable<LocationModel>("location")!!
+                val location = data.extras?.getParcelable<LocationModel>("location")!!
                 hillfort.lat = location.lat
                 hillfort.lng = location.lng
                 hillfort.zoom = location.zoom
+
             }
         }
     }

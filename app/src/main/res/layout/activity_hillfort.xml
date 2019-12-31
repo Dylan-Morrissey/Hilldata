@@ -120,26 +120,11 @@
                     android:text="@string/button_addImage"
                     android:textColor="@color/lightText"
                     android:textSize="20sp"/>
-
-                <Button
-                    android:id="@+id/hillfortLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/button_background"
-                    android:paddingBottom="8dp"
-                    android:paddingTop="8dp"
-                    android:stateListAnimator="@null"
-                    android:text="@string/button_location"
-                    android:textColor="@color/lightText"
-                    android:textAllCaps="false"
-                    android:textSize="20sp"/>
-
-
+                
                 <com.google.android.gms.maps.MapView
                     android:id="@+id/mapView"
                     android:layout_width="378dp"
-                    android:layout_height="126dp"
+                    android:layout_height="198dp"
                     android:layout_margin="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

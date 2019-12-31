@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import org.jetbrains.anko.intentFor
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.views.editlocation.MapView
+import org.wit.archaeologicalfieldwork.views.editlocation.*
 import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import org.wit.archaeologicalfieldwork.helpers.showImagePicker
 import org.wit.archaeologicalfieldwork.main.MainApp

@@ -2,7 +2,6 @@ package org.wit.archaeologicalfieldwork.views.hillfort
 
 import android.app.DatePickerDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem

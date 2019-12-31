@@ -4,6 +4,7 @@ import android.content.ClipDescription
 import android.content.Intent
 import android.location.Location
 import androidx.viewpager.widget.ViewPager
+import com.google.android.gms.maps.MapView
 import kotlinx.android.synthetic.main.activity_hillfort.view.*
 import org.jetbrains.anko.intentFor
 import org.wit.archaeologicalfieldwork.R
@@ -13,9 +14,10 @@ import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
-import org.wit.archaeologicalfieldwork.views.editlocation.MapView
+import org.wit.archaeologicalfieldwork.views.editlocation.*
+import org.wit.archaeologicalfieldwork.views.hillfort.HillfortView
 
-class HillfortPresenter(val view: HillfortActivity) {
+class HillfortPresenter(val view: HillfortView) {
 
     val IMAGE_REQUEST = 1
     val LOCATION_REQUEST = 2

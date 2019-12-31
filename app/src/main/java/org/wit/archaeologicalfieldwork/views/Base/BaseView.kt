@@ -1,5 +1,4 @@
 package org.wit.archaeologicalfieldwork.views.Base
-
 import android.content.Intent
 import android.location.Location
 import android.os.Parcelable
@@ -7,7 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
 import org.wit.archaeologicalfieldwork.models.HillfortModel
-import org.wit.archaeologicalfieldwork.views.editlocation.MapView
+import org.wit.archaeologicalfieldwork.views.editlocation.EditLocationPresenter
+import org.wit.archaeologicalfieldwork.views.editlocation.*
 import org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView
 import org.wit.archaeologicalfieldwork.views.hillfort.HillfortView
 import org.wit.archaeologicalfieldwork.views.login.LoginView
@@ -31,7 +31,7 @@ open abstract class BaseView(): AppCompatActivity(), AnkoLogger {
     fun navigateTo(view: VIEW, code:Int = 0, key:String = "", value: Parcelable? = null){
         var intent = Intent(this,HillfortListView::class.java)
         when(view){
-            VIEW.LOCATION -> intent = Intent(this,MapView::class.java)
+            VIEW.LOCATION -> intent = Intent(this, EditLocationView::class.java)
             VIEW.HILLFORT -> intent = Intent(this,HillfortView::class.java)
             VIEW.MAPS -> intent = Intent(this,HillfortMapView::class.java)
             VIEW.HILLFORTLIST -> intent = Intent(this,HillfortListView::class.java)

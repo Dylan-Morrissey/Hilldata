@@ -1219,9 +1219,11 @@ id item_cancel
 id item_list_logout
 id item_list_settings
 id item_map
+id item_save
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id lat
 id latText
 id left
 id light
@@ -1229,11 +1231,11 @@ id line1
 id line3
 id listMode
 id list_item
+id lng
 id lngText
 id lnglatCard
 id loginEmail
 id loginPassword
-id map
 id mapView
 id masked
 id message
@@ -1443,6 +1445,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu menu_edit_location
 menu menu_hillfort
 menu menu_hillfortlist
 mipmap ic_launcher

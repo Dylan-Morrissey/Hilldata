@@ -63,7 +63,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="org.wit.archaeologicalfieldwork.views.editlocation.MapView"
+            android:name="org.wit.archaeologicalfieldwork.views.editlocation.EditLocationView"
             android:label="@string/title_activity_map" />
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsView"

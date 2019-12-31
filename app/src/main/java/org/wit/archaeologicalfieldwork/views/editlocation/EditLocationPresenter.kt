@@ -1,6 +1,5 @@
 package org.wit.archaeologicalfieldwork.views.editlocation
 
-import android.app.Activity
 import android.content.Intent
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -8,8 +7,10 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import org.wit.archaeologicalfieldwork.models.LocationModel
+import org.wit.archaeologicalfieldwork.views.Base.BasePresenter
+import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
-class MapPresenter(val view: MapView) {
+class EditLocationPresenter(view: BaseView) : BasePresenter(view) {
 
     var location = LocationModel()
 
@@ -17,7 +18,7 @@ class MapPresenter(val view: MapView) {
         location = view.intent.extras?.getParcelable<LocationModel>("location")!!
     }
 
-    fun initMap(map: GoogleMap) {
+    fun doConfigureMap(map: GoogleMap) {
         val loc = LatLng(location.lat, location.lng)
         val options = MarkerOptions()
             .title("Placemark")
@@ -28,17 +29,16 @@ class MapPresenter(val view: MapView) {
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, location.zoom))
     }
 
-    fun doUpdateLocation(lat: Double, lng: Double, zoom: Float) {
+    fun doUpdateLocation(lat: Double, lng: Double) {
         location.lat = lat
         location.lng = lng
-        location.zoom = zoom
     }
 
-    fun doOnBackPressed() {
+    fun doSave() {
         val resultIntent = Intent()
         resultIntent.putExtra("location", location)
-        view.setResult(Activity.RESULT_OK, resultIntent)
-        view.finish()
+        view?.setResult(0, resultIntent)
+        view?.finish()
     }
 
     fun doUpdateMarker(marker: Marker) {

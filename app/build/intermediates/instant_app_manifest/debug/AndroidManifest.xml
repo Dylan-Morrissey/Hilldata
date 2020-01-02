@@ -99,6 +99,10 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false" />
+
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

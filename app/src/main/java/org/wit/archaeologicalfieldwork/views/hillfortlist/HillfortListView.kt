@@ -1,7 +1,6 @@
 package org.wit.archaeologicalfieldwork.views.hillfortlist
 
-import HillfortAdapter
-import HillfortListener
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -10,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.AnkoLogger
 import org.wit.archaeologicalfieldwork.R
+import org.wit.archaeologicalfieldwork.adapter.HillfortAdapter
+import org.wit.archaeologicalfieldwork.adapter.HillfortListener
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 

@@ -1552,9 +1552,12 @@ int string search_menu_title 0x7f0e0062
 int string select_hillfort_image 0x7f0e0063
 int string settings 0x7f0e0064
 int string status_bar_notification_info_overflow 0x7f0e0065
-int string title_activity_hillfort_maps 0x7f0e0066
-int string title_activity_map 0x7f0e0067
-int string username 0x7f0e0068
+int string title_activity_edit_location 0x7f0e0066
+int string title_activity_hillfort 0x7f0e0067
+int string title_activity_hillfort_list 0x7f0e0068
+int string title_activity_hillfort_maps 0x7f0e0069
+int string title_activity_map 0x7f0e006a
+int string username 0x7f0e006b
 int style AlertDialog_AppCompat 0x7f0f0000
 int style AlertDialog_AppCompat_Light 0x7f0f0001
 int style Animation_AppCompat_Dialog 0x7f0f0002

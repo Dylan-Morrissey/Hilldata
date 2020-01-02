@@ -5806,9 +5806,12 @@ public final class R {
     public static final int select_hillfort_image=0x7f0e0063;
     public static final int settings=0x7f0e0064;
     public static final int status_bar_notification_info_overflow=0x7f0e0065;
-    public static final int title_activity_hillfort_maps=0x7f0e0066;
-    public static final int title_activity_map=0x7f0e0067;
-    public static final int username=0x7f0e0068;
+    public static final int title_activity_edit_location=0x7f0e0066;
+    public static final int title_activity_hillfort=0x7f0e0067;
+    public static final int title_activity_hillfort_list=0x7f0e0068;
+    public static final int title_activity_hillfort_maps=0x7f0e0069;
+    public static final int title_activity_map=0x7f0e006a;
+    public static final int username=0x7f0e006b;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0f0000;

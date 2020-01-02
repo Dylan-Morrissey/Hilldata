@@ -9,38 +9,39 @@ import org.wit.archaeologicalfieldwork.views.settings.SettingsView
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.UserModel
+import org.wit.archaeologicalfieldwork.views.Base.BasePresenter
+import org.wit.archaeologicalfieldwork.views.Base.VIEW
 import org.wit.archaeologicalfieldwork.views.hillfort.HillfortView
 
-class HillfortListPresenter(val view: HillfortListView) {
+class HillfortListPresenter(view: HillfortListView): BasePresenter(view) {
 
-    var app:MainApp
-    var user: UserModel
+    var user = UserModel()
+    override var app : MainApp = view.application as MainApp
 
 
     init {
-        app = view.application as MainApp
         user = app.user
     }
 
-    fun getHillforts() = app.users.findAllHillforts(user)
+    fun getHillforts(): List<HillfortModel> = app.users.findAllHillforts(user)
 
     fun doAddHillfort() {
-        view.startActivityForResult<HillfortView>(0)
+        view?.navigateTo(VIEW.HILLFORT)
     }
 
     fun doLogout(){
-        view.startActivity<LoginView>()
+        view?.navigateTo(VIEW.LOGIN)
     }
 
     fun doSettings() {
-        view.startActivity<SettingsView>()
+        view?.navigateTo(VIEW.SETTINGS)
     }
 
     fun doEditHillfort(hillfort: HillfortModel){
-        view.startActivityForResult(view.intentFor<HillfortView>().putExtra("hillfort_edit", hillfort), 0)
+        view?.navigateTo(VIEW.HILLFORT, 0, "hillfort_edit", hillfort)
     }
 
     fun doShowHillfortsMap() {
-        view.startActivity<HillfortMapView>()
+        view?.navigateTo(VIEW.MAPS)
     }
 }

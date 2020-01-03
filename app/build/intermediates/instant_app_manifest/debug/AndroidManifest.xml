@@ -46,6 +46,9 @@
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.hillfort.HillfortView"
             android:theme="@style/LoginPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
         </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView"
@@ -72,10 +75,18 @@
         </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsView"
-            android:theme="@style/LoginPage" />
+            android:theme="@style/LoginPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
+        </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.map.HillfortMapView"
-            android:label="@string/title_activity_hillfort_maps" />
+            android:label="@string/title_activity_hillfort_maps" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
+        </activity>
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"

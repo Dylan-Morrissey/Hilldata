@@ -1418,6 +1418,7 @@ id title_template
 id toolbar
 id toolbarAdd
 id toolbarMap
+id toolbarSettings
 id top
 id topPanel
 id totalHillforts
@@ -1537,6 +1538,7 @@ layout support_simple_spinner_dropdown_item
 menu menu_edit_location
 menu menu_hillfort
 menu menu_hillfortlist
+menu menu_settings
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

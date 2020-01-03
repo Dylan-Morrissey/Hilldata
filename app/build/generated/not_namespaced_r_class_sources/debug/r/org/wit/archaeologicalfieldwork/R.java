@@ -5772,29 +5772,30 @@ public final class R {
     public static final int toolbar=0x7f08011b;
     public static final int toolbarAdd=0x7f08011c;
     public static final int toolbarMap=0x7f08011d;
-    public static final int top=0x7f08011e;
-    public static final int topPanel=0x7f08011f;
-    public static final int totalHillforts=0x7f080120;
-    public static final int totalPictures=0x7f080121;
-    public static final int totalUserHillforts=0x7f080122;
-    public static final int totalUsers=0x7f080123;
-    public static final int touch_outside=0x7f080124;
-    public static final int transition_current_scene=0x7f080125;
-    public static final int transition_layout_save=0x7f080126;
-    public static final int transition_position=0x7f080127;
-    public static final int transition_scene_layoutid_cache=0x7f080128;
-    public static final int transition_transform=0x7f080129;
-    public static final int unchecked=0x7f08012a;
-    public static final int uniform=0x7f08012b;
-    public static final int unlabeled=0x7f08012c;
-    public static final int up=0x7f08012d;
-    public static final int useLogo=0x7f08012e;
-    public static final int view_offset_helper=0x7f08012f;
-    public static final int visible=0x7f080130;
-    public static final int wide=0x7f080131;
-    public static final int withText=0x7f080132;
-    public static final int wrap=0x7f080133;
-    public static final int wrap_content=0x7f080134;
+    public static final int toolbarSettings=0x7f08011e;
+    public static final int top=0x7f08011f;
+    public static final int topPanel=0x7f080120;
+    public static final int totalHillforts=0x7f080121;
+    public static final int totalPictures=0x7f080122;
+    public static final int totalUserHillforts=0x7f080123;
+    public static final int totalUsers=0x7f080124;
+    public static final int touch_outside=0x7f080125;
+    public static final int transition_current_scene=0x7f080126;
+    public static final int transition_layout_save=0x7f080127;
+    public static final int transition_position=0x7f080128;
+    public static final int transition_scene_layoutid_cache=0x7f080129;
+    public static final int transition_transform=0x7f08012a;
+    public static final int unchecked=0x7f08012b;
+    public static final int uniform=0x7f08012c;
+    public static final int unlabeled=0x7f08012d;
+    public static final int up=0x7f08012e;
+    public static final int useLogo=0x7f08012f;
+    public static final int view_offset_helper=0x7f080130;
+    public static final int visible=0x7f080131;
+    public static final int wide=0x7f080132;
+    public static final int withText=0x7f080133;
+    public static final int wrap=0x7f080134;
+    public static final int wrap_content=0x7f080135;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f090000;
@@ -5899,6 +5900,7 @@ public final class R {
     public static final int menu_edit_location=0x7f0c0000;
     public static final int menu_hillfort=0x7f0c0001;
     public static final int menu_hillfortlist=0x7f0c0002;
+    public static final int menu_settings=0x7f0c0003;
   }
   public static final class mipmap {
     public static final int ic_launcher=0x7f0d0000;

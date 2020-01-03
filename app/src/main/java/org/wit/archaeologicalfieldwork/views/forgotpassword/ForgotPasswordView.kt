@@ -9,12 +9,14 @@ import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
+import org.wit.archaeologicalfieldwork.views.Base.BaseView
 import org.wit.archaeologicalfieldwork.views.login.LoginView
 
-class ForgotPasswordView : AppCompatActivity(), AnkoLogger {
+class ForgotPasswordView : BaseView(), AnkoLogger {
 
 
     lateinit var presenter : ForgotPasswordPresenter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

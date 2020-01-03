@@ -7,15 +7,16 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
+import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
-class LoginView : AppCompatActivity(), AnkoLogger {
+class LoginView : BaseView() {
 
     lateinit var presenter: LoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        presenter = LoginPresenter(this)
+        presenter = initPresenter(LoginPresenter(this)) as LoginPresenter
 
         info("Login Activity Started...")
 

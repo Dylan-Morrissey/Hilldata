@@ -2,6 +2,7 @@ package org.wit.archaeologicalfieldwork.views.hillfort
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.location.Location
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -13,19 +14,16 @@ import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
+import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
 import org.wit.archaeologicalfieldwork.models.HillfortModel
+import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 import java.util.*
 
 class HillfortView : BaseView(), AnkoLogger {
 
-
     lateinit var presenter: HillfortPresenter
     var hillfort = HillfortModel()
-    lateinit var map: GoogleMap
-
-
-  //  var location = LocationModel(52.245696, -7.139102, 15f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +35,8 @@ class HillfortView : BaseView(), AnkoLogger {
 
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync {
-            map = it
-            presenter.doConfigureMap(map)
+            presenter.doConfigureMap(it)
+            it.setOnMapClickListener { presenter.doSelectImage() }
         }
 
         btnAdd.setOnClickListener() {
@@ -86,22 +84,28 @@ class HillfortView : BaseView(), AnkoLogger {
         description.setText(hillfort.description)
         checkbox.setChecked(hillfort.visited)
         dateText.setText(hillfort.date)
-        lngText.setText("Longitude " +hillfort.lng.toString())
-        latText.setText("Latitude " +  hillfort.lat.toString())
+        lngText.setText("Longitude " +hillfort.location.lng.toString())
+        latText.setText("Latitude " +  hillfort.location.lat.toString())
         notes.setText(hillfort.notes)
         btnAdd.setText(R.string.save_hillfort)
         chooseImage.setText((R.string.change_hillfort_image))
         deleteHillfortBtn.visibility = View.VISIBLE
-        val images = findViewById<ViewPager>(R.id.hillfortImages)
-        val adapter =
-            ImageAdapter(this, hillfort.imageStore)
-        images.adapter = adapter
+        hillfortImages.setImageBitmap(readImageFromPath(this, hillfort.image))
+        if (hillfort.image != null) {
+            chooseImage.setText(R.string.change_hillfort_image)
+        }
+        this.showLocation(hillfort.location)
         btnAdd.setText(R.string.save_hillfort)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_hillfort, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun showLocation(location: LocationModel) {
+        latText.setText("%.6f".format(location.lat))
+        lngText.setText("%.6f".format(location.lng))
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

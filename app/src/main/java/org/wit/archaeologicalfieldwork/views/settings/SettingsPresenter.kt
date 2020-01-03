@@ -22,13 +22,14 @@ class SettingsPresenter (val view: SettingsView){
     fun doBackToList(){
         view.startActivity<HillfortListView>()
     }
-
+/*
     fun doDeleteUser(){
         app.users.deleteUser(app.users.findCurrentUser())
         view.toast("Account Deleted")
         view.startActivity<LoginView>()
     }
-
+*/
+    /*
     fun doSaveSettings(){
         if (view.settingUserName.text.isNotEmpty() && view.settingEmail.text.isNotEmpty() && view.settingPassword.text.isNotEmpty()) {
             if (isEmailValid(view.settingEmail.text.toString()) == true) {
@@ -47,6 +48,8 @@ class SettingsPresenter (val view: SettingsView){
         }
     }
 
+     */
+/*
     fun doShowUserStats(){
         view.totalUserHillforts.setText(app.users.findCurrentUser().emailAddress + "'s hillforts total : " + app.users.findCurrentUser().hillforts.size )
         var visited = 0
@@ -73,4 +76,6 @@ class SettingsPresenter (val view: SettingsView){
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
+
+ */
 }

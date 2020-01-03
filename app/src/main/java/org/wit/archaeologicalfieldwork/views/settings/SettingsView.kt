@@ -28,13 +28,13 @@ class SettingsView : BaseView(), AnkoLogger {
         setContentView(R.layout.activity_settings)
         init(toolbarSettings, true)
 
-        settingEmail.setText(presenter.app.users.findCurrentUser().emailAddress)
-        settingPassword.setText(presenter.app.users.findCurrentUser().password)
+        //settingEmail.setText(presenter.app.)
+        //settingPassword.setText(presenter.app.users.findCurrentUser().password)
 
         btnBackToList.setOnClickListener {
             presenter.doBackToList()
         }
-
+/*
         btnSaveSettings.setOnClickListener {
             presenter.doSaveSettings()
         }
@@ -45,7 +45,8 @@ class SettingsView : BaseView(), AnkoLogger {
 
         presenter.doShowUserStats()
     }
-
+ */
+    }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_settings, menu)
         return super.onCreateOptionsMenu(menu)

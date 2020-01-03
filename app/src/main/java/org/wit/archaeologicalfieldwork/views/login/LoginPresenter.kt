@@ -7,6 +7,7 @@ import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView
 import org.wit.archaeologicalfieldwork.views.signup.SignUpView
 import org.wit.archaeologicalfieldwork.main.MainApp
+import org.wit.archaeologicalfieldwork.models.firebase.HillfortFireStore
 import org.wit.archaeologicalfieldwork.views.Base.BasePresenter
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 import org.wit.archaeologicalfieldwork.views.Base.VIEW
@@ -15,8 +16,10 @@ import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 class LoginPresenter (view: BaseView): BasePresenter(view){
 
     var auth: FirebaseAuth = FirebaseAuth.getInstance()
+    var fireStore: HillfortFireStore? = null
 
     init {
+        if (app.hillforts is HillfortFireStore)
         app = view.application as MainApp
     }
 

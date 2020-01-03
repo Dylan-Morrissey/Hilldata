@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <androidx.viewpager.widget.ViewPager
+                <ImageView
                     android:id="@+id/hillfortImages"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" />
@@ -50,6 +50,7 @@
                     android:layout_height="70dp"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"/>
+
 
 
                 <EditText

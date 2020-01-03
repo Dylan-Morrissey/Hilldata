@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Dylan\\AndroidStudioProjects\\Hilldata\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\147916af8a905c4e15af657e5fb3e6df\\play-services-base-17.1.0\\res\\values-ca\\values.xml",
+                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\6b4b5bc3433b6bc3909998edabdbe771\\play-services-base-17.1.0\\res\\values-ca\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\5f73b3dbac68c92d84ba46e9c6205e46\\appcompat-1.1.0\\res\\values-ca\\values-ca.xml",
+                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\d711c97bb6f88ff5b7d22037d0cc8e07\\appcompat-1.1.0\\res\\values-ca\\values-ca.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\b8cd411b9e22abbf365ff2dcab1dafa0\\jetified-play-services-basement-17.0.0\\res\\values-ca\\values.xml",
+                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\f7420b6e43bfd8291a10195ad2a500f2\\jetified-play-services-basement-17.0.0\\res\\values-ca\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\2972ebfdd545005e1c9a70bc2daa2585\\core-1.1.0\\res\\values-ca\\values-ca.xml",
+                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\9c623595c330b3d9e26012833f626e85\\core-1.1.0\\res\\values-ca\\values-ca.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

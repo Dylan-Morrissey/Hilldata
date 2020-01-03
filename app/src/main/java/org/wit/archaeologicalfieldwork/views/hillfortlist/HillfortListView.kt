@@ -1,7 +1,5 @@
 package org.wit.archaeologicalfieldwork.views.hillfortlist
 
-import HillfortAdapter
-import HillfortListener
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -10,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.AnkoLogger
 import org.wit.archaeologicalfieldwork.R
+import org.wit.archaeologicalfieldwork.adapter.HillfortAdapter
+import org.wit.archaeologicalfieldwork.adapter.HillfortListener
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
@@ -20,21 +20,20 @@ class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hillfort_list)
-        toolbar.title = title
-        init(toolbar, false)
+        super.init(toolbar, false)
 
         presenter = initPresenter(HillfortListPresenter(this)) as HillfortListPresenter
+
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = HillfortAdapter(presenter.getHillforts(), this)
-        recyclerView.adapter?.notifyDataSetChanged()
+        presenter.loadHillforts()
     }
 
 
-//    fun showHillforts(hillforts:List<HillfortModel>){
-//        recyclerView.adapter = HillfortAdapter(hillforts, this)
-//        recyclerView.adapter?.notifyDataSetChanged()
-//    }
+    override fun showHillforts(hillforts:List<HillfortModel>){
+        recyclerView.adapter = HillfortAdapter(hillforts, this)
+        recyclerView.adapter?.notifyDataSetChanged()
+    }
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -57,7 +56,7 @@ class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        recyclerView.adapter?.notifyDataSetChanged()
+        presenter.loadHillforts()
         super.onActivityResult(requestCode, resultCode, data)
     }
 }

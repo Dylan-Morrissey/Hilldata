@@ -18,24 +18,31 @@ import org.wit.archaeologicalfieldwork.views.Base.BaseView
 class HillfortMapView: BaseView(), GoogleMap.OnMarkerClickListener {
 
     lateinit var presenter: HillfortMapPresenter
+    lateinit var map : GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hillfort_maps)
-        init(toolbarMap, true)
+        super.init(toolbarMap, true)
 
         presenter = initPresenter(HillfortMapPresenter(this)) as HillfortMapPresenter
 
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync {
-            presenter.doPopulateMap(it)
+            map = it
+            map.setOnMarkerClickListener(this)
+            presenter.loadHillforts()
         }
     }
 
     override fun showHillfort(hillfort: HillfortModel) {
-        currentTitle.text = hillfort!!.name
-        currentDescription.text = hillfort!!.description
+        currentTitle.text = hillfort.name
+        currentDescription.text = hillfort.description
         currentImage.setImageBitmap(readImageFromPath(this, hillfort.image))
+    }
+
+    override fun showHillforts(hillforts: List<HillfortModel>) {
+        presenter.doPopulateMap(map, hillforts)
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {

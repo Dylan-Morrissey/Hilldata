@@ -21,13 +21,6 @@ class ForgotPasswordPresenter (view: BaseView): BasePresenter(view){
     }
 
     fun doResetPassword(enteredEmail:String){
-        for (x in app.users.findAllUsers()){
-            if (enteredEmail == x.emailAddress) {
-                view?.info { "forgot button pressed" }
-                view?.toast("Password: " + x.password)
-            } else {
-                view?.info("Invalid email address")
-            }
-        }
+
     }
 }

@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
     tools:context=".views.login.LoginView">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,9 +17,11 @@
         android:layout_centerVertical="true">
 
         <ImageView
+            android:id="@+id/logo"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:src="@drawable/hilldata" />
+
 
         <EditText
             android:id="@+id/loginEmail"
@@ -78,6 +83,6 @@
             android:layout_gravity="center"
             android:textSize="20dp"
             />
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

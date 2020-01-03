@@ -1186,7 +1186,6 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fab
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1236,6 +1235,7 @@ id lngText
 id lnglatCard
 id loginEmail
 id loginPassword
+id logo
 id mapView
 id masked
 id message

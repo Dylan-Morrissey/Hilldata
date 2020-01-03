@@ -5,32 +5,29 @@ import org.jetbrains.anko.startActivity
 import org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView
 import org.wit.archaeologicalfieldwork.views.signup.SignUpView
 import org.wit.archaeologicalfieldwork.main.MainApp
+import org.wit.archaeologicalfieldwork.views.Base.BasePresenter
+import org.wit.archaeologicalfieldwork.views.Base.BaseView
+import org.wit.archaeologicalfieldwork.views.Base.VIEW
 import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 
-class LoginPresenter (val view: LoginView){
-
-    var app: MainApp
-
-    init {
-        app = view.application as MainApp
-    }
+class LoginPresenter (view: BaseView): BasePresenter(view){
 
     fun doForgotPassword(){
-        view.startActivity<ForgotPasswordView>()
+        view?.navigateTo(VIEW.FORGOTPASSWORD)
     }
 
     fun doSignUp(){
-        view.startActivity<SignUpView>()
+        view?.navigateTo(VIEW.SIGNUP)
     }
 
     fun doSignIn(loginEmail:String, loginPassword: String) {
         for (x in app.users.findAllUsers()) {
             if (x.emailAddress == loginEmail && x.password == loginPassword) {
                 app.user = app.users.findUser(x.id)!!
-                view.startActivity<HillfortListView>()
-                view.finish()
+                view?.navigateTo(VIEW.HILLFORTLIST)
+                view?.finish()
             } else {
-                view.info { "Invalid Email or Password" }
+                view?.info { "Invalid Email or Password" }
             }
         }
     }

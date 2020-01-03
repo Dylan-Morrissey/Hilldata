@@ -38,7 +38,7 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
     var edit = false;
 
     init {
-        user = app.user
+        user = app.users.findCurrentUser()
         if (view.intent.hasExtra("hillfort_edit")) {
             edit = true
             hillfort = view.intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!

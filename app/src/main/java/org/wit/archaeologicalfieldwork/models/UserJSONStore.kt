@@ -24,6 +24,7 @@ class UserJSONStore : UserStore, AnkoLogger {
 
     val context: Context
     var users = mutableListOf<UserModel>()
+    var user:UserModel = UserModel()
 
     constructor (context: Context) {
         this.context = context
@@ -35,6 +36,10 @@ class UserJSONStore : UserStore, AnkoLogger {
     override fun findUser(id: Long): UserModel? {
         val finduser: UserModel? = users.find { p -> p.id == id}
         return finduser
+    }
+
+    override fun findCurrentUser(): UserModel {
+        return user
     }
 
     override fun findHillfortById(user: UserModel, id: Long): HillfortModel? {
@@ -66,7 +71,6 @@ class UserJSONStore : UserStore, AnkoLogger {
         val foundUsers: UserModel? = users.find { hill -> hill.id == user.id }
         if (foundUsers != null){
             foundUsers.id = user.id
-            foundUsers.userName = user.userName
             foundUsers.emailAddress = user.emailAddress
             foundUsers.password = user.password
             foundUsers.hillforts = user.hillforts

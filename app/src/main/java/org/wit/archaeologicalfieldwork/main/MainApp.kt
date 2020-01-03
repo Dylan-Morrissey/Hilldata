@@ -11,7 +11,6 @@ import org.wit.archaeologicalfieldwork.models.UserStore
 class MainApp : Application(), AnkoLogger {
 
     lateinit var  users:UserStore
-    lateinit var  user:UserModel
 
     override fun onCreate() {
         super.onCreate()

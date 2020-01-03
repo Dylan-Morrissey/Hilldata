@@ -1322,8 +1322,6 @@ id navigation_header_container
 id never
 id newEmail
 id newPassword
-id newPasswordConfirm
-id newUsername
 id none
 id normal
 id notes
@@ -1340,6 +1338,7 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio

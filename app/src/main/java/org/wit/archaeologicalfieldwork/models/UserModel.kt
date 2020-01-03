@@ -8,7 +8,6 @@ import kotlinx.android.parcel.Parcelize
 data class UserModel (
 
     var id: Long = 0,
-    var userName: String="",
     var emailAddress: String="",
     var password: String="",
     var hillforts: ArrayList<HillfortModel> = ArrayList<HillfortModel>()

@@ -24,7 +24,7 @@ class SettingsPresenter (val view: SettingsView){
     }
 
     fun doDeleteUser(){
-        app.users.deleteUser(app.user)
+        app.users.deleteUser(app.users.findCurrentUser())
         view.toast("Account Deleted")
         view.startActivity<LoginView>()
     }
@@ -32,11 +32,10 @@ class SettingsPresenter (val view: SettingsView){
     fun doSaveSettings(){
         if (view.settingUserName.text.isNotEmpty() && view.settingEmail.text.isNotEmpty() && view.settingPassword.text.isNotEmpty()) {
             if (isEmailValid(view.settingEmail.text.toString()) == true) {
-                app.user.userName = view.settingUserName.text.toString()
-                app.user.emailAddress = view.settingEmail.text.toString()
-                app.user.password = view.settingPassword.text.toString()
-                app.users.updateUser(app.user.copy())
-                view.info("Update Button Pressed:${app.user}")
+                app.users.findCurrentUser().emailAddress = view.settingEmail.text.toString()
+                app.users.findCurrentUser().password = view.settingPassword.text.toString()
+                app.users.updateUser(app.users.findCurrentUser().copy())
+                view.info("Update Button Pressed:${app.users.findCurrentUser()}")
                 view.setResult(AppCompatActivity.RESULT_OK)
                 view.finish()
                 doBackToList()
@@ -49,18 +48,18 @@ class SettingsPresenter (val view: SettingsView){
     }
 
     fun doShowUserStats(){
-        view.totalUserHillforts.setText(app.user.userName + "'s hillforts total : " + app.user.hillforts.size )
+        view.totalUserHillforts.setText(app.users.findCurrentUser().emailAddress + "'s hillforts total : " + app.users.findCurrentUser().hillforts.size )
         var visited = 0
         var pictueCount = 0
-        for (userhillfort in app.user.hillforts) {
+        for (userhillfort in app.users.findCurrentUser().hillforts) {
             pictueCount += userhillfort.imageStore.size
             if (userhillfort.visited == true) {
                 visited += 1
             }
         }
 
-        view.hillfortsVisited.setText(app.user.userName + " hillfort visited total: " + visited)
-        view.totalPictures.setText(app.user.userName + " pictue upload count: " + pictueCount)
+        view.hillfortsVisited.setText(app.users.findCurrentUser().emailAddress + " hillfort visited total: " + visited)
+        view.totalPictures.setText(app.users.findCurrentUser().emailAddress + " pictue upload count: " + pictueCount)
         view.totalUsers.setText("Hilldata total number of users: " + app.users.findAllUsers().size)
         var users = app.users.findAllUsers()
         var hillfortCount = 0

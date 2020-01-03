@@ -2,17 +2,21 @@ package org.wit.archaeologicalfieldwork.views.signup
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_signup.*
 import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.main.MainApp
+import org.wit.archaeologicalfieldwork.views.Base.BasePresenter
+import org.wit.archaeologicalfieldwork.views.Base.BaseView
+import org.wit.archaeologicalfieldwork.views.Base.VIEW
 import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 import org.wit.archaeologicalfieldwork.views.login.LoginView
 
-class SignUpPresenter (val view: SignUpView){
+class SignUpPresenter (view: BaseView): BasePresenter(view){
 
-    var app: MainApp
+    var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
 
     init {
@@ -20,24 +24,13 @@ class SignUpPresenter (val view: SignUpView){
     }
 
 
-    fun doRegisterUser() {
-        if (view.isEmailValid(view.newEmail.text.toString()) == true) {
-            if (view.newPassword.text.toString() == view.newPasswordConfirm.text.toString()) {
-                view.newuser.userName = view.newUsername.text.toString()
-                view.newuser.emailAddress = view.newEmail.text.toString()
-                view.newuser.password = view.newPassword.text.toString()
-                app.users.createUser(view.newuser.copy())
-                view.info("Register Button Pressed:${view.newuser}")
-                view.setResult(AppCompatActivity.RESULT_OK)
-                view.finish()
-                view.startActivity<LoginView>()
+    fun doRegisterUser(email:String, password:String) {
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(view!!) { task ->
+            if (task.isSuccessful) {
+                view?.navigateTo(VIEW.HILLFORTLIST)
             } else {
-                view.newPassword.setText("")
-                view.newPasswordConfirm.setText("")
-                view.toast("Passwords do not match Please try again")
+                view?.toast("Sign Up Failed: ${task.exception?.message}")
             }
-        } else {
-            view.toast("Please eneter a valid email address.")
         }
     }
 }

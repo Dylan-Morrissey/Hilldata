@@ -18,7 +18,7 @@ class HillfortMapPresenter (val view: HillfortMapView){
     fun doPopulateMap(map: GoogleMap) {
         map.uiSettings.setZoomControlsEnabled(true)
         map.setOnMarkerClickListener(view)
-        app.user.hillforts.forEach {
+        app.users.findCurrentUser().hillforts.forEach {
             val loc = LatLng(it.lat, it.lng)
             val options = MarkerOptions().title(it.name).position(loc)
             map.addMarker(options).tag = it.id
@@ -27,7 +27,7 @@ class HillfortMapPresenter (val view: HillfortMapView){
 
     fun doMarkerSelected(marker: Marker) {
         val tag = marker.tag as Long
-        val hillfort = app.users.findHillfortById(app.user, tag)
+        val hillfort = app.users.findHillfortById(app.users.findCurrentUser(), tag)
         if(hillfort != null)view.showHillfort(hillfort)
 
     }

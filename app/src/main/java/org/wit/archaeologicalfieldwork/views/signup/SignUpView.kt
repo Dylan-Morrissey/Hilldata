@@ -10,9 +10,11 @@ import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.UserModel
+import org.wit.archaeologicalfieldwork.views.Base.BaseView
+import org.wit.archaeologicalfieldwork.views.Base.VIEW
 import org.wit.archaeologicalfieldwork.views.login.LoginView
 
-class SignUpView : AppCompatActivity(), AnkoLogger {
+class SignUpView : BaseView(), AnkoLogger {
 
     var newuser = UserModel()
     lateinit var presenter : SignUpPresenter
@@ -21,23 +23,16 @@ class SignUpView : AppCompatActivity(), AnkoLogger {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
         info("Login Activity Started...")
-        presenter = SignUpPresenter(this)
+        presenter = initPresenter(SignUpPresenter(this)) as SignUpPresenter
 
         btnRegester.setOnClickListener() {
-            if (newUsername.text.isNotEmpty() && newEmail.text.isNotEmpty() && newPassword.text.isNotEmpty() && newPasswordConfirm.text.isNotEmpty()) {
-                presenter.doRegisterUser()
-            } else {
-                toast("Please fill in to register")
-            }
+            var email = newEmail.text.toString()
+            var password = newPassword.text.toString()
+            presenter.doRegisterUser(email, password)
         }
 
         btnBackSignIn.setOnClickListener() {
-            val intent = Intent(baseContext, LoginView::class.java)
-            startActivity(intent)
+            presenter.view?.navigateTo(VIEW.LOGIN)
         }
-    }
-
-    fun isEmailValid(email:String): Boolean {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }

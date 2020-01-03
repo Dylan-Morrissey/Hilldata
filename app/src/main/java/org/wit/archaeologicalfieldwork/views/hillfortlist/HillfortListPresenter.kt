@@ -19,7 +19,7 @@ class HillfortListPresenter(val view: HillfortListView) {
 
     init {
         app = view.application as MainApp
-        user = app.user
+        user = app.users.findCurrentUser()
     }
 
     fun getHillforts() = app.users.findAllHillforts(user)

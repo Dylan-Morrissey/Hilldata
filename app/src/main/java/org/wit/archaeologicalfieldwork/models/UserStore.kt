@@ -12,4 +12,5 @@ interface UserStore {
     fun createHillfort(hillfort:HillfortModel, user: UserModel)
     fun updateHillfort(hillfort: HillfortModel, user: UserModel)
     fun deleteHillfort(hillfort: HillfortModel, user: UserModel)
+    fun findCurrentUser():UserModel
 }

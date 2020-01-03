@@ -21,10 +21,8 @@ class SettingsView : AppCompatActivity(), AnkoLogger {
         presenter = SettingsPresenter(this)
         setContentView(R.layout.activity_settings)
 
-
-        settingUserName.setText(presenter.app.user.userName)
-        settingEmail.setText(presenter.app.user.emailAddress)
-        settingPassword.setText(presenter.app.user.password)
+        settingEmail.setText(presenter.app.users.findCurrentUser().emailAddress)
+        settingPassword.setText(presenter.app.users.findCurrentUser().password)
 
         btnBackToList.setOnClickListener {
             presenter.doBackToList()

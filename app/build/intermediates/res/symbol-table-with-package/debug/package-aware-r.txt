@@ -1553,6 +1553,9 @@ string search_menu_title
 string select_hillfort_image
 string settings
 string status_bar_notification_info_overflow
+string title_activity_edit_location
+string title_activity_hillfort
+string title_activity_hillfort_list
 string title_activity_hillfort_maps
 string title_activity_map
 string username

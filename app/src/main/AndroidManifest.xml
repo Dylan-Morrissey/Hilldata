@@ -21,7 +21,6 @@
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -31,13 +30,26 @@
         <activity
             android:name=".views.hillfort.HillfortView"
             android:theme="@style/LoginPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView"
+                />
         </activity>
         <activity
             android:name=".views.forgotpassword.ForgotPasswordView"
-            android:theme="@style/LoginPage"></activity>
+            android:theme="@style/LoginPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.login.LoginView"
+                />
+        </activity>
         <activity
             android:name=".views.signup.SignUpView"
             android:theme="@style/LoginPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.login.LoginView"
+                />
         </activity>
         <activity android:name=".views.hillfortlist.HillfortListView"
             android:theme="@style/LoginPage">
@@ -56,10 +68,20 @@
 
         <activity
             android:name=".views.settings.SettingsView"
-            android:theme="@style/LoginPage"></activity>
+            android:theme="@style/LoginPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView"
+                />
+        </activity>
 
         <activity android:name=".views.map.HillfortMapView"
-            android:label="@string/title_activity_hillfort_maps"></activity>
+            android:label="@string/title_activity_hillfort_maps">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView"
+                />
+        </activity>
     </application>
 
 </manifest>

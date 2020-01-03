@@ -638,6 +638,9 @@
     <string name="select_hillfort_image">Select hillfort image</string>
     <string name="settings">Settings</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="title_activity_edit_location">Hillfort</string>
+    <string name="title_activity_hillfort">Hillfort</string>
+    <string name="title_activity_hillfort_list">Hillfort</string>
     <string name="title_activity_hillfort_maps">Map of All Hillforts</string>
     <string name="title_activity_map">Map</string>
     <string name="username">Username</string>

@@ -45,13 +45,23 @@
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.hillfort.HillfortView"
             android:theme="@style/LoginPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
         </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView"
-            android:theme="@style/LoginPage" />
+            android:theme="@style/LoginPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.login.LoginView" />
+        </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.signup.SignUpView"
             android:theme="@style/LoginPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.login.LoginView" />
         </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView"
@@ -64,17 +74,33 @@
 
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.editlocation.EditLocationView"
-            android:label="@string/title_activity_map" />
+            android:label="@string/title_activity_map" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfort.HillfortView" />
+        </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsView"
-            android:theme="@style/LoginPage" />
+            android:theme="@style/LoginPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
+        </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.map.HillfortMapView"
-            android:label="@string/title_activity_hillfort_maps" />
+            android:label="@string/title_activity_hillfort_maps" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
+        </activity>
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

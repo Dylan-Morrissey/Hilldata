@@ -1,6 +1,6 @@
 package org.wit.archaeologicalfieldwork.views.Base
 import android.content.Intent
-import android.location.Location
+
 import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -16,6 +16,7 @@ import org.wit.archaeologicalfieldwork.views.map.HillfortMapView
 import org.wit.archaeologicalfieldwork.views.settings.SettingsView
 import org.wit.archaeologicalfieldwork.views.signup.SignUpView
 import org.wit.archaeologicalfieldwork.views.splashscreen.SplashScreenView
+import org.wit.archaeologicalfieldwork.models.Location
 
 val IMAGE_REQUEST = 1
 val LOCATION_REQUEST = 2
@@ -52,9 +53,10 @@ open abstract class BaseView(): AppCompatActivity(), AnkoLogger {
         return presenter
     }
 
-    fun init(toolbar: Toolbar) {
+    fun init(toolbar: Toolbar, upEnabled:Boolean) {
         toolbar.title = title
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(upEnabled)
     }
 
     override fun onDestroy() {
@@ -79,6 +81,7 @@ open abstract class BaseView(): AppCompatActivity(), AnkoLogger {
 
     open fun showHillfort(hillfort: HillfortModel) {}
     open fun showHillforts(hillfort: List<HillfortModel>) {}
+    open fun showLocation(location: Location){}
     open fun showProgress() {}
     open fun hideProgress() {}
 }

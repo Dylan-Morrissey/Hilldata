@@ -1,18 +1,24 @@
 package org.wit.archaeologicalfieldwork.models
 
 import android.os.Parcelable
-import com.google.android.gms.maps.model.LatLng
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class HillfortModel(var id: Long = 0,
+@Entity
+data class HillfortModel(@PrimaryKey(autoGenerate = true) var id: Long = 0,
                          var name: String="",
                          var description: String= "",
                          var image:String = "",
                          var imageStore: ArrayList<String> = ArrayList(),
-                         var lat:Double =0.0,
-                         var lng:Double =0.0,
-                         var zoom:Float =0f,
                          var visited:Boolean =false,
                          var date: String = "",
-                         var notes: String = ""):Parcelable
+                         var notes: String = "",
+                         @Embedded var location : Location = Location() ):Parcelable
+
+@Parcelize
+data class Location(var lat: Double = 0.0,
+                    var lng: Double = 0.0,
+                    var zoom: Float = 0f) : Parcelable

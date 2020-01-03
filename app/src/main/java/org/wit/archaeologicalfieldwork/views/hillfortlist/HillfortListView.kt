@@ -1,7 +1,5 @@
 package org.wit.archaeologicalfieldwork.views.hillfortlist
 
-import HillfortAdapter
-import HillfortListener
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -10,17 +8,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.AnkoLogger
 import org.wit.archaeologicalfieldwork.R
+import org.wit.archaeologicalfieldwork.adapter.HillfortAdapter
+import org.wit.archaeologicalfieldwork.adapter.HillfortListener
 import org.wit.archaeologicalfieldwork.models.HillfortModel
+import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
-class HillfortListView: AppCompatActivity(), HillfortListener, AnkoLogger {
+class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
 
     lateinit var presenter: HillfortListPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hillfort_list)
+        presenter = initPresenter(HillfortListPresenter(this)) as HillfortListPresenter
         toolbar.title = title
-        setSupportActionBar(toolbar)
+        super.init(toolbar, false)
 
         presenter = HillfortListPresenter(this)
         val layoutManager = LinearLayoutManager(this)

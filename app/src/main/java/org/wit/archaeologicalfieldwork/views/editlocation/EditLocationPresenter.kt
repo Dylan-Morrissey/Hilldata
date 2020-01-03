@@ -6,28 +6,28 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import org.wit.archaeologicalfieldwork.models.LocationModel
+import org.wit.archaeologicalfieldwork.models.Location
 import org.wit.archaeologicalfieldwork.views.Base.BasePresenter
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
 class EditLocationPresenter(view: BaseView) : BasePresenter(view) {
 
-    var location = LocationModel()
+    var location = Location()
 
     init {
-        location = view.intent.extras?.getParcelable<LocationModel>("location")!!
+        location = view.intent.extras?.getParcelable<Location>("location")!!
     }
 
     fun doConfigureMap(map: GoogleMap) {
         val loc = LatLng(location.lat, location.lng)
         val options = MarkerOptions()
-            .title("Placemark")
+            .title("Hillfort")
             .snippet("GPS : " + loc.toString())
             .draggable(true)
             .position(loc)
         map.addMarker(options)
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, location.zoom))
-        view?.showLocation(loc.latitude, loc.longitude);
+        view?.showLocation(Location(loc.latitude, loc.longitude))
     }
 
     fun doUpdateLocation(lat: Double, lng: Double) {

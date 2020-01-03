@@ -32,7 +32,7 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
 
         fun bind(hillfort: HillfortModel, listener: HillfortListener){
             itemView.hillfortNameCard.text  = hillfort.name
-            itemView.lnglatCard.text = "Longdiude: "+ hillfort.lng.toString() + "\nLatitude: " + hillfort.lat.toString()
+            itemView.lnglatCard.text = "Longdiude: "+ hillfort.location.lng.toString() + "\nLatitude: " + hillfort.location.lat.toString()
             itemView.checkboxCard.setChecked(hillfort.visited)
             val viewPager = itemView.findViewById<ViewPager>(R.id.imageIcon)
             val adapter = ImageAdapter(

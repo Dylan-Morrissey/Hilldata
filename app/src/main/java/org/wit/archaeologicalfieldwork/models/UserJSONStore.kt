@@ -104,9 +104,7 @@ class UserJSONStore : UserStore, AnkoLogger {
                     hillfort.name = hillfortModel.name
                     hillfort.description = hillfortModel.description
                     hillfort.imageStore = hillfortModel.imageStore
-                    hillfort.lat = hillfortModel.lat
-                    hillfort.lng = hillfortModel.lng
-                    hillfort.zoom = hillfort.zoom
+                    hillfort.location = hillfortModel.location
                     hillfort.visited = hillfortModel.visited
                     hillfort.date = hillfortModel.date
                     hillfort.notes = hillfortModel.notes

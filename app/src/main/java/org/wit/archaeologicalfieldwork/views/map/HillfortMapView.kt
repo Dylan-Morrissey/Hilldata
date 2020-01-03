@@ -13,18 +13,20 @@ import kotlinx.android.synthetic.main.content_hillfort_maps.*
 import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
+import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
-class HillfortMapView: AppCompatActivity(), GoogleMap.OnMarkerClickListener {
+class HillfortMapView: BaseView(), GoogleMap.OnMarkerClickListener {
 
+    lateinit var map: GoogleMap
     lateinit var presenter: HillfortMapPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hillfort_maps)
-        setSupportActionBar(toolbarMap)
+        super.init(toolbarMap, true)
         toolbarMap.title = title
 
-        presenter = HillfortMapPresenter(this)
+        presenter = initPresenter(HillfortMapPresenter(this)) as HillfortMapPresenter
 
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync {
@@ -32,7 +34,7 @@ class HillfortMapView: AppCompatActivity(), GoogleMap.OnMarkerClickListener {
         }
     }
 
-    fun showHillfort(hillfort: HillfortModel) {
+    override fun showHillfort(hillfort: HillfortModel) {
         currentTitle.text = hillfort!!.name
         currentDescription.text = hillfort!!.description
         currentImage.setImageBitmap(readImageFromPath(this, hillfort.image))

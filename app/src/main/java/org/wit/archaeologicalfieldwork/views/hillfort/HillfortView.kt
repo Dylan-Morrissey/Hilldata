@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.models.HillfortModel
+import org.wit.archaeologicalfieldwork.models.Location
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 import java.util.*
 
@@ -86,8 +87,6 @@ class HillfortView : BaseView(), AnkoLogger {
         description.setText(hillfort.description)
         checkbox.setChecked(hillfort.visited)
         dateText.setText(hillfort.date)
-        lngText.setText("Longitude " +hillfort.lng.toString())
-        latText.setText("Latitude " +  hillfort.lat.toString())
         notes.setText(hillfort.notes)
         btnAdd.setText(R.string.save_hillfort)
         chooseImage.setText((R.string.change_hillfort_image))
@@ -97,6 +96,7 @@ class HillfortView : BaseView(), AnkoLogger {
             ImageAdapter(this, hillfort.imageStore)
         images.adapter = adapter
         btnAdd.setText(R.string.save_hillfort)
+        this.showLocation(hillfort.location)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -139,6 +139,11 @@ class HillfortView : BaseView(), AnkoLogger {
         super.onResume()
         mapView.onResume()
         presenter.doResartLocationUpdates()
+    }
+
+    override fun showLocation(location: Location) {
+        latText.setText("%.6f".format(location.lat))
+        lngText.setText("%.6f".format(location.lng))
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

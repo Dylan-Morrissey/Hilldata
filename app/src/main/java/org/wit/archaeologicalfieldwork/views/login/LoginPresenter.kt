@@ -19,8 +19,9 @@ class LoginPresenter (view: BaseView): BasePresenter(view){
     var fireStore: HillfortFireStore? = null
 
     init {
-        if (app.hillforts is HillfortFireStore)
-        app = view.application as MainApp
+        if (app.hillforts is HillfortFireStore) {
+            fireStore = app.hillforts as HillfortFireStore
+        }
     }
 
     fun doForgotPassword(){
@@ -33,14 +34,21 @@ class LoginPresenter (view: BaseView): BasePresenter(view){
 
     fun doSignIn(loginEmail:String, loginPassword: String) {
         view?.showProgress()
-        auth.signInWithEmailAndPassword(loginEmail, loginPassword)
-            .addOnCompleteListener(view!!) { task ->
-                if (task.isSuccessful) {
+        auth.signInWithEmailAndPassword(loginEmail, loginPassword).addOnCompleteListener(view!!) { task ->
+        if (task.isSuccessful) {
+            if (fireStore != null) {
+                fireStore!!.fetchHillforts {
+                    view?.hideProgress()
                     view?.navigateTo(VIEW.HILLFORTLIST)
-                } else {
-                    view?.toast("Incorrect Email address or Password")
                 }
+            } else {
                 view?.hideProgress()
+                view?.navigateTo(VIEW.HILLFORTLIST)
             }
+        } else{
+            view?.hideProgress()
+            view?.toast("Incorrect Email address or Password")
+            }
+        }
     }
 }

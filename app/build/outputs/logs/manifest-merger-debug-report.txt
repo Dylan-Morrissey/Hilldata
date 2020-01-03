@@ -14,6 +14,8 @@ MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Dyla
 MERGED from [androidx.room:room-runtime:2.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\060a8d8ffec80b9e47bfa47fab72020d\room-runtime-2.1.0\AndroidManifest.xml:17:1-30:12
 MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:15:1-39:12
+MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\41b58dcfeb0b025fcea65ba76ce08cc6\glide-4.10.0\AndroidManifest.xml:2:1-12:12
 MERGED from [org.jetbrains.anko:commons-base:0.10.8] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\5e221b67fe5e2b59c8bc0d4c2891a20c\jetified-commons-base-0.10.8\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f55f272ff0252c2aae783be2091f3beb\play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1cb4ede113cbac55b9861792561502b4\firebase-auth-interop-18.0.0\AndroidManifest.xml:2:1-10:12
@@ -47,6 +49,7 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Dylan\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\e9b3155b7ce8a00254fddd580d0684b2\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\47b98de8f85878120b410c3e1504a6b1\core-runtime-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f2e8f01a085aa4a7896e7d4e79b5d3d0\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\79fe66bba8702b7e267b34edf6a6dadf\gifdecoder-4.10.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\bd0554f8149d31bb724efe4eb07c760d\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\eff1a882902c49ee54630bccd0490a64\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\90984b39e3af1dd778ae51079b880d8b\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -96,6 +99,10 @@ MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\ca
 MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:28:5-36:19
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:29:5-37:19
+MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\41b58dcfeb0b025fcea65ba76ce08cc6\glide-4.10.0\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\41b58dcfeb0b025fcea65ba76ce08cc6\glide-4.10.0\AndroidManifest.xml:10:5-20
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f55f272ff0252c2aae783be2091f3beb\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f55f272ff0252c2aae783be2091f3beb\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1cb4ede113cbac55b9861792561502b4\firebase-auth-interop-18.0.0\AndroidManifest.xml:7:5-8:19
@@ -110,6 +117,8 @@ MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dyla
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9c623595c330b3d9e26012833f626e85\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\9c623595c330b3d9e26012833f626e85\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\79fe66bba8702b7e267b34edf6a6dadf\gifdecoder-4.10.0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\79fe66bba8702b7e267b34edf6a6dadf\gifdecoder-4.10.0\AndroidManifest.xml:9:5-20
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\bd0554f8149d31bb724efe4eb07c760d\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\bd0554f8149d31bb724efe4eb07c760d\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
@@ -232,6 +241,10 @@ MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\ca
 MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\41b58dcfeb0b025fcea65ba76ce08cc6\glide-4.10.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\41b58dcfeb0b025fcea65ba76ce08cc6\glide-4.10.0\AndroidManifest.xml:6:5-8:41
 MERGED from [org.jetbrains.anko:commons-base:0.10.8] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\5e221b67fe5e2b59c8bc0d4c2891a20c\jetified-commons-base-0.10.8\AndroidManifest.xml:7:5-9:41
 MERGED from [org.jetbrains.anko:commons-base:0.10.8] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\5e221b67fe5e2b59c8bc0d4c2891a20c\jetified-commons-base-0.10.8\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f55f272ff0252c2aae783be2091f3beb\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
@@ -298,6 +311,8 @@ MERGED from [androidx.arch.core:core-runtime:2.0.1] C:\Users\Dylan\.gradle\cache
 MERGED from [androidx.arch.core:core-runtime:2.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\47b98de8f85878120b410c3e1504a6b1\core-runtime-2.0.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f2e8f01a085aa4a7896e7d4e79b5d3d0\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f2e8f01a085aa4a7896e7d4e79b5d3d0\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\79fe66bba8702b7e267b34edf6a6dadf\gifdecoder-4.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\79fe66bba8702b7e267b34edf6a6dadf\gifdecoder-4.10.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\bd0554f8149d31bb724efe4eb07c760d\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\bd0554f8149d31bb724efe4eb07c760d\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\eff1a882902c49ee54630bccd0490a64\interpolator-1.0.0\AndroidManifest.xml:20:5-44
@@ -328,12 +343,16 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:26:5-79
 	android:name
 		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:23:22-76
 uses-permission#android.permission.INTERNET
 ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:27:5-67
 	android:name
 		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:24:22-64
 uses-feature#0x00020000
@@ -374,6 +393,8 @@ service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:33:9-39:19
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:30:9-36:19
 MERGED from [com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:12:9-15:40
 MERGED from [com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:12:9-15:40
 	android:exported
@@ -394,6 +415,12 @@ ADDED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle
 		ADDED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:34:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:33:17-109
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:34:17-107
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 	android:exported

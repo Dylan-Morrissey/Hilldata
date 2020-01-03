@@ -120,9 +120,7 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
             uiThread {
                 view?.finish()
             }
-
         }
-
     }
 
     fun doSelectImage(){
@@ -137,7 +135,6 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
 
     fun doSetLocation() {
         view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", LocationModel(hillfort.location.lat, hillfort.location.lng, hillfort.location.zoom))
-
     }
 
     override fun doActivityResult(requestCode:Int, resultCode: Int, data: Intent) {

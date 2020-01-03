@@ -204,34 +204,40 @@
 114-->[com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:33:17-109
 115                android:value="com.google.firebase.components.ComponentRegistrar" />
 115-->[com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:34:17-82
-116        </service>
-117
-118        <activity
-118-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-119            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-119-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-120            android:exported="false"
-120-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-121            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-121-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-122
-123        <provider
-123-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:17:9-21:39
-124            android:name="com.google.firebase.provider.FirebaseInitProvider"
-124-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:18:13-77
-125            android:authorities="org.wit.archaeologicalfieldwork.firebaseinitprovider"
-125-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:19:13-72
-126            android:exported="false"
-126-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:20:13-37
-127            android:initOrder="100" />
-127-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:21:13-36
-128
-129        <meta-data
-129-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-130            android:name="com.google.android.gms.version"
-130-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-131            android:value="@integer/google_play_services_version" />
-131-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-132    </application>
-133
-134</manifest>
+116            <meta-data
+116-->[com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:33:13-35:85
+117                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+117-->[com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:34:17-107
+118                android:value="com.google.firebase.components.ComponentRegistrar" />
+118-->[com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:35:17-82
+119        </service>
+120
+121        <activity
+121-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+122            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+122-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+123            android:exported="false"
+123-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+124            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+124-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+125
+126        <provider
+126-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:17:9-21:39
+127            android:name="com.google.firebase.provider.FirebaseInitProvider"
+127-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:18:13-77
+128            android:authorities="org.wit.archaeologicalfieldwork.firebaseinitprovider"
+128-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:19:13-72
+129            android:exported="false"
+129-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:20:13-37
+130            android:initOrder="100" />
+130-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:21:13-36
+131
+132        <meta-data
+132-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+133            android:name="com.google.android.gms.version"
+133-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+134            android:value="@integer/google_play_services_version" />
+134-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+135    </application>
+136
+137</manifest>

@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
@@ -34,8 +35,8 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
             itemView.hillfortNameCard.text  = hillfort.name
             itemView.lnglatCard.text = "Longdiude: "+ hillfort.location.lng.toString() + "\nLatitude: " + hillfort.location.lat.toString()
             itemView.checkboxCard.setChecked(hillfort.visited)
+            Glide.with(itemView.context).load(hillfort.image).into(itemView.imageIcon);
             itemView.setOnClickListener{listener.onHillfortClick(hillfort)}
-
         }
     }
 }

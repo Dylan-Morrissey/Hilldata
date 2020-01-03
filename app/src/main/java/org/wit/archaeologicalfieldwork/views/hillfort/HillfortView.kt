@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.DatePicker
 import androidx.viewpager.widget.ViewPager
+import com.bumptech.glide.Glide
 import com.google.android.gms.maps.GoogleMap
 import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
 import kotlinx.android.synthetic.main.activity_hillfort.*
@@ -91,6 +92,7 @@ class HillfortView : BaseView(), AnkoLogger {
         chooseImage.setText((R.string.change_hillfort_image))
         deleteHillfortBtn.visibility = View.VISIBLE
         hillfortImages.setImageBitmap(readImageFromPath(this, hillfort.image))
+        Glide.with(this).load(hillfort.image).into(hillfortImages);
         if (hillfort.image != null) {
             chooseImage.setText(R.string.change_hillfort_image)
         }

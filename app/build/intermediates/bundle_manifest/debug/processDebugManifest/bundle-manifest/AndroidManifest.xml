@@ -64,7 +64,11 @@
 
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.editlocation.EditLocationView"
-            android:label="@string/title_activity_map" />
+            android:label="@string/title_activity_map" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfort.HillfortView" />
+        </activity>
         <activity
             android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsView"
             android:theme="@style/LoginPage" />
@@ -77,9 +81,31 @@
             android:required="false" />
 
         <activity
+            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="org.wit.archaeologicalfieldwork.firebaseinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
 
         <meta-data
             android:name="com.google.android.gms.version"

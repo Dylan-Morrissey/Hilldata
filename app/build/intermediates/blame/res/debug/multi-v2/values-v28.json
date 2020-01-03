@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Dylan\\AndroidStudioProjects\\ArchaeologicalFieldwork\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v28\\values-v28.xml",
+            "outputFile": "C:\\Users\\Dylan\\AndroidStudioProjects\\Hilldata\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v28\\values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\e9ae3774108b833d755ef0f4d315c971\\appcompat-1.0.2\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\5f73b3dbac68c92d84ba46e9c6205e46\\appcompat-1.1.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "330683508643",
+    "firebase_url": "https://hilldata-dylan.firebaseio.com",
+    "project_id": "hilldata-dylan",
+    "storage_bucket": "hilldata-dylan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330683508643:android:3abcc309b6974261b21c16",
+        "android_client_info": {
+          "package_name": "org.wit.archaeologicalfieldwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330683508643-ldn6osih6msvl6crak5laof3ilnf63hk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.wit.archaeologicalfieldwork",
+            "certificate_hash": "205f3a53e124ebd6643b982afd3bdea7070b61c5"
+          }
+        },
+        {
+          "client_id": "330683508643-btv5sf91utj4580v20vg6dkk405s3oah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk_HItBPSA7_L3ojoshN5Ttsg3uIDvoHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330683508643-btv5sf91utj4580v20vg6dkk405s3oah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

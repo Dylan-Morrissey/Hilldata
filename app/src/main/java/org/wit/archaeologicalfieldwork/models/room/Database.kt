@@ -7,5 +7,5 @@ import org.wit.archaeologicalfieldwork.models.HillfortModel
 @Database(entities = arrayOf(HillfortModel::class), version = 1,  exportSchema = false)
 abstract class Database : RoomDatabase() {
 
-  abstract fun placemarkDao(): HillfortDao
+  abstract fun hillfortDao(): HillfortDao
 }

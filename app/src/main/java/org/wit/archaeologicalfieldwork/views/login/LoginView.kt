@@ -17,7 +17,7 @@ class LoginView : BaseView(), AnkoLogger {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        presenter = LoginPresenter(this)
+        presenter = initPresenter(LoginPresenter(this)) as LoginPresenter
         progressBar.visibility = View.GONE
 
         info("Login Activity Started...")

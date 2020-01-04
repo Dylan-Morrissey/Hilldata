@@ -14,7 +14,7 @@ class HillfortStoreRoom(val context: Context) : HillfortStore {
     val database = Room.databaseBuilder(context, Database::class.java, "room_sample.db")
         .fallbackToDestructiveMigration()
         .build()
-    dao = database.placemarkDao()
+    dao = database.hillfortDao()
   }
 
   override fun findAllHillforts(): List<HillfortModel> {

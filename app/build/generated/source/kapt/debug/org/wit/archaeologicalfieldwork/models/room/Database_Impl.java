@@ -127,7 +127,7 @@ public final class Database_Impl extends Database {
   }
 
   @Override
-  public HillfortDao placemarkDao() {
+  public HillfortDao hillfortDao() {
     if (_hillfortDao != null) {
       return _hillfortDao;
     } else {

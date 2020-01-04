@@ -10,7 +10,6 @@ import org.wit.archaeologicalfieldwork.views.Base.VIEW
 
 class HillfortListPresenter(view: BaseView): BasePresenter(view) {
 
-
     fun doAddHillfort() {
         view?.navigateTo(VIEW.HILLFORT)
     }
@@ -33,8 +32,8 @@ class HillfortListPresenter(view: BaseView): BasePresenter(view) {
     }
 
     fun doLogout(){
-        FirebaseAuth.getInstance().signOut()
         app.hillforts.clear()
+        FirebaseAuth.getInstance().signOut()
         view?.navigateTo(VIEW.LOGIN)
     }
 

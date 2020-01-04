@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Bitmap
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import org.jetbrains.anko.AnkoLogger
 import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
@@ -24,34 +25,40 @@ class HillfortFireStore(val context: Context) : HillfortStore, AnkoLogger {
     }
 
     override fun findHillfortById(id: Long): HillfortModel? {
-        val foundPlacemark: HillfortModel? = hillforts.find { p -> p.id == id }
-        return foundPlacemark
+        val foundHillfort: HillfortModel? = hillforts.find { p -> p.id == id }
+        return foundHillfort
     }
 
     override fun createHillfort(hillfort: HillfortModel) {
-        val key = db.child("users").child(userId).child("hillfort").push().key
+        val key = db.child("users").child(userId).child("hillforts").push().key
         key?.let {
             hillfort.fbId = key
             hillforts.add(hillfort)
-            db.child("users").child(userId).child("hillfort").child(key).setValue(hillfort)
+            db.child("users").child(userId).child("hillforts").child(key).setValue(hillfort)
             updateImage(hillfort)
         }
     }
 
     override fun updateHillfort(hillfort: HillfortModel) {
-        var foundPlacemark: HillfortModel? = hillforts.find { p -> p.fbId == hillfort.fbId }
-        if (foundPlacemark != null) {
-            foundPlacemark.name = hillfort.name
-            foundPlacemark.description = hillfort.description
-            foundPlacemark.image = hillfort.image
-            foundPlacemark.location = hillfort.location
+        var foundHillfort: HillfortModel? = hillforts.find { p -> p.fbId == hillfort.fbId }
+        if (foundHillfort != null) {
+            foundHillfort.name = hillfort.name
+            foundHillfort.description = hillfort.description
+            foundHillfort.image = hillfort.image
+            foundHillfort.location = hillfort.location
+            foundHillfort.notes = hillfort.notes
+            foundHillfort.date = hillfort.date
+            foundHillfort.visited = hillfort.visited
         }
 
-        db.child("users").child(userId).child("hillfort").child(hillfort.fbId).setValue(hillfort)
+        db.child("users").child(userId).child("hillforts").child(hillfort.fbId).setValue(hillfort)
+        if ((hillfort.image.length) > 0 && (hillfort.image[0] != 'h')) {
+            updateImage(hillfort)
+        }
     }
 
     override fun deleteHillfort(hillfort: HillfortModel) {
-        db.child("users").child(userId).child("hillfort").child(hillfort.fbId).removeValue()
+        db.child("users").child(userId).child("hillforts").child(hillfort.fbId).removeValue()
         hillforts.remove(hillfort)
     }
 
@@ -59,19 +66,20 @@ class HillfortFireStore(val context: Context) : HillfortStore, AnkoLogger {
         hillforts.clear()
     }
 
-    fun fetchHillforts(placemarksReady: () -> Unit) {
+    fun fetchHillforts(hillfortsReady: () -> Unit) {
         val valueEventListener = object : ValueEventListener {
             override fun onCancelled(dataSnapshot: DatabaseError) {
             }
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 dataSnapshot!!.children.mapNotNullTo(hillforts) { it.getValue<HillfortModel>(HillfortModel::class.java) }
-                placemarksReady()
+                hillfortsReady()
             }
         }
         userId = FirebaseAuth.getInstance().currentUser!!.uid
         db = FirebaseDatabase.getInstance().reference
+        st = FirebaseStorage.getInstance().reference
         hillforts.clear()
-        db.child("users").child(userId).child("Hillforts").addListenerForSingleValueEvent(valueEventListener)
+        db.child("users").child(userId).child("hillforts").addListenerForSingleValueEvent(valueEventListener)
     }
 
     fun updateImage(hillfort: HillfortModel) {
@@ -92,7 +100,7 @@ class HillfortFireStore(val context: Context) : HillfortStore, AnkoLogger {
                 }.addOnSuccessListener { taskSnapshot ->
                     taskSnapshot.metadata!!.reference!!.downloadUrl.addOnSuccessListener {
                         hillfort.image = it.toString()
-                        db.child("users").child(userId).child("placemarks").child(hillfort.fbId).setValue(hillfort)
+                        db.child("users").child(userId).child("hillforts").child(hillfort.fbId).setValue(hillfort)
                     }
                 }
             }

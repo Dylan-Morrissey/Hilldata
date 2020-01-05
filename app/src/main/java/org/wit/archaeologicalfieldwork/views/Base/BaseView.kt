@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.AnkoLogger
-import org.wit.archaeologicalfieldwork.helpers.constructEmailTemplate
+import org.wit.archaeologicalfieldwork.helpers.constructEmail
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.views.editlocation.*
@@ -59,9 +59,9 @@ open abstract class BaseView(): AppCompatActivity(), AnkoLogger {
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.type = "text/plain"
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hilldata")
-        val shareMessage = constructEmailTemplate(value as HillfortModel)
+        val shareMessage = constructEmail(value as HillfortModel)
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
-        startActivity(Intent.createChooser(shareIntent, "Choose an Application"))
+        startActivity(Intent.createChooser(shareIntent, "Who would you like to share it with."))
     }
 
 

@@ -25,6 +25,12 @@
         android:icon="@android:drawable/ic_menu_mapmode"
         android:title="Hillforts Map"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/favorite"
+        android:title="Favorites"
+        app:showAsAction="never"/>
+
     <item
         android:id="@+id/item_list_logout"
         android:title="@string/log_out"

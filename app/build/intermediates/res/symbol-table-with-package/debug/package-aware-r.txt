@@ -1269,6 +1269,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id favorite
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1284,6 +1285,7 @@ id groups
 id hillfortImages
 id hillfortName
 id hillfortNameCard
+id hillfortRating
 id hillfortRatingBar
 id hillfortsVisited
 id home
@@ -1431,6 +1433,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id togglefavoite
 id toolbar
 id toolbarAdd
 id toolbarMap

@@ -31,7 +31,7 @@ public final class HillfortDao_Impl implements HillfortDao {
     this.__insertionAdapterOfHillfortModel = new EntityInsertionAdapter<HillfortModel>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `HillfortModel`(`id`,`fbId`,`name`,`description`,`visited`,`date`,`notes`,`rating`,`image`,`lat`,`lng`,`zoom`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `HillfortModel`(`id`,`fbId`,`name`,`description`,`visited`,`date`,`notes`,`rating`,`image`,`favorite`,`lat`,`lng`,`zoom`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -71,15 +71,18 @@ public final class HillfortDao_Impl implements HillfortDao {
         } else {
           stmt.bindString(9, value.getImage());
         }
+        final int _tmp_1;
+        _tmp_1 = value.getFavorite() ? 1 : 0;
+        stmt.bindLong(10, _tmp_1);
         final LocationModel _tmpLocation = value.getLocation();
         if(_tmpLocation != null) {
-          stmt.bindDouble(10, _tmpLocation.getLat());
-          stmt.bindDouble(11, _tmpLocation.getLng());
-          stmt.bindDouble(12, _tmpLocation.getZoom());
+          stmt.bindDouble(11, _tmpLocation.getLat());
+          stmt.bindDouble(12, _tmpLocation.getLng());
+          stmt.bindDouble(13, _tmpLocation.getZoom());
         } else {
-          stmt.bindNull(10);
           stmt.bindNull(11);
           stmt.bindNull(12);
+          stmt.bindNull(13);
         }
       }
     };
@@ -97,7 +100,7 @@ public final class HillfortDao_Impl implements HillfortDao {
     this.__updateAdapterOfHillfortModel = new EntityDeletionOrUpdateAdapter<HillfortModel>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `HillfortModel` SET `id` = ?,`fbId` = ?,`name` = ?,`description` = ?,`visited` = ?,`date` = ?,`notes` = ?,`rating` = ?,`image` = ?,`lat` = ?,`lng` = ?,`zoom` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `HillfortModel` SET `id` = ?,`fbId` = ?,`name` = ?,`description` = ?,`visited` = ?,`date` = ?,`notes` = ?,`rating` = ?,`image` = ?,`favorite` = ?,`lat` = ?,`lng` = ?,`zoom` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -137,17 +140,20 @@ public final class HillfortDao_Impl implements HillfortDao {
         } else {
           stmt.bindString(9, value.getImage());
         }
+        final int _tmp_1;
+        _tmp_1 = value.getFavorite() ? 1 : 0;
+        stmt.bindLong(10, _tmp_1);
         final LocationModel _tmpLocation = value.getLocation();
         if(_tmpLocation != null) {
-          stmt.bindDouble(10, _tmpLocation.getLat());
-          stmt.bindDouble(11, _tmpLocation.getLng());
-          stmt.bindDouble(12, _tmpLocation.getZoom());
+          stmt.bindDouble(11, _tmpLocation.getLat());
+          stmt.bindDouble(12, _tmpLocation.getLng());
+          stmt.bindDouble(13, _tmpLocation.getZoom());
         } else {
-          stmt.bindNull(10);
           stmt.bindNull(11);
           stmt.bindNull(12);
+          stmt.bindNull(13);
         }
-        stmt.bindLong(13, value.getId());
+        stmt.bindLong(14, value.getId());
       }
     };
   }
@@ -204,6 +210,7 @@ public final class HillfortDao_Impl implements HillfortDao {
       final int _cursorIndexOfNotes = CursorUtil.getColumnIndexOrThrow(_cursor, "notes");
       final int _cursorIndexOfRating = CursorUtil.getColumnIndexOrThrow(_cursor, "rating");
       final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
+      final int _cursorIndexOfFavorite = CursorUtil.getColumnIndexOrThrow(_cursor, "favorite");
       final int _cursorIndexOfLat = CursorUtil.getColumnIndexOrThrow(_cursor, "lat");
       final int _cursorIndexOfLng = CursorUtil.getColumnIndexOrThrow(_cursor, "lng");
       final int _cursorIndexOfZoom = CursorUtil.getColumnIndexOrThrow(_cursor, "zoom");
@@ -230,6 +237,10 @@ public final class HillfortDao_Impl implements HillfortDao {
         _tmpRating = _cursor.getInt(_cursorIndexOfRating);
         final String _tmpImage;
         _tmpImage = _cursor.getString(_cursorIndexOfImage);
+        final boolean _tmpFavorite;
+        final int _tmp_1;
+        _tmp_1 = _cursor.getInt(_cursorIndexOfFavorite);
+        _tmpFavorite = _tmp_1 != 0;
         final LocationModel _tmpLocation;
         if (! (_cursor.isNull(_cursorIndexOfLat) && _cursor.isNull(_cursorIndexOfLng) && _cursor.isNull(_cursorIndexOfZoom))) {
           final double _tmpLat;
@@ -242,7 +253,7 @@ public final class HillfortDao_Impl implements HillfortDao {
         }  else  {
           _tmpLocation = null;
         }
-        _item = new HillfortModel(_tmpId,_tmpFbId,_tmpName,_tmpDescription,_tmpVisited,_tmpDate,_tmpNotes,_tmpRating,_tmpImage,_tmpLocation);
+        _item = new HillfortModel(_tmpId,_tmpFbId,_tmpName,_tmpDescription,_tmpVisited,_tmpDate,_tmpNotes,_tmpRating,_tmpImage,_tmpFavorite,_tmpLocation);
         _result.add(_item);
       }
       return _result;
@@ -270,6 +281,7 @@ public final class HillfortDao_Impl implements HillfortDao {
       final int _cursorIndexOfNotes = CursorUtil.getColumnIndexOrThrow(_cursor, "notes");
       final int _cursorIndexOfRating = CursorUtil.getColumnIndexOrThrow(_cursor, "rating");
       final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
+      final int _cursorIndexOfFavorite = CursorUtil.getColumnIndexOrThrow(_cursor, "favorite");
       final int _cursorIndexOfLat = CursorUtil.getColumnIndexOrThrow(_cursor, "lat");
       final int _cursorIndexOfLng = CursorUtil.getColumnIndexOrThrow(_cursor, "lng");
       final int _cursorIndexOfZoom = CursorUtil.getColumnIndexOrThrow(_cursor, "zoom");
@@ -295,6 +307,10 @@ public final class HillfortDao_Impl implements HillfortDao {
         _tmpRating = _cursor.getInt(_cursorIndexOfRating);
         final String _tmpImage;
         _tmpImage = _cursor.getString(_cursorIndexOfImage);
+        final boolean _tmpFavorite;
+        final int _tmp_1;
+        _tmp_1 = _cursor.getInt(_cursorIndexOfFavorite);
+        _tmpFavorite = _tmp_1 != 0;
         final LocationModel _tmpLocation;
         if (! (_cursor.isNull(_cursorIndexOfLat) && _cursor.isNull(_cursorIndexOfLng) && _cursor.isNull(_cursorIndexOfZoom))) {
           final double _tmpLat;
@@ -307,7 +323,7 @@ public final class HillfortDao_Impl implements HillfortDao {
         }  else  {
           _tmpLocation = null;
         }
-        _result = new HillfortModel(_tmpId,_tmpFbId,_tmpName,_tmpDescription,_tmpVisited,_tmpDate,_tmpNotes,_tmpRating,_tmpImage,_tmpLocation);
+        _result = new HillfortModel(_tmpId,_tmpFbId,_tmpName,_tmpDescription,_tmpVisited,_tmpDate,_tmpNotes,_tmpRating,_tmpImage,_tmpFavorite,_tmpLocation);
       } else {
         _result = null;
       }

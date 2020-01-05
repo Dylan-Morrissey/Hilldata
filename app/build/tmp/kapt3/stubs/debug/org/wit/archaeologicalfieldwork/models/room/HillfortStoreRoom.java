@@ -75,4 +75,8 @@ public final class HillfortStoreRoom implements org.wit.archaeologicalfieldwork.
     android.content.Context context) {
         super();
     }
+    
+    public void addFavorite(@org.jetbrains.annotations.NotNull()
+    org.wit.archaeologicalfieldwork.models.HillfortModel hillfort) {
+    }
 }

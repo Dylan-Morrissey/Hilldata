@@ -7,6 +7,7 @@ import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.HillfortStore
@@ -17,6 +18,8 @@ class HillfortFireStore(val context: Context) : HillfortStore, AnkoLogger {
 
     val hillforts = ArrayList<HillfortModel>()
     val searchedHillforts = ArrayList<HillfortModel>()
+    val favoriteList = ArrayList<String>()
+    val favoriteHillforts = ArrayList<HillfortModel>()
     lateinit var userId: String
     lateinit var db: DatabaseReference
     lateinit var st: StorageReference
@@ -54,9 +57,17 @@ class HillfortFireStore(val context: Context) : HillfortStore, AnkoLogger {
         })
     }
 
-
     override fun findAllHillforts(): List<HillfortModel> {
         return hillforts
+    }
+
+    override fun findAllFavorites(): List<HillfortModel> {
+        hillforts.forEach {
+            if (it.favorite) {
+                favoriteHillforts.add(it)
+            }
+        }
+        return  favoriteHillforts
     }
 
     override fun findHillfortById(id: Long): HillfortModel? {
@@ -85,11 +96,25 @@ class HillfortFireStore(val context: Context) : HillfortStore, AnkoLogger {
             foundHillfort.date = hillfort.date
             foundHillfort.visited = hillfort.visited
             foundHillfort.rating = hillfort.rating
+            foundHillfort.favorite = hillfort.favorite
         }
 
         db.child("users").child(userId).child("hillforts").child(hillfort.fbId).setValue(hillfort)
         if ((hillfort.image.length) > 0 && (hillfort.image[0] != 'h')) {
             updateImage(hillfort)
+        }
+    }
+
+    override fun addFavorite(hillfort: HillfortModel) {
+        if (!hillfort.favorite) {
+            db.child("users").child(userId).child("favoritehillforts").child(hillfort.fbId)
+                .removeValue()
+        } else {
+            val key = db.child("users").child(userId).child("favoritehillforts").push()
+            key.let {
+                db.child("users").child(userId).child("favoritehillforts").child(hillfort.fbId)
+                    .setValue(hillfort.name)
+            }
         }
     }
 

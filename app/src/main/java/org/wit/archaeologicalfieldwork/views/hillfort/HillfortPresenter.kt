@@ -11,6 +11,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 import org.wit.archaeologicalfieldwork.helpers.*
 import org.wit.archaeologicalfieldwork.models.HillfortModel
@@ -91,13 +92,14 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
         view?.showHillfort(hillfort)
     }
 
-    fun doAddOrSave(name: String, description: String, visited: Boolean, date: String, notes: String, rating: Int) {
+    fun doAddOrSave(name: String, description: String, visited: Boolean, date: String, notes: String, rating: Int, favorite:Boolean) {
         hillfort.name = name
         hillfort.description = description
         hillfort.visited = visited
         hillfort.date = date
         hillfort.notes = notes
         hillfort.rating = rating
+        hillfort.favorite = favorite
         doAsync {
             if (edit) {
                 app.hillforts.updateHillfort(hillfort)
@@ -136,6 +138,17 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
     fun doCheckBox(checkBox: Boolean) {
         hillfort.visited = checkBox
     }
+
+    fun doFavorite(checkBox: Boolean) {
+        hillfort.favorite = checkBox
+        if (hillfort.fbId == ""){
+            view?.toast("No hillfort to favorite")
+        } else {
+            app.hillforts.updateHillfort(hillfort)
+            app.hillforts.addFavorite(hillfort)
+        }
+    }
+
 
     fun doSetLocation() {
         view?.navigateTo(VIEW.LOCATION, LOCATION_REQUEST, "location", LocationModel(hillfort.location.lat, hillfort.location.lng, hillfort.location.zoom))

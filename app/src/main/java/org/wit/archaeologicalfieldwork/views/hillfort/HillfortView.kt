@@ -42,6 +42,11 @@ class HillfortView : BaseView(), AnkoLogger {
 
         chooseImage.setOnClickListener {presenter.doSelectImage()}
 
+        togglefavoite.setOnClickListener{
+            presenter.doFavorite(togglefavoite.isChecked)
+
+        }
+
         checkbox.setOnClickListener {
             presenter.doCheckBox(checkbox.isChecked)
             if (checkbox.isChecked()){
@@ -76,6 +81,7 @@ class HillfortView : BaseView(), AnkoLogger {
         hillfortName.setText(hillfort.name)
         description.setText(hillfort.description)
         checkbox.setChecked(hillfort.visited)
+        togglefavoite.setChecked(hillfort.favorite)
         dateText.setText(hillfort.date)
         lngText.setText("Longitude " +hillfort.location.lng.toString())
         latText.setText("Latitude " +  hillfort.location.lat.toString())
@@ -110,7 +116,7 @@ class HillfortView : BaseView(), AnkoLogger {
                 if (hillfortName.text.toString().isEmpty()) {
                     toast(R.string.enter_hillfort_name)
                 } else {
-                    presenter.doAddOrSave(hillfortName.text.toString(), description.text.toString(), checkbox.isChecked, dateText.text.toString(), notes.text.toString(), hillfortRatingBar.rating.toInt())
+                    presenter.doAddOrSave(hillfortName.text.toString(), description.text.toString(), checkbox.isChecked, dateText.text.toString(), notes.text.toString(), hillfortRatingBar.rating.toInt(), togglefavoite.isChecked)
                 }
             }
             R.id.share_hillfort -> {

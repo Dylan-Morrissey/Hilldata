@@ -67,6 +67,10 @@ public final class HillfortMemStore implements org.wit.archaeologicalfieldwork.m
         super();
     }
     
+    public void addFavorite(@org.jetbrains.annotations.NotNull()
+    org.wit.archaeologicalfieldwork.models.HillfortModel hillfort) {
+    }
+    
     @org.jetbrains.annotations.NotNull()
     public java.lang.String getLoggerTag() {
         return null;

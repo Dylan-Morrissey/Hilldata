@@ -7,6 +7,7 @@ import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.main.MainApp
+import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView
 import org.wit.archaeologicalfieldwork.views.login.LoginView
 
@@ -14,21 +15,64 @@ class SettingsPresenter (val view: SettingsView){
 
     var app : MainApp
 
+
     init {
         app = view.application as MainApp
 
     }
 
-    fun doBackToList(){
-        view.startActivity<HillfortListView>()
-    }
-/*
+
     fun doDeleteUser(){
-        app.users.deleteUser(app.users.findCurrentUser())
         view.toast("Account Deleted")
         view.startActivity<LoginView>()
     }
-*/
+
+    var hillforts: List<HillfortModel> = app.hillforts.findAllHillforts()!!
+
+
+    fun getAverageRate(): Double {
+        var average = 0.0
+        if(hillforts.isEmpty()) {
+            average = 0.0
+        }
+        else {
+            hillforts.forEach {
+                average += it.rating
+            }
+            average /= hillforts.size
+        }
+        return average
+    }
+
+    fun getFavourites(): Int {
+        var favourites = 0
+        hillforts.forEach {
+            if (it.favorite) {
+                favourites++
+            }
+        }
+        return favourites
+    }
+
+    fun getVisited(): Int {
+        var visited = 0
+        hillforts.forEach {
+            if (it.visited) {
+                visited++
+            }
+        }
+        return visited
+    }
+
+    fun getImages(): Int {
+        var images = 0
+        hillforts.forEach {
+            images += it.image.length
+        }
+        return images
+    }
+}
+
     /*
     fun doSaveSettings(){
         if (view.settingUserName.text.isNotEmpty() && view.settingEmail.text.isNotEmpty() && view.settingPassword.text.isNotEmpty()) {
@@ -78,4 +122,3 @@ class SettingsPresenter (val view: SettingsView){
 
 
  */
-}

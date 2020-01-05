@@ -13,6 +13,8 @@ class HillfortListPresenter(view: BaseView): BasePresenter(view) {
 
     var fireStore: HillfortFireStore? = null
     var currentHillforts: List<HillfortModel> = arrayListOf()
+    var alerady = false
+    val hillforts = app.hillforts.findAllHillforts()
 
     fun doSearchHillforts(name: String) {
         val searchResults = app.hillforts.findHillfortName(name)
@@ -20,7 +22,6 @@ class HillfortListPresenter(view: BaseView): BasePresenter(view) {
             currentHillforts = searchResults
             view?.showHillforts(searchResults)
         }
-
     }
 
     fun doAddHillfort() {
@@ -35,17 +36,9 @@ class HillfortListPresenter(view: BaseView): BasePresenter(view) {
         view?.navigateTo(VIEW.MAPS)
     }
 
-    fun clearSearch(){
-        fireStore?.clearSearch()
-    }
-
-    fun clear() {
-        app.hillforts.clear()
-    }
-
     fun loadHillforts() {
         doAsync {
-            val hillforts = app.hillforts.findAllHillforts()
+
             uiThread {
                 if (hillforts != null) {
                     currentHillforts = hillforts
@@ -54,6 +47,18 @@ class HillfortListPresenter(view: BaseView): BasePresenter(view) {
             }
         }
     }
+    var fav = app.hillforts.findAllFavorites()
+    fun doLoadFavorites() {
+
+            if (fav != null) {
+                currentHillforts = fav
+                view?.showHillforts(fav)
+            } else {
+            view?.showHillforts(hillforts)
+        }
+
+    }
+
 
     fun doLogout() {
         app.hillforts.clear()

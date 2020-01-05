@@ -30,9 +30,9 @@ public final class Database_Impl extends Database {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `HillfortModel` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fbId` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `visited` INTEGER NOT NULL, `date` TEXT NOT NULL, `notes` TEXT NOT NULL, `rating` INTEGER NOT NULL, `image` TEXT NOT NULL, `lat` REAL NOT NULL, `lng` REAL NOT NULL, `zoom` REAL NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `HillfortModel` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fbId` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `visited` INTEGER NOT NULL, `date` TEXT NOT NULL, `notes` TEXT NOT NULL, `rating` INTEGER NOT NULL, `image` TEXT NOT NULL, `favorite` INTEGER NOT NULL, `lat` REAL NOT NULL, `lng` REAL NOT NULL, `zoom` REAL NOT NULL)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6447a8ef2389c86a76ea34e92f557f93')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8cd8c8d3695d9fcacd28b5f25e83754c')");
       }
 
       @Override
@@ -71,7 +71,7 @@ public final class Database_Impl extends Database {
 
       @Override
       protected void validateMigration(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsHillfortModel = new HashMap<String, TableInfo.Column>(12);
+        final HashMap<String, TableInfo.Column> _columnsHillfortModel = new HashMap<String, TableInfo.Column>(13);
         _columnsHillfortModel.put("id", new TableInfo.Column("id", "INTEGER", true, 1));
         _columnsHillfortModel.put("fbId", new TableInfo.Column("fbId", "TEXT", true, 0));
         _columnsHillfortModel.put("name", new TableInfo.Column("name", "TEXT", true, 0));
@@ -81,6 +81,7 @@ public final class Database_Impl extends Database {
         _columnsHillfortModel.put("notes", new TableInfo.Column("notes", "TEXT", true, 0));
         _columnsHillfortModel.put("rating", new TableInfo.Column("rating", "INTEGER", true, 0));
         _columnsHillfortModel.put("image", new TableInfo.Column("image", "TEXT", true, 0));
+        _columnsHillfortModel.put("favorite", new TableInfo.Column("favorite", "INTEGER", true, 0));
         _columnsHillfortModel.put("lat", new TableInfo.Column("lat", "REAL", true, 0));
         _columnsHillfortModel.put("lng", new TableInfo.Column("lng", "REAL", true, 0));
         _columnsHillfortModel.put("zoom", new TableInfo.Column("zoom", "REAL", true, 0));
@@ -94,7 +95,7 @@ public final class Database_Impl extends Database {
                   + " Found:\n" + _existingHillfortModel);
         }
       }
-    }, "6447a8ef2389c86a76ea34e92f557f93", "c67e3b6f0a1ef8e2ee45027969f9f2a1");
+    }, "8cd8c8d3695d9fcacd28b5f25e83754c", "d9dc6f87df327e13115b7dcc38b49157");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

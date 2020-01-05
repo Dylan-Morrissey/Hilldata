@@ -12,6 +12,7 @@ import org.wit.archaeologicalfieldwork.adapter.HillfortAdapter
 import org.wit.archaeologicalfieldwork.adapter.HillfortListener
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
+import org.wit.archaeologicalfieldwork.views.Base.VIEW
 
 class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
 
@@ -23,7 +24,7 @@ class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
         super.init(toolbar, false)
 
         presenter = initPresenter(HillfortListPresenter(this)) as HillfortListPresenter
-        presenter = initPresenter(HillfortListPresenter(this)) as HillfortListPresenter
+
         toolbar.title = title
         super.init(toolbar, false)
         val layoutManager = LinearLayoutManager(this)
@@ -37,14 +38,13 @@ class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
         recyclerView.adapter?.notifyDataSetChanged()
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_hillfortlist, menu)
         val item = menu?.findItem(R.id.menu_search)
         val searchView: SearchView = item?.actionView as SearchView
 
         searchView.isSubmitButtonEnabled = true
-        searchView.queryHint = "Enter A Name..."
+        searchView.queryHint = "Search"
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextChange(currentText: String): Boolean {
@@ -72,6 +72,7 @@ class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
             R.id.item_list_logout -> presenter.doLogout()
             R.id.item_list_settings -> presenter.doSettings()
             R.id.item_map -> presenter.doShowHillfortsMap()
+            R.id.favorite -> presenter.doLoadFavorites()
         }
         return super.onOptionsItemSelected(item)
     }

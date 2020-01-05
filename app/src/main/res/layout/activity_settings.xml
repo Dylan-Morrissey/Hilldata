@@ -53,69 +53,7 @@
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/username"
-            android:textSize="20dp"
-            android:layout_marginLeft="30dp"
-            />
-
-        <EditText
-            android:id="@+id/settingUserName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/login_edit_background"
-            android:padding="10dp"
-            android:drawablePadding="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:textSize="20dp"
-            android:layout_marginLeft="30dp"
-            android:paddingTop="20dp"
-            />
-
-        <EditText
-            android:id="@+id/settingEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/login_edit_background"
-            android:padding="10dp"
-            android:drawablePadding="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/password"
-            android:paddingTop="20dp"
-            android:textSize="20dp"
-            android:layout_marginLeft="30dp"
-            />
-
-        <EditText
-            android:id="@+id/settingPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/login_edit_background"
-            android:padding="10dp"
-            android:drawablePadding="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            />
-
-        <TextView
-            android:id="@+id/totalUserHillforts"
+            android:id="@+id/totalHillforts"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_width="wrap_content"
@@ -151,50 +89,12 @@
             />
 
         <TextView
-            android:id="@+id/totalUsers"
+            android:id="@+id/hillfortRating"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            />
-
-        <TextView
-            android:id="@+id/totalHillforts"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            />
-
-        <Button
-            android:id="@+id/btnSaveSettings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
-            android:text="Save Changes"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="30dp"
-            android:textAllCaps="false"
-            android:textSize="20dp"
-            />
-
-        <TextView
-            android:id="@+id/btnBackToList"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back to Hillforts"
             android:padding="10dp"
             android:layout_gravity="center"
             android:textSize="20dp"

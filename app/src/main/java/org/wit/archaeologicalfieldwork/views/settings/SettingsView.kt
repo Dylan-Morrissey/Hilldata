@@ -31,24 +31,20 @@ class SettingsView : BaseView(), AnkoLogger {
         //settingEmail.setText(presenter.app.)
         //settingPassword.setText(presenter.app.users.findCurrentUser().password)
 
-        btnBackToList.setOnClickListener {
-            presenter.doBackToList()
-        }
-/*
-        btnSaveSettings.setOnClickListener {
-            presenter.doSaveSettings()
-        }
+        totalHillforts.setText("Total Hillforts: " + presenter.hillforts.size)
+
+        hillfortsVisited.setText("Total Hillfort Visited: " + presenter.getVisited())
+
+        hillfortRating.setText("Average Rating: " + presenter.getAverageRate())
+
+        totalPictures.setText("Total Number of favorite: " + presenter.getFavourites())
+
+
+
+
 
         deleteUserBtn.setOnClickListener {
             presenter.doDeleteUser()
         }
-
-        presenter.doShowUserStats()
-    }
- */
-    }
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_settings, menu)
-        return super.onCreateOptionsMenu(menu)
     }
 }

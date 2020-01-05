@@ -17,6 +17,7 @@ data class HillfortModel(@PrimaryKey(autoGenerate = true) var id: Long = 0,
                          var notes: String = "",
                          var rating: Int = 0,
                          var image: String = "",
+                         var favorite: Boolean = false,
                          @Embedded var location: LocationModel = LocationModel()):Parcelable
 
 @Parcelize

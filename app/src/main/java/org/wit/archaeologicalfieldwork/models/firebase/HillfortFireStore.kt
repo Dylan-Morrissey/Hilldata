@@ -16,9 +16,44 @@ import java.io.File
 class HillfortFireStore(val context: Context) : HillfortStore, AnkoLogger {
 
     val hillforts = ArrayList<HillfortModel>()
+    val searchedHillforts = ArrayList<HillfortModel>()
     lateinit var userId: String
     lateinit var db: DatabaseReference
     lateinit var st: StorageReference
+
+    override fun findSearchedHillforts(): ArrayList<HillfortModel> {
+        return searchedHillforts
+    }
+
+    override fun clearSearch(){
+        searchedHillforts.clear()
+    }
+
+    override fun findHillfortName(name: String): ArrayList<HillfortModel> {
+        val foundHillforts: ArrayList<HillfortModel> = arrayListOf()
+        hillforts.forEach {
+            if (it.name.toLowerCase().contains(name.toLowerCase())) {
+                foundHillforts?.add(it)
+            }
+        }
+        return foundHillforts
+    }
+
+    fun findHillforts(name: String){
+        searchedHillforts.clear()
+        val query = db.child("users").child(userId).child("hillforts")
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                dataSnapshot.children.forEach {
+                    if(it.child("name").toString().contains(name)){
+                        searchedHillforts.add(it.getValue<HillfortModel>(HillfortModel::class.java)!!)
+                    }
+                }
+            }
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
+    }
+
 
     override fun findAllHillforts(): List<HillfortModel> {
         return hillforts

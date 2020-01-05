@@ -7,6 +7,17 @@ import org.wit.archaeologicalfieldwork.models.HillfortStore
 import org.wit.archaeologicalfieldwork.models.room.HillfortDao
 
 class HillfortStoreRoom(val context: Context) : HillfortStore {
+  override fun findHillfortName(name: String): ArrayList<HillfortModel> {
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+  }
+
+  override fun clearSearch() {
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+  }
+
+  override fun findSearchedHillforts(): List<HillfortModel> {
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+  }
 
   var dao: HillfortDao
 

@@ -31,6 +31,9 @@
         <activity
             android:name=".views.hillfort.HillfortView"
             android:theme="@style/LoginPage">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.hillfortlist.HillfortListView" />
@@ -46,6 +49,9 @@
 
         <activity android:name=".views.hillfortlist.HillfortListView"
             android:theme="@style/LoginPage">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
         </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"

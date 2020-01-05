@@ -30,7 +30,7 @@
 19-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
 20
 21    <application
-21-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:8:5-76:19
+21-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:8:5-82:19
 22        android:name="org.wit.archaeologicalfieldwork.main.MainApp"
 22-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:9:9-37
 23        android:allowBackup="true"
@@ -75,169 +75,182 @@
 44            android:theme="@style/LoginPage" />
 44-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:30:13-45
 45        <activity
-45-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:31:9-37:20
+45-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:31:9-40:20
 46            android:name="org.wit.archaeologicalfieldwork.views.hillfort.HillfortView"
 46-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:32:13-56
 47            android:theme="@style/LoginPage" >
 47-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:33:13-45
-48            <meta-data
-48-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:34:13-36:72
-49                android:name="android.support.PARENT_ACTIVITY"
-49-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:35:17-63
-50                android:value=".views.hillfortlist.HillfortListView" />
-50-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:36:17-69
-51        </activity>
-52        <activity
-52-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:38:9-40:57
-53            android:name="org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView"
-53-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:39:13-68
-54            android:theme="@style/LoginPage" />
-54-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:40:13-45
-55        <activity
-55-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:42:9-45:20
-56            android:name="org.wit.archaeologicalfieldwork.views.signup.SignUpView"
-56-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:43:13-52
-57            android:theme="@style/LoginPage" >
-57-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:44:13-45
-58        </activity>
+48            <intent-filter>
+48-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:34:13-36:29
+49                <action android:name="android.intent.action.SEARCH" />
+49-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:35:17-71
+49-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:35:25-68
+50            </intent-filter>
+51
+52            <meta-data
+52-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:37:13-39:72
+53                android:name="android.support.PARENT_ACTIVITY"
+53-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:38:17-63
+54                android:value=".views.hillfortlist.HillfortListView" />
+54-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:39:17-69
+55        </activity>
+56        <activity
+56-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:41:9-43:57
+57            android:name="org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView"
+57-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:42:13-68
+58            android:theme="@style/LoginPage" />
+58-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:43:13-45
 59        <activity
-59-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:47:9-49:20
-60            android:name="org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView"
-60-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:47:19-70
+59-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:45:9-48:20
+60            android:name="org.wit.archaeologicalfieldwork.views.signup.SignUpView"
+60-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:46:13-52
 61            android:theme="@style/LoginPage" >
-61-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:48:13-45
+61-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:47:13-45
 62        </activity>
-63
-64        <meta-data
-64-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:50:9-52:55
-65            android:name="com.google.android.geo.API_KEY"
-65-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:51:13-58
-66            android:value="@string/google_maps_key" />
-66-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:52:13-52
-67
-68        <activity
-68-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:54:9-60:20
-69            android:name="org.wit.archaeologicalfieldwork.views.editlocation.EditLocationView"
-69-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:55:13-64
-70            android:label="@string/title_activity_map" >
-70-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:56:13-55
-71            <meta-data
-71-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:34:13-36:72
-72                android:name="android.support.PARENT_ACTIVITY"
-72-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:35:17-63
-73                android:value=".views.hillfort.HillfortView" />
-73-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:36:17-69
-74        </activity>
+63        <activity
+63-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:50:9-55:20
+64            android:name="org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView"
+64-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:50:19-70
+65            android:theme="@style/LoginPage" >
+65-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:51:13-45
+66            <intent-filter>
+66-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:34:13-36:29
+67                <action android:name="android.intent.action.SEARCH" />
+67-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:35:17-71
+67-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:35:25-68
+68            </intent-filter>
+69        </activity>
+70
+71        <meta-data
+71-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:56:9-58:55
+72            android:name="com.google.android.geo.API_KEY"
+72-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:57:13-58
+73            android:value="@string/google_maps_key" />
+73-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:58:13-52
+74
 75        <activity
-75-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:62:9-68:20
-76            android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsView"
-76-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:63:13-56
-77            android:theme="@style/LoginPage" >
-77-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:64:13-45
+75-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:60:9-66:20
+76            android:name="org.wit.archaeologicalfieldwork.views.editlocation.EditLocationView"
+76-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:61:13-64
+77            android:label="@string/title_activity_map" >
+77-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:62:13-55
 78            <meta-data
-78-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:34:13-36:72
+78-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:37:13-39:72
 79                android:name="android.support.PARENT_ACTIVITY"
-79-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:35:17-63
-80                android:value=".views.hillfortlist.HillfortListView" />
-80-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:36:17-69
+79-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:38:17-63
+80                android:value=".views.hillfort.HillfortView" />
+80-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:39:17-69
 81        </activity>
 82        <activity
-82-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:70:9-75:20
-83            android:name="org.wit.archaeologicalfieldwork.views.map.HillfortMapView"
-83-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:70:19-60
-84            android:label="@string/title_activity_hillfort_maps" >
-84-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:71:13-65
+82-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:68:9-74:20
+83            android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsView"
+83-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:69:13-56
+84            android:theme="@style/LoginPage" >
+84-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:70:13-45
 85            <meta-data
-85-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:34:13-36:72
+85-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:37:13-39:72
 86                android:name="android.support.PARENT_ACTIVITY"
-86-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:35:17-63
+86-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:38:17-63
 87                android:value=".views.hillfortlist.HillfortListView" />
-87-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:36:17-69
+87-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:39:17-69
 88        </activity>
-89        <!-- Needs to be explicitly declared on P+ -->
-90        <uses-library
-90-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-91            android:name="org.apache.http.legacy"
-91-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-92            android:required="false" />
-92-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-93
-94        <service
-94-->[androidx.room:room-runtime:2.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\060a8d8ffec80b9e47bfa47fab72020d\room-runtime-2.1.0\AndroidManifest.xml:25:9-27:40
-95            android:name="androidx.room.MultiInstanceInvalidationService"
-95-->[androidx.room:room-runtime:2.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\060a8d8ffec80b9e47bfa47fab72020d\room-runtime-2.1.0\AndroidManifest.xml:26:13-74
-96            android:exported="false" />
-96-->[androidx.room:room-runtime:2.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\060a8d8ffec80b9e47bfa47fab72020d\room-runtime-2.1.0\AndroidManifest.xml:27:13-37
-97
-98        <activity
-98-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:24:9-31:50
-99            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-99-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:25:13-85
-100            android:excludeFromRecents="true"
-100-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:26:13-46
-101            android:exported="true"
-101-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:27:13-36
-102            android:launchMode="singleTask"
-102-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:28:13-44
-103            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-103-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:29:13-102
-104            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-104-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:30:13-72
-105
-106        <service
-106-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:33:9-39:19
-107            android:name="com.google.firebase.components.ComponentDiscoveryService"
-107-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:34:13-84
-108            android:directBootAware="true"
-108-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:14:13-43
-109            android:exported="false" >
-109-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:35:13-37
-110            <meta-data
-110-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:36:13-38:85
-111                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-111-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:37:17-109
-112                android:value="com.google.firebase.components.ComponentRegistrar" />
-112-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:38:17-82
-113            <meta-data
-113-->[com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:32:13-34:85
-114                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-114-->[com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:33:17-109
-115                android:value="com.google.firebase.components.ComponentRegistrar" />
-115-->[com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:34:17-82
-116            <meta-data
-116-->[com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:33:13-35:85
-117                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-117-->[com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:34:17-107
-118                android:value="com.google.firebase.components.ComponentRegistrar" />
-118-->[com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:35:17-82
-119        </service>
-120
-121        <activity
-121-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-122            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-122-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-123            android:exported="false"
-123-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-124            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-124-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-125
-126        <provider
-126-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:17:9-21:39
-127            android:name="com.google.firebase.provider.FirebaseInitProvider"
-127-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:18:13-77
-128            android:authorities="org.wit.archaeologicalfieldwork.firebaseinitprovider"
-128-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:19:13-72
-129            android:exported="false"
-129-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:20:13-37
-130            android:initOrder="100" />
-130-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:21:13-36
-131
-132        <meta-data
-132-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-133            android:name="com.google.android.gms.version"
-133-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-134            android:value="@integer/google_play_services_version" />
-134-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-135    </application>
-136
-137</manifest>
+89        <activity
+89-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:76:9-81:20
+90            android:name="org.wit.archaeologicalfieldwork.views.map.HillfortMapView"
+90-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:76:19-60
+91            android:label="@string/title_activity_hillfort_maps" >
+91-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:77:13-65
+92            <meta-data
+92-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:37:13-39:72
+93                android:name="android.support.PARENT_ACTIVITY"
+93-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:38:17-63
+94                android:value=".views.hillfortlist.HillfortListView" />
+94-->C:\Users\Dylan\AndroidStudioProjects\Hilldata\app\src\main\AndroidManifest.xml:39:17-69
+95        </activity>
+96        <!-- Needs to be explicitly declared on P+ -->
+97        <uses-library
+97-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+98            android:name="org.apache.http.legacy"
+98-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+99            android:required="false" />
+99-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\1b387f63c7d8aa2a1dde3a4c46e60a20\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+100
+101        <service
+101-->[androidx.room:room-runtime:2.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\060a8d8ffec80b9e47bfa47fab72020d\room-runtime-2.1.0\AndroidManifest.xml:25:9-27:40
+102            android:name="androidx.room.MultiInstanceInvalidationService"
+102-->[androidx.room:room-runtime:2.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\060a8d8ffec80b9e47bfa47fab72020d\room-runtime-2.1.0\AndroidManifest.xml:26:13-74
+103            android:exported="false" />
+103-->[androidx.room:room-runtime:2.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\060a8d8ffec80b9e47bfa47fab72020d\room-runtime-2.1.0\AndroidManifest.xml:27:13-37
+104
+105        <activity
+105-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:24:9-31:50
+106            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+106-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:25:13-85
+107            android:excludeFromRecents="true"
+107-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:26:13-46
+108            android:exported="true"
+108-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:27:13-36
+109            android:launchMode="singleTask"
+109-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:28:13-44
+110            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+110-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:29:13-102
+111            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+111-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:30:13-72
+112
+113        <service
+113-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:33:9-39:19
+114            android:name="com.google.firebase.components.ComponentDiscoveryService"
+114-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:34:13-84
+115            android:directBootAware="true"
+115-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:14:13-43
+116            android:exported="false" >
+116-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:35:13-37
+117            <meta-data
+117-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:36:13-38:85
+118                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+118-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:37:17-109
+119                android:value="com.google.firebase.components.ComponentRegistrar" />
+119-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\21349e00c39cb549100843a9d27eab81\firebase-auth-19.1.0\AndroidManifest.xml:38:17-82
+120            <meta-data
+120-->[com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:32:13-34:85
+121                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+121-->[com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:33:17-109
+122                android:value="com.google.firebase.components.ComponentRegistrar" />
+122-->[com.google.firebase:firebase-database:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\83fce081198a4b13b6a3659fddcd2e38\firebase-database-19.1.0\AndroidManifest.xml:34:17-82
+123            <meta-data
+123-->[com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:33:13-35:85
+124                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+124-->[com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:34:17-107
+125                android:value="com.google.firebase.components.ComponentRegistrar" />
+125-->[com.google.firebase:firebase-storage:19.0.1] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\62ecc624f40407a4ae50a802e740cbff\firebase-storage-19.0.1\AndroidManifest.xml:35:17-82
+126        </service>
+127
+128        <activity
+128-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+129            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+129-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+130            android:exported="false"
+130-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+131            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+131-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\6b4b5bc3433b6bc3909998edabdbe771\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+132
+133        <provider
+133-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:17:9-21:39
+134            android:name="com.google.firebase.provider.FirebaseInitProvider"
+134-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:18:13-77
+135            android:authorities="org.wit.archaeologicalfieldwork.firebaseinitprovider"
+135-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:19:13-72
+136            android:exported="false"
+136-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:20:13-37
+137            android:initOrder="100" />
+137-->[com.google.firebase:firebase-common:19.1.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\a1936f87523b8fb7128c8a86843b257f\firebase-common-19.1.0\AndroidManifest.xml:21:13-36
+138
+139        <meta-data
+139-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+140            android:name="com.google.android.gms.version"
+140-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+141            android:value="@integer/google_play_services_version" />
+141-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Dylan\.gradle\caches\transforms-2\files-2.1\f7420b6e43bfd8291a10195ad2a500f2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+142    </application>
+143
+144</manifest>

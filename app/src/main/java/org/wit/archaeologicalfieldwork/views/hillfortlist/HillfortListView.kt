@@ -3,10 +3,15 @@ package org.wit.archaeologicalfieldwork.views.hillfortlist
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.app.SearchManager;
+import android.content.Context
+import android.widget.SearchView.OnQueryTextListener;
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.adapter.HillfortAdapter
 import org.wit.archaeologicalfieldwork.adapter.HillfortListener
@@ -30,7 +35,7 @@ class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
     }
 
 
-    override fun showHillforts(hillforts:List<HillfortModel>){
+    override fun showHillforts(hillforts: List<HillfortModel>) {
         recyclerView.adapter = HillfortAdapter(hillforts, this)
         recyclerView.adapter?.notifyDataSetChanged()
     }
@@ -38,6 +43,29 @@ class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_hillfortlist, menu)
+        val item = menu?.findItem(R.id.menu_search)
+        val searchView: SearchView = item?.actionView as SearchView
+
+        searchView.isSubmitButtonEnabled = true
+        searchView.queryHint = "Enter A Name..."
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+
+            override fun onQueryTextChange(currentText: String): Boolean {
+                presenter.doSearchHillforts(currentText)
+                return true
+            }
+
+            override fun onQueryTextSubmit(query: String): Boolean {
+                presenter.doSearchHillforts(query)
+                return true
+            }
+        })
+
+        searchView.setOnCloseListener {
+            presenter.loadHillforts()
+            true
+        }
+
         return super.onCreateOptionsMenu(menu)
     }
 

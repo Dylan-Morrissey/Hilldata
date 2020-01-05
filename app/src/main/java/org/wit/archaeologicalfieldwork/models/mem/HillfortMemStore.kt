@@ -12,6 +12,17 @@ internal fun getId(): Long {
 }
 
 class HillfortMemStore : HillfortStore, AnkoLogger {
+  override fun findHillfortName(name: String): ArrayList<HillfortModel> {
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+  }
+
+  override fun clearSearch() {
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+  }
+
+  override fun findSearchedHillforts(): List<HillfortModel> {
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+  }
 
   val hillforts = ArrayList<HillfortModel>()
 

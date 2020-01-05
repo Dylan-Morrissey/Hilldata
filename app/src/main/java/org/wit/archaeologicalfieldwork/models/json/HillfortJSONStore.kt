@@ -11,6 +11,7 @@ import org.wit.archaeologicalfieldwork.helpers.write
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.models.HillfortStore
 import java.util.*
+import kotlin.collections.ArrayList
 
 private val JSON_FILE = "hillfort.json"
 private val gsonBuilder = GsonBuilder().setPrettyPrinting().create()
@@ -21,6 +22,17 @@ private fun generateRandomId(): Long {
 }
 
 class HillfortJSONStore : HillfortStore, AnkoLogger {
+    override fun findHillfortName(name: String): ArrayList<HillfortModel> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun clearSearch() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun findSearchedHillforts(): List<HillfortModel> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     val context: Context
     var hillforts = mutableListOf<HillfortModel>()

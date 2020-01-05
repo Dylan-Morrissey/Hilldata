@@ -1648,6 +1648,10 @@
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\9c623595c330b3d9e26012833f626e85\\core-1.1.0\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
+        "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\Hilldata\\app\\build\\intermediates\\res\\merged\\debug\\layout-land_activity_hillfort.xml.flat",
+        "source": "C:\\Users\\Dylan\\AndroidStudioProjects\\Hilldata\\app\\src\\main\\res\\layout-land\\activity_hillfort.xml"
+    },
+    {
         "merged": "C:\\Users\\Dylan\\AndroidStudioProjects\\Hilldata\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\Dylan\\.gradle\\caches\\transforms-2\\files-2.1\\d711c97bb6f88ff5b7d22037d0cc8e07\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
     },

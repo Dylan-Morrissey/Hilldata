@@ -40,14 +40,6 @@ class HillfortView : BaseView(), AnkoLogger {
             it.setOnMapClickListener { presenter.doSelectImage() }
         }
 
-        btnAdd.setOnClickListener() {
-            if (hillfortName.text.toString().isEmpty()) {
-                toast(R.string.enter_hillfort_name)
-            } else {
-                presenter.doAddOrSave(hillfortName.text.toString(), description.text.toString(), checkbox.isChecked, dateText.text.toString(), notes.text.toString(), hillfortRatingBar.rating.toInt())
-            }
-        }
-
         chooseImage.setOnClickListener {presenter.doSelectImage()}
 
         checkbox.setOnClickListener {
@@ -88,7 +80,6 @@ class HillfortView : BaseView(), AnkoLogger {
         lngText.setText("Longitude " +hillfort.location.lng.toString())
         latText.setText("Latitude " +  hillfort.location.lat.toString())
         notes.setText(hillfort.notes)
-        btnAdd.setText(R.string.save_hillfort)
         chooseImage.setText((R.string.change_hillfort_image))
         deleteHillfortBtn.visibility = View.VISIBLE
         hillfortImages.setImageBitmap(readImageFromPath(this, hillfort.image))
@@ -98,7 +89,6 @@ class HillfortView : BaseView(), AnkoLogger {
             chooseImage.setText(R.string.change_hillfort_image)
         }
         this.showLocation(hillfort.location)
-        btnAdd.setText(R.string.save_hillfort)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -115,6 +105,16 @@ class HillfortView : BaseView(), AnkoLogger {
         when (item?.itemId) {
             R.id.item_cancel -> {
                 presenter.doCancel()
+            }
+            R.id.save_hillfort -> {
+                if (hillfortName.text.toString().isEmpty()) {
+                    toast(R.string.enter_hillfort_name)
+                } else {
+                    presenter.doAddOrSave(hillfortName.text.toString(), description.text.toString(), checkbox.isChecked, dateText.text.toString(), notes.text.toString(), hillfortRatingBar.rating.toInt())
+                }
+            }
+            R.id.share_hillfort -> {
+                presenter.doShare()
             }
         }
         return super.onOptionsItemSelected(item)

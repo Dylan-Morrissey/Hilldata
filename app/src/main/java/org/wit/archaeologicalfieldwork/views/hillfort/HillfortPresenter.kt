@@ -110,6 +110,10 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
         }
     }
 
+    fun doShare(){
+        view?.share(hillfort)
+    }
+
     fun doCancel() {
         view?.finish()
     }

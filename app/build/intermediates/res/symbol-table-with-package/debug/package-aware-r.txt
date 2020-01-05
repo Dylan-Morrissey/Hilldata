@@ -1360,6 +1360,7 @@ id right
 id right_icon
 id right_side
 id satellite
+id save_hillfort
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1384,6 +1385,7 @@ id selected
 id settingEmail
 id settingPassword
 id settingUserName
+id share_hillfort
 id shortcut
 id showCustom
 id showHome

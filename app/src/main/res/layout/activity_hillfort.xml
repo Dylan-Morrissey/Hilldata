@@ -131,20 +131,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
-                <Button
-                    android:id="@+id/btnAdd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/button_background"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:stateListAnimator="@null"
-                    android:text="@string/addHillFort"
-                    android:textColor="@color/lightText"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
-
                 <CheckBox
                     android:id="@+id/checkbox"
                     android:layout_width="wrap_content"

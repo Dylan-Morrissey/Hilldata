@@ -5,8 +5,11 @@ import android.view.Menu
 import android.view.MenuItem
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.Marker
+import kotlinx.android.synthetic.main.activity_hillfort.*
 import kotlinx.android.synthetic.main.activity_map.*
+import kotlinx.android.synthetic.main.activity_map.mapView
 import org.wit.archaeologicalfieldwork.R
+import org.wit.archaeologicalfieldwork.models.Location
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
 class EditLocationView : BaseView(), GoogleMap.OnMarkerDragListener, GoogleMap.OnMarkerClickListener {
@@ -26,6 +29,10 @@ class EditLocationView : BaseView(), GoogleMap.OnMarkerDragListener, GoogleMap.O
             it.setOnMarkerClickListener(this)
             presenter.doConfigureMap(it)
         }
+    }
+    override fun showLocation(location: Location) {
+        lat.setText("%.6f".format(location.lat))
+        lng.setText("%.6f".format(location.lng))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

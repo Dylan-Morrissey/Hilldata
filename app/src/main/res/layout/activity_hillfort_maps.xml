@@ -24,5 +24,8 @@
 
     <include layout="@layout/content_hillfort_maps" />
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

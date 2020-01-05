@@ -1,14 +1,9 @@
 package org.wit.archaeologicalfieldwork.views.forgotpassword
 
-import kotlinx.android.synthetic.main.activity_forgotpassword.*
-import org.jetbrains.anko.info
-import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.views.Base.BasePresenter
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 import org.wit.archaeologicalfieldwork.views.Base.VIEW
-import org.wit.archaeologicalfieldwork.views.login.LoginView
 
 class ForgotPasswordPresenter (view: BaseView): BasePresenter(view){
 

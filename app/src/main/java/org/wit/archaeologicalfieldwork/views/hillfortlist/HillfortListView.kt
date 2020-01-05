@@ -28,7 +28,9 @@ class HillfortListView: BaseView(), HillfortListener, AnkoLogger {
         super.init(toolbar, false)
 
         presenter = initPresenter(HillfortListPresenter(this)) as HillfortListPresenter
-
+        presenter = initPresenter(HillfortListPresenter(this)) as HillfortListPresenter
+        toolbar.title = title
+        super.init(toolbar, false)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         presenter.loadHillforts()

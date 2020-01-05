@@ -6,16 +6,16 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import org.wit.archaeologicalfieldwork.models.Location
+import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.views.Base.BasePresenter
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
 class EditLocationPresenter(view: BaseView) : BasePresenter(view) {
 
-    var location = Location()
+    var location = LocationModel()
 
     init {
-        location = view.intent.extras?.getParcelable<Location>("location")!!
+        location = view.intent.extras?.getParcelable<LocationModel>("location")!!
     }
 
     fun doConfigureMap(map: GoogleMap) {
@@ -27,7 +27,7 @@ class EditLocationPresenter(view: BaseView) : BasePresenter(view) {
             .position(loc)
         map.addMarker(options)
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, location.zoom))
-        view?.showLocation(Location(loc.latitude, loc.longitude))
+        view?.showLocation(LocationModel(loc.latitude, loc.longitude))
     }
 
     fun doUpdateLocation(lat: Double, lng: Double) {

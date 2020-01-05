@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_hillfort.*
 import kotlinx.android.synthetic.main.activity_map.*
 import kotlinx.android.synthetic.main.activity_map.mapView
 import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.models.Location
+import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
 class EditLocationView : BaseView(), GoogleMap.OnMarkerDragListener, GoogleMap.OnMarkerClickListener {
@@ -30,7 +30,7 @@ class EditLocationView : BaseView(), GoogleMap.OnMarkerDragListener, GoogleMap.O
             presenter.doConfigureMap(it)
         }
     }
-    override fun showLocation(location: Location) {
+    override fun showLocation(location: LocationModel) {
         lat.setText("%.6f".format(location.lat))
         lng.setText("%.6f".format(location.lng))
     }

@@ -10,11 +10,7 @@ import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
-<<<<<<< HEAD
 class LoginView : BaseView(), AnkoLogger {
-=======
-class LoginView : BaseView() {
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
 
     lateinit var presenter: LoginPresenter
 
@@ -22,10 +18,7 @@ class LoginView : BaseView() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         presenter = initPresenter(LoginPresenter(this)) as LoginPresenter
-<<<<<<< HEAD
         progressBar.visibility = View.GONE
-=======
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
 
         info("Login Activity Started...")
 

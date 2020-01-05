@@ -1,5 +1,6 @@
 package org.wit.archaeologicalfieldwork.views.Base
 import android.content.Intent
+import android.os.Parcelable
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -16,7 +17,7 @@ import org.wit.archaeologicalfieldwork.views.map.HillfortMapView
 import org.wit.archaeologicalfieldwork.views.settings.SettingsView
 import org.wit.archaeologicalfieldwork.views.signup.SignUpView
 import org.wit.archaeologicalfieldwork.views.splashscreen.SplashScreenView
-import org.wit.archaeologicalfieldwork.models.Location
+
 
 val IMAGE_REQUEST = 1
 val LOCATION_REQUEST = 2
@@ -29,7 +30,7 @@ open abstract class BaseView(): AppCompatActivity(), AnkoLogger {
 
     var basePresenter: BasePresenter? = null
 
-    fun navigateTo(view: VIEW, code:Int = 0, key:String = "", value: HillfortModel = null){
+    fun navigateTo(view: VIEW, code:Int = 0, key:String = "", value: Parcelable? = null){
         var intent = Intent(this,HillfortListView::class.java)
         when(view){
             VIEW.LOCATION -> intent = Intent(this, EditLocationView::class.java)
@@ -57,13 +58,10 @@ open abstract class BaseView(): AppCompatActivity(), AnkoLogger {
         toolbar.title = title
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(upEnabled)
-<<<<<<< HEAD
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
             toolbar.title = "${title}: ${user.email}"
         }
-=======
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
     }
 
     override fun onDestroy() {
@@ -88,11 +86,7 @@ open abstract class BaseView(): AppCompatActivity(), AnkoLogger {
 
     open fun showHillfort(hillfort: HillfortModel) {}
     open fun showHillforts(hillfort: List<HillfortModel>) {}
-<<<<<<< HEAD
     open fun showLocation(location: LocationModel) {}
-=======
-    open fun showLocation(location: Location){}
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
     open fun showProgress() {}
     open fun hideProgress() {}
 }

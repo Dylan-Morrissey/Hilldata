@@ -18,7 +18,6 @@ import org.wit.archaeologicalfieldwork.views.Base.BaseView
 
 class HillfortMapView: BaseView(), GoogleMap.OnMarkerClickListener {
 
-    lateinit var map: GoogleMap
     lateinit var presenter: HillfortMapPresenter
     lateinit var map : GoogleMap
 
@@ -26,10 +25,6 @@ class HillfortMapView: BaseView(), GoogleMap.OnMarkerClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hillfort_maps)
         super.init(toolbarMap, true)
-<<<<<<< HEAD
-=======
-        toolbarMap.title = title
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
 
         presenter = initPresenter(HillfortMapPresenter(this)) as HillfortMapPresenter
 
@@ -42,7 +37,6 @@ class HillfortMapView: BaseView(), GoogleMap.OnMarkerClickListener {
     }
 
     override fun showHillfort(hillfort: HillfortModel) {
-<<<<<<< HEAD
         currentTitle.text = hillfort.name
         currentDescription.text = hillfort.description
         Glide.with(this).load(hillfort.image).into(currentImage);
@@ -50,11 +44,6 @@ class HillfortMapView: BaseView(), GoogleMap.OnMarkerClickListener {
 
     override fun showHillforts(hillforts: List<HillfortModel>) {
         presenter.doPopulateMap(map, hillforts)
-=======
-        currentTitle.text = hillfort!!.name
-        currentDescription.text = hillfort!!.description
-        currentImage.setImageBitmap(readImageFromPath(this, hillfort.image))
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {

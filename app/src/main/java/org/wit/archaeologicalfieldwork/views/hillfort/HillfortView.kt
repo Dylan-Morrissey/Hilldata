@@ -17,11 +17,7 @@ import org.jetbrains.anko.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
 import org.wit.archaeologicalfieldwork.models.HillfortModel
-<<<<<<< HEAD
 import org.wit.archaeologicalfieldwork.models.LocationModel
-=======
-import org.wit.archaeologicalfieldwork.models.Location
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
 import org.wit.archaeologicalfieldwork.views.Base.BaseView
 import java.util.*
 
@@ -34,11 +30,7 @@ class HillfortView : BaseView(), AnkoLogger {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hillfort)
         toolbarAdd.title = title
-<<<<<<< HEAD
         init(toolbarAdd, true)
-=======
-        super.init(toolbarAdd, true)
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
 
         presenter = initPresenter(HillfortPresenter(this)) as HillfortPresenter
 
@@ -73,13 +65,13 @@ class HillfortView : BaseView(), AnkoLogger {
             it.setOnMapClickListener { presenter.doSetLocation() }
         }
         btnDate.setOnClickListener {
-          val calander = Calendar.getInstance()
-          val year = calander.get(Calendar.YEAR)
-          val month = calander.get(Calendar.MONTH)
-          val day = calander.get(Calendar.DAY_OF_MONTH)
-          val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view:DatePicker, mYear:Int, mMonth:Int, mDay:Int ->
-              dateText.setText("" + mDay + "/" + mMonth + "/" + mYear)
-          }, year, month, day)
+            val calander = Calendar.getInstance()
+            val year = calander.get(Calendar.YEAR)
+            val month = calander.get(Calendar.MONTH)
+            val day = calander.get(Calendar.DAY_OF_MONTH)
+            val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view:DatePicker, mYear:Int, mMonth:Int, mDay:Int ->
+                dateText.setText("" + mDay + "/" + mMonth + "/" + mYear)
+            }, year, month, day)
             datePicker.show()
         }
 
@@ -93,11 +85,8 @@ class HillfortView : BaseView(), AnkoLogger {
         description.setText(hillfort.description)
         checkbox.setChecked(hillfort.visited)
         dateText.setText(hillfort.date)
-<<<<<<< HEAD
         lngText.setText("Longitude " +hillfort.location.lng.toString())
         latText.setText("Latitude " +  hillfort.location.lat.toString())
-=======
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
         notes.setText(hillfort.notes)
         btnAdd.setText(R.string.save_hillfort)
         chooseImage.setText((R.string.change_hillfort_image))
@@ -109,7 +98,6 @@ class HillfortView : BaseView(), AnkoLogger {
         }
         this.showLocation(hillfort.location)
         btnAdd.setText(R.string.save_hillfort)
-        this.showLocation(hillfort.location)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -135,8 +123,8 @@ class HillfortView : BaseView(), AnkoLogger {
         super.onActivityResult(requestCode, resultCode, data)
         if (data != null) {
             presenter.doActivityResult(requestCode, resultCode, data)
-            }
         }
+    }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -157,11 +145,6 @@ class HillfortView : BaseView(), AnkoLogger {
         super.onResume()
         mapView.onResume()
         presenter.doResartLocationUpdates()
-    }
-
-    override fun showLocation(location: Location) {
-        latText.setText("%.6f".format(location.lat))
-        lngText.setText("%.6f".format(location.lng))
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

@@ -1319,6 +1319,7 @@ id lngText
 id lnglatCard
 id loginEmail
 id loginPassword
+id logo
 id mapView
 id masked
 id media_actions

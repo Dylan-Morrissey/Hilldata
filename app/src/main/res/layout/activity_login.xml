@@ -72,7 +72,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-<<<<<<< HEAD
             android:textSize="20dp"
             />
 
@@ -90,13 +89,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
-=======
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:padding="10dp"
-            android:text="@string/Signup"
-            android:textSize="20dp" />
->>>>>>> 377f6d9accf986e08b58ae4575005f9f6550becc
     </LinearLayout>
 
 </RelativeLayout>

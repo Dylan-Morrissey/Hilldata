@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.wit.archaeologicalfieldwork">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -11,10 +12,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/LoginPage">
+        android:theme="@style/LoginPage"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".activities.SplashScreenActivity"
+            android:name=".views.splashscreen.SplashScreenView"
             android:noHistory="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -24,33 +26,59 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".views.login.LoginView"
             android:theme="@style/LoginPage"></activity>
         <activity
-            android:name=".activities.HillfortActivity"
+            android:name=".views.hillfort.HillfortView"
             android:theme="@style/LoginPage">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
         </activity>
         <activity
-            android:name=".activities.ForgotPasswordActivity"
+            android:name=".views.forgotpassword.ForgotPasswordView"
             android:theme="@style/LoginPage"></activity>
+
         <activity
-            android:name=".activities.SignUpActivity"
+            android:name=".views.signup.SignUpView"
             android:theme="@style/LoginPage">
         </activity>
-        <activity android:name=".activities.HillfortListActivity"
+
+        <activity android:name=".views.hillfortlist.HillfortListView"
             android:theme="@style/LoginPage">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
         </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".activities.MapActivity"
-            android:label="@string/title_activity_map"></activity>
+            android:name=".views.editlocation.EditLocationView"
+            android:label="@string/title_activity_map">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfort.HillfortView" />
+        </activity>
 
         <activity
-            android:name=".activities.SettingsActivity"
-            android:theme="@style/LoginPage"></activity>
+            android:name=".views.settings.SettingsView"
+            android:theme="@style/LoginPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
+        </activity>
+
+        <activity android:name=".views.map.HillfortMapView"
+            android:label="@string/title_activity_hillfort_maps">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
+        </activity>
     </application>
 
 </manifest>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
-    tools:context=".activities.SignUpActivity">
+    tools:context=".views.signup.SignUpView">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,19 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:src="@drawable/applogo" />
-
-        <EditText
-            android:id="@+id/newUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/login_edit_background"
-            android:padding="10dp"
-            android:hint="@string/username"
-            android:drawablePadding="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            />
 
         <EditText
             android:id="@+id/newEmail"
@@ -51,19 +38,6 @@
             android:background="@drawable/login_edit_background"
             android:padding="10dp"
             android:hint="@string/password"
-            android:drawablePadding="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="15dp"
-            />
-        <EditText
-            android:id="@+id/newPasswordConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:background="@drawable/login_edit_background"
-            android:padding="10dp"
-            android:hint="@string/passwordConfirm"
             android:drawablePadding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"

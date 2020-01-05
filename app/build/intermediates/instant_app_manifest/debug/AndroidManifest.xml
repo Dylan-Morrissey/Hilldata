@@ -31,7 +31,7 @@
         android:testOnly="true"
         android:theme="@style/LoginPage" >
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.SplashScreenActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.splashscreen.SplashScreenView"
             android:noHistory="true"
             android:theme="@style/SplashTheme" >
             <intent-filter>
@@ -41,25 +41,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.LoginActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.login.LoginView"
             android:theme="@style/LoginPage" />
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.HillfortActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.hillfort.HillfortView"
+            android:theme="@style/LoginPage" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
+        </activity>
+        <activity
+            android:name="org.wit.archaeologicalfieldwork.views.forgotpassword.ForgotPasswordView"
+            android:theme="@style/LoginPage" />
+        <activity
+            android:name="org.wit.archaeologicalfieldwork.views.signup.SignUpView"
             android:theme="@style/LoginPage" >
         </activity>
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.ForgotPasswordActivity"
-            android:theme="@style/LoginPage" />
-        <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.SignUpActivity"
-            android:theme="@style/LoginPage" />
-        <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.HillfortListActivity"
+            android:name="org.wit.archaeologicalfieldwork.views.hillfortlist.HillfortListView"
             android:theme="@style/LoginPage" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
 
@@ -68,17 +74,68 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="org.wit.archaeologicalfieldwork.activities.MapActivity"
-            android:label="@string/title_activity_map" />
+            android:name="org.wit.archaeologicalfieldwork.views.editlocation.EditLocationView"
+            android:label="@string/title_activity_map" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfort.HillfortView" />
+        </activity>
+        <activity
+            android:name="org.wit.archaeologicalfieldwork.views.settings.SettingsView"
+            android:theme="@style/LoginPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
+        </activity>
+        <activity
+            android:name="org.wit.archaeologicalfieldwork.views.map.HillfortMapView"
+            android:label="@string/title_activity_hillfort_maps" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.hillfortlist.HillfortListView" />
+        </activity>
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="org.wit.archaeologicalfieldwork.firebaseinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
 
         <meta-data
             android:name="com.google.android.gms.version"

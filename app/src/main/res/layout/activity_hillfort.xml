@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.HillfortActivity"
+    tools:context=".views.hillfort.HillfortView"
     android:background="@drawable/login_background">
 
     <RelativeLayout
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <androidx.viewpager.widget.ViewPager
+                <ImageView
                     android:id="@+id/hillfortImages"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" />
@@ -50,6 +50,7 @@
                     android:layout_height="70dp"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"/>
+
 
 
                 <EditText
@@ -120,35 +121,15 @@
                     android:text="@string/button_addImage"
                     android:textColor="@color/lightText"
                     android:textSize="20sp"/>
-
-                <Button
-                    android:id="@+id/hillfortLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="378dp"
+                    android:layout_height="198dp"
                     android:layout_margin="16dp"
-                    android:background="@drawable/button_background"
-                    android:paddingBottom="8dp"
-                    android:paddingTop="8dp"
-                    android:stateListAnimator="@null"
-                    android:text="@string/button_location"
-                    android:textColor="@color/lightText"
-                    android:textAllCaps="false"
-                    android:textSize="20sp"/>
-
-
-                <Button
-                    android:id="@+id/btnAdd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/button_background"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:stateListAnimator="@null"
-                    android:text="@string/addHillFort"
-                    android:textColor="@color/lightText"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <CheckBox
                     android:id="@+id/checkbox"
@@ -180,6 +161,32 @@
                     android:textAllCaps="false"
                     android:textSize="20sp" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="Rate Hillfort"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+                <RatingBar
+                    android:id="@+id/hillfortRatingBar"
+                    android:layout_width="240dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="1" />
+
+                <CheckBox
+                    android:id="@+id/togglefavoite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Favorite"
+                    android:textSize="20dp" />
+
                 <Button
                     android:id="@+id/deleteHillfortBtn"
                     android:layout_width="match_parent"
@@ -196,6 +203,8 @@
                     android:textSize="20sp"/>
 
             </LinearLayout>
+
+
         </ScrollView>
 
     </RelativeLayout>

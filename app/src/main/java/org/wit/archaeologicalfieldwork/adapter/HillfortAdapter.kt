@@ -1,8 +1,11 @@
+package org.wit.archaeologicalfieldwork.adapter
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
@@ -30,17 +33,10 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
 
         fun bind(hillfort: HillfortModel, listener: HillfortListener){
             itemView.hillfortNameCard.text  = hillfort.name
-            itemView.lnglatCard.text = "Longdiude: "+ hillfort.lng.toString() + "\nLatitude: " + hillfort.lat.toString()
+            itemView.lnglatCard.text = "Longdiude: "+ hillfort.location.lng.toString() + "\nLatitude: " + hillfort.location.lat.toString()
             itemView.checkboxCard.setChecked(hillfort.visited)
-            val viewPager = itemView.findViewById<ViewPager>(R.id.imageIcon)
-            val adapter = ImageAdapter(
-                itemView.context,
-                hillfort.imageStore
-            )
-            viewPager.adapter = adapter
-
+            Glide.with(itemView.context).load(hillfort.image).into(itemView.imageIcon);
             itemView.setOnClickListener{listener.onHillfortClick(hillfort)}
-
         }
     }
 }

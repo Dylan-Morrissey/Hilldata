@@ -1284,6 +1284,7 @@ id groups
 id hillfortImages
 id hillfortName
 id hillfortNameCard
+id hillfortRatingBar
 id hillfortsVisited
 id home
 id homeAsUp

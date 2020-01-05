@@ -8,7 +8,6 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.content_hillfort_maps.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
-import org.wit.archaeologicalfieldwork.helpers.readImageFromPath
 import org.wit.archaeologicalfieldwork.main.MainApp
 import org.wit.archaeologicalfieldwork.models.HillfortModel
 import org.wit.archaeologicalfieldwork.views.Base.BasePresenter
@@ -28,13 +27,9 @@ class HillfortMapPresenter (view: BaseView): BasePresenter(view){
     }
 
     fun doMarkerSelected(marker: Marker) {
-        val tag = marker.tag as Long
-        doAsync {
-            val hillfort = marker.tag as HillfortModel
-            uiThread {
-                if (hillfort != null) view?.showHillfort(hillfort)
-            }
-        }
+        val hillfort = marker.tag as HillfortModel
+        view?.showHillfort(hillfort)
+
 
     }
 

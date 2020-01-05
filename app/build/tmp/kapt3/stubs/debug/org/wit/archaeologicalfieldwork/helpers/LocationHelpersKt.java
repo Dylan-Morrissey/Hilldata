@@ -15,14 +15,14 @@ public final class LocationHelpersKt {
         return false;
     }
     
-    public static final boolean isPermissionGranted(int code, @org.jetbrains.annotations.NotNull()
-    int[] grantResults) {
-        return false;
-    }
-    
     @org.jetbrains.annotations.NotNull()
     @android.annotation.SuppressLint(value = {"RestrictedApi"})
     public static final com.google.android.gms.location.LocationRequest createDefaultLocationRequest() {
         return null;
+    }
+    
+    public static final boolean isPermissionGranted(int code, @org.jetbrains.annotations.NotNull()
+    int[] grantResults) {
+        return false;
     }
 }

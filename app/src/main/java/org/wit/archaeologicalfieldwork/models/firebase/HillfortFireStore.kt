@@ -84,6 +84,7 @@ class HillfortFireStore(val context: Context) : HillfortStore, AnkoLogger {
             foundHillfort.notes = hillfort.notes
             foundHillfort.date = hillfort.date
             foundHillfort.visited = hillfort.visited
+            foundHillfort.rating = hillfort.rating
         }
 
         db.child("users").child(userId).child("hillforts").child(hillfort.fbId).setValue(hillfort)

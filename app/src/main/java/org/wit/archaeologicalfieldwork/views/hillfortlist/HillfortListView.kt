@@ -3,15 +3,10 @@ package org.wit.archaeologicalfieldwork.views.hillfortlist
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.app.SearchManager;
-import android.content.Context
-import android.widget.SearchView.OnQueryTextListener;
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.toast
 import org.wit.archaeologicalfieldwork.R
 import org.wit.archaeologicalfieldwork.adapter.HillfortAdapter
 import org.wit.archaeologicalfieldwork.adapter.HillfortListener

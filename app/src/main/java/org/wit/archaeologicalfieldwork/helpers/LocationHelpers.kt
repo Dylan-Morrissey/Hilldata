@@ -10,18 +10,34 @@ import com.google.android.gms.location.LocationRequest
 
 val REQUEST_PERMISSIONS_REQUEST_CODE = 34
 
-fun checkLocationPermissions(activity: Activity) : Boolean {
-    if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-        return true
+fun checkLocationPermissions(activity: Activity): Boolean {
+    return if (ActivityCompat.checkSelfPermission(
+            activity,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        ) == PackageManager.PERMISSION_GRANTED
+    ) {
+        true
+    } else {
+        ActivityCompat.requestPermissions(
+            activity,
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+            REQUEST_PERMISSIONS_REQUEST_CODE
+        )
+        false
     }
-    else {
-        ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), REQUEST_PERMISSIONS_REQUEST_CODE)
-        return false
+}
+
+@SuppressLint("RestrictedApi")
+fun createDefaultLocationRequest(): LocationRequest {
+    return LocationRequest().apply {
+        interval = 10000
+        fastestInterval = 5000
+        priority = LocationRequest.PRIORITY_HIGH_ACCURACY
     }
 }
 
 fun isPermissionGranted(code: Int, grantResults: IntArray): Boolean {
-    var permissionGranted = false;
+    var permissionGranted = false
     if (code == REQUEST_PERMISSIONS_REQUEST_CODE) {
         when {
             grantResults.isEmpty() -> Log.i("Location", "User interaction was cancelled.")
@@ -33,14 +49,4 @@ fun isPermissionGranted(code: Int, grantResults: IntArray): Boolean {
         }
     }
     return permissionGranted
-}
-
-@SuppressLint("RestrictedApi")
-fun createDefaultLocationRequest() : LocationRequest {
-    val locationRequest = LocationRequest().apply {
-        interval = 10000
-        fastestInterval = 5000
-        priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-    }
-    return locationRequest
 }

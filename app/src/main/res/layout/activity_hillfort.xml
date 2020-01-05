@@ -175,6 +175,24 @@
                     android:textAllCaps="false"
                     android:textSize="20sp" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="RateHillfort"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+                <RatingBar
+                    android:id="@+id/hillfortRatingBar"
+                    android:layout_width="240dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="1" />
+
                 <Button
                     android:id="@+id/deleteHillfortBtn"
                     android:layout_width="match_parent"
@@ -191,6 +209,8 @@
                     android:textSize="20sp"/>
 
             </LinearLayout>
+
+
         </ScrollView>
 
     </RelativeLayout>

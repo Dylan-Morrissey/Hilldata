@@ -2,7 +2,6 @@ package org.wit.archaeologicalfieldwork.views.hillfort
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.viewpager.widget.ViewPager
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
@@ -13,13 +12,11 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
-import org.wit.archaeologicalfieldwork.R
-import org.wit.archaeologicalfieldwork.adapter.ImageAdapter
-import org.wit.archaeologicalfieldwork.helpers.showImagePicker
+import org.wit.archaeologicalfieldwork.helpers.*
 import org.wit.archaeologicalfieldwork.models.HillfortModel
-import org.wit.archaeologicalfieldwork.helpers.checkLocationPermissions
-import org.wit.archaeologicalfieldwork.helpers.createDefaultLocationRequest
-import org.wit.archaeologicalfieldwork.helpers.isPermissionGranted
+
+
+import org.wit.archaeologicalfieldwork.helpers.showImagePicker
 import org.wit.archaeologicalfieldwork.models.LocationModel
 import org.wit.archaeologicalfieldwork.views.Base.*
 
@@ -32,6 +29,8 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
     var edit = false;
     var locationService: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(view)
     val locationRequest = createDefaultLocationRequest()
+    val IMAGE_REQUEST = 1
+    val LOCATION_REQUEST = 2
 
     init {
         if (view.intent.hasExtra("hillfort_edit")) {
@@ -92,12 +91,13 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
         view?.showHillfort(hillfort)
     }
 
-    fun doAddOrSave(name: String, description: String, visited: Boolean, date: String, notes: String) {
+    fun doAddOrSave(name: String, description: String, visited: Boolean, date: String, notes: String, rating: Int) {
         hillfort.name = name
         hillfort.description = description
         hillfort.visited = visited
         hillfort.date = date
         hillfort.notes = notes
+        hillfort.rating = rating
         doAsync {
             if (edit) {
                 app.hillforts.updateHillfort(hillfort)
@@ -142,7 +142,6 @@ class HillfortPresenter(view: BaseView): BasePresenter(view) {
             IMAGE_REQUEST -> {
                 hillfort.image = data.data.toString()
                 view?.showHillfort(hillfort)
-
             }
             LOCATION_REQUEST -> {
                 val location = data.extras?.getParcelable<LocationModel>("location")!!

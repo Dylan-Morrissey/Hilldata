@@ -44,7 +44,7 @@ class HillfortView : BaseView(), AnkoLogger {
             if (hillfortName.text.toString().isEmpty()) {
                 toast(R.string.enter_hillfort_name)
             } else {
-                presenter.doAddOrSave(hillfortName.text.toString(), description.text.toString(), checkbox.isChecked, dateText.text.toString(), notes.text.toString())
+                presenter.doAddOrSave(hillfortName.text.toString(), description.text.toString(), checkbox.isChecked, dateText.text.toString(), notes.text.toString(), hillfortRatingBar.rating.toInt())
             }
         }
 
@@ -93,6 +93,7 @@ class HillfortView : BaseView(), AnkoLogger {
         deleteHillfortBtn.visibility = View.VISIBLE
         hillfortImages.setImageBitmap(readImageFromPath(this, hillfort.image))
         Glide.with(this).load(hillfort.image).into(hillfortImages);
+        hillfortRatingBar?.rating = hillfort.rating.toFloat()
         if (hillfort.image != null) {
             chooseImage.setText(R.string.change_hillfort_image)
         }
